@@ -1,0 +1,778 @@
+\input texinfo @c -*- mode: texinfo; coding: sjis-dos -*-
+@c $Id: jbanner.texinfo,v 1.1 2004/01/19 09:01:28 tfuruka1 Exp $
+@c $Log: jbanner.texinfo,v $
+@c Revision 1.1  2004/01/19 09:01:28  tfuruka1
+@c リビジョン管理をRCSからCVSへ変更しました。
+@c
+@c Revision 1.1  2003/06/09 07:09:06  tfuruka1
+@c Initial revision
+@c
+@c
+
+@documentlanguage{ja}
+
+@c 現在, これは makeinfo の HTML 出力のみで使われます.ドキュメントエンコード
+@c enc が指定された場合, `<meta>'タグで出力の`<head>'に含められます. <meta
+@c http-equiv="Content-Type" content="text/html; charset=enc"> てな事を書い
+@c ているんですが, 私の makeinfo だと, 巧く行かないようななので, 手動で html を
+@c 書き換えています。
+@c <meta http-equiv="Content-Type" content="text/html; charset=iso-2022-jp">
+@documentencoding{iso-2022-jp}
+
+
+@c --------------
+@c part 1: ヘッダ
+@c --------------
+
+@c %**start of header
+@setfilename jbanner.info
+@settitle jbanner
+@afourpaper
+@c %**end of header
+
+@c --------------------------
+@c part 2: 要約の記述と著作権
+@c --------------------------
+@copying
+このドキュメントは, jbanner について記述しています。jbanner は日本語を含
+む文字列を拡大し, バナーとして画面に表示するコマンドです。CYGWIN の 
+banner と同じ動作になるように作成したつもりですが, ソースを全く参照して
+いませんので, 内部処理は全く異なっているでしょう。また, 細かい動作は異なっ
+ていると思われます。
+
+@flushright
+Copyright @copyright{} 2003 Tadamegu Furukawa
+@end flushright
+
+このドキュメントの版数は $Revision: 1.1 $ です。
+@end copying
+
+@c ------------------------------------
+@c part 3: タイトルページ, 目次, 著作権
+@c ------------------------------------
+@titlepage
+@title JBANNER
+@subtitle 日本語を含む文字列を拡大し, バナーとして画面に表示する
+@author tfuruka1@@nifty.com
+@author Copyright @copyright 2003 Tadamegu Furukawa
+
+@c the following two commands start the copyright page.
+@page
+@vskip 0pt plus 1filll
+@insertcopying
+@end titlepage
+
+@c Output the table of contents at the beginning.
+@contents
+
+@c ------------
+@c インストール
+@c ------------
+@dircategory Individual utilities
+@direntry
+* jbanner: (jbanner). Prints a string enlarged as a banner on the screen.
+@end direntry
+
+@c -------------------------------------
+@c Part 4: `Top'ノードとマスターメニュー
+@c -------------------------------------
+@ifnottex
+@node Top, 要旨, (dir), (dir)
+@top JBANNER
+@end ifnottex
+
+@insertcopying
+
+@menu
+* 要旨::                        
+* 機能概要::                    
+* 動作環境::                    
+* インストールとアンインストール方法::  
+* 使用方法::                    
+* 蛇足::                        
+* 取り扱い::                    
+
+@detailmenu
+ --- The Detailed Node Listing ---
+
+インストールとアンインストール方法
+
+* インストール::                
+* アンインストール::            
+
+使用方法
+
+* 簡単な使いかた::              
+* コマンド形式::                
+* ヘルプオプション::            
+* 全体的なオプション::          
+* 特殊オプション(WIN32)::       
+
+蛇足
+
+* コンパイル方法::              
+* コマンドライン引数の解析::    
+* 蛇足の蛇足::                  
+
+取り扱い
+
+* 著作権、免責等::              
+* バグ報告等::                  
+
+@end detailmenu
+@end menu
+
+@c --------------------------
+@c Part 5: ドキュメントの本体
+@c --------------------------
+@node 要旨, 機能概要, Top, Top
+@chapter 要旨
+
+jbanner は, 日本語を含む文字列を拡大し, バナーとして画面に表示するコマン
+ドです。以下の出力例を見れば何をするコマンドなのかは一目瞭然でしょう。
+
+@example
+[491] ~/WORK/jbanner/src: ./jbanner -c 漢 漢字
+
+　漢　　　　　漢　　　漢　　　　　　　　　　　漢
+　　漢　漢漢漢漢漢漢漢漢漢漢漢　　　　　　　　漢
+　　　漢　　　漢　　　漢　　　　漢漢漢漢漢漢漢漢漢漢漢漢漢漢漢
+　　　　　　　　　　　　　　　　漢　　　　　　　　　　　　　漢
+漢　　　　漢漢漢漢漢漢漢漢漢　　漢　　　　　　　　　　　　　漢
+　漢　　　漢　　　漢　　　漢　　　　　漢漢漢漢漢漢漢漢漢
+　　漢　　漢漢漢漢漢漢漢漢漢　　　　　　　　　　　　漢
+　　　　　　　　　漢　　　　　　　　　　　　　　　漢
+　　　　　漢漢漢漢漢漢漢漢漢　　　　　　　　　漢漢
+　　漢　　　　　　漢　　　　　　　　　　　　　漢
+　　漢　漢漢漢漢漢漢漢漢漢漢漢　漢漢漢漢漢漢漢漢漢漢漢漢漢漢漢
+　漢　　　　　　　漢　　　　　　　　　　　　　漢
+　漢　　　　　　漢　漢　　　　　　　　　　　　漢
+漢　　　　　漢漢　　　漢漢　　　　　　　　　　漢
+漢　　　漢漢　　　　　　　漢漢　　　　　　漢漢漢
+
+[492] ~/WORK/jbanner/src: ./jbanner -c '_/' 漢字
+
+  _/          _/      _/                      _/
+    _/  _/_/_/_/_/_/_/_/_/_/_/                _/
+      _/      _/      _/        _/_/_/_/_/_/_/_/_/_/_/_/_/_/_/
+                                _/                          _/
+_/        _/_/_/_/_/_/_/_/_/    _/                          _/
+  _/      _/      _/      _/          _/_/_/_/_/_/_/_/_/
+    _/    _/_/_/_/_/_/_/_/_/                        _/
+                  _/                              _/
+          _/_/_/_/_/_/_/_/_/                  _/_/
+    _/            _/                          _/
+    _/  _/_/_/_/_/_/_/_/_/_/_/  _/_/_/_/_/_/_/_/_/_/_/_/_/_/_/
+  _/              _/                          _/
+  _/            _/  _/                        _/
+_/          _/_/      _/_/                    _/
+_/      _/_/              _/_/            _/_/_/
+
+@end example
+
+ふとした事から, banner を使用したくなったのですが, Cygwin の banner は日
+本語を通してくれませんでした(当たり前ですけど)。多分, 数時間で作成できる
+だろうと思って作り始めたのですが, 色々と機能を追加しては削除したりして, 
+結構な日数を費やしてしましました。
+
+@c --------------------------------------------------------------------
+@node  機能概要, 動作環境, 要旨, Top
+@comment  node-name,  next,  previous,  up
+@chapter 機能概要
+
+jbanner は, 日本語を含む文字列を拡大し, バナーとして画面に表示するコマン
+ドです。
+
+ある日, メールに日本語のバナーを入れたいと思って, Cygwin の banner を使
+用したところ, 思った通り, 日本語は通してくれませんでした。多分, 日本語化
+されたものが有ると思い, インターネット等で検索してみたのですが, 違うバナー
+が沢山ヒットしてしまい, 結局目的のものは探し出せませんでした。
+
+@quotation
+「しょうがない。作るか～。」
+
+「多分, 二～三時間もあれば作れるだろう」
+@end quotation
+
+と思って, 作り始めました。ま～, だいたいは二時間ぐらいで出来たのですが, 
+どうせなら, オリジナルと同じ動作にしようと思い, オリジナルを操作しながら, 
+動作を真似て作りました。
+
+面倒だったので, オリジナルのソースは見ないで作成したので, 細かい部分まで
+は真似しきれてないと思います。何れにしろ, オリジナルは多分プログラム内部
+にフォント情報を持っているでしょう(違うかな?)。欧文のように数が少なけれ
+ば可能なのですが, 日本語は数が多いのでフォントを内部に持つのは得策ではな
+いと判断して, OS からフォント情報を得ています。そんな訳でオリジナルには
+存在しない機能として, 以下の機能があります。
+
+@itemize
+@item
+日本語を処理できます
+
+@item
+フォントの指定が可能です
+
+@item
+フォントサイズの指定が可能です
+
+@item
+フォントファミリを列挙する事ができます。
+
+@end itemize
+
+フォントの指定が可能になった事により, 
+
+@example
+[498] ~/WORK/jbanner/src: ./jbanner -c 漢 --fontname='@@ＭＳ 明朝' 漢字
+　
+　漢　　　　　　　　漢　　　漢　　　漢　　　　　　漢
+　漢　　漢漢漢　漢　漢　　　漢　　漢漢漢　　　　漢漢
+　漢　　漢　漢　漢　漢　　漢　　　　漢　　　　　　漢
+漢漢漢　漢　漢　漢　漢　漢　　　　　漢　　漢　　　漢
+　漢　　漢　漢　漢　漢漢　　　　　　漢　漢漢　　　漢
+　漢　　漢漢漢漢漢漢漢　　　　　　　漢　　漢漢　　漢
+　漢　　漢　漢　漢　漢漢　　　　漢　漢　　漢　漢　漢
+漢漢漢　漢　漢　漢　漢　漢　　　漢漢漢　　漢　漢漢漢漢漢漢漢
+　漢　　漢　漢　漢　漢　　漢　　　　漢　　漢　　　漢　　　漢漢
+　漢　　漢漢漢　漢　漢　　　漢　　　漢　　漢　　　漢　　　漢
+　漢　　　　　　　　漢　　　漢　　　漢　　漢　　　漢　　　漢
+　　　　漢漢漢　　　　　　　　　　　漢　　漢　　　漢
+　漢漢　　　　漢漢漢　　　　　　　　漢　　　　　　漢
+漢　　　漢漢　　　　漢漢漢漢漢　　漢漢漢　　　　　漢
+　　　漢　　　　　　漢　　　　　　　　漢漢　　　　漢
+@end example
+
+こんな事も出来るようになりました。
+
+@c --------------------------------------------------------------------
+@node 動作環境, インストールとアンインストール方法, 機能概要, Top
+@comment  node-name,  next,  previous,  up
+@chapter 動作環境
+
+一応, Windows(32bit)汎用のつもりです。特殊な API は一切使用していません
+ので, 多分 Windows 95/98/98SE/ME/NT/2000/Xp の何れでも動作すると思います。
+もしかすると, Win32s でも動作するかもしれません。但し私が動作確認を行っ
+た環境は
+
+@itemize
+@item Windows 2000
+@item Windows Xp
+@end itemize
+
+のみです。
+
+@c --------------------------------------------------------------------
+@node インストールとアンインストール方法, 使用方法, 動作環境, Top
+@comment  node-name,  next,  previous,  up
+@chapter インストールとアンインストール方法
+
+@menu
+* インストール::                
+* アンインストール::            
+@end menu
+
+@node  インストール, アンインストール, インストールとアンインストール方法, インストールとアンインストール方法
+@comment  node-name,  next,  previous,  up
+@section インストール
+
+インストールは, 特殊な事は何も行う必要はありません。@file{jbanner.exe}を
+任意のフォルダ(ディレクトリ)にコピーして下さい。jbanner はコマンドプロン
+プトから使用するツールですので, 環境変数@code{Path}に含まれているディレ
+クトリにコピーする事をお勧め致します。エクスプローラから, クリックしても
+何も起こりませんので悪しからず@code{:-p} 。
+
+@node  アンインストール,  , インストール, インストールとアンインストール方法
+@comment  node-name,  next,  previous,  up
+@section アンインストール
+
+アンインストールは, @file{jbanner.exe}を削除するだけです。レジストリは一
+切触っていませんので, それ以外には何も行う必要はありません。
+
+@c --------------------------------------------------------------------
+@node   使用方法, 蛇足, インストールとアンインストール方法, Top
+@comment  node-name,  next,  previous,  up
+@chapter 使用方法
+
+@menu
+* 簡単な使いかた::              
+* コマンド形式::                
+* ヘルプオプション::            
+* 全体的なオプション::          
+* 特殊オプション(WIN32)::       
+@end menu
+
+@c --------------------------------------------------------------------
+@node  簡単な使いかた, コマンド形式, 使用方法, 使用方法
+@comment  node-name,  next,  previous,  up
+@section 簡単な使いかた
+
+@file{jbanner}は Windows のコマンドプロンプト等から使用します。私は 
+Emacs の shell で bash を起動して使用する事が殆どですので, このドキュメ
+ントの例もbash のものを使用しているのが殆どです。コマンドプロンプトで使
+用する場合に於いても特に大きな違いはありませんので, 適当に読み替えて下さ
+い。
+
+そのままコマンドプロンプトから@samp{jbanner}と入力すると, 
+
+@example
+C:\home\tfuruka1>jbanner
+jbanner: 引数が不十分です。
+Usage: jbanner [-c X] [-w 80] [--usage] [--version] [--help] 表示する文字列
+@end example
+
+といった, 簡単な使用方法を表示します。今度は「表示する文字列」を何か入力してみ
+ます。ここでは「ほげ」と入力します。
+
+@example
+C:\home\tfuruka1>jbanner ほげ
+                            X X
+  X               X         X X
+  X   XXXXXXXX    X        X
+ X         X     X         X
+ X         X     X    XXXXXXXXX
+ X    XXXXXXXX   X         X
+ X         X     X         X
+ X         X     X         X
+ X         X     X         X
+ X         X     X         X
+ X     XXXXX     X        X
+ X    X    XX     X       X
+  X   X    X X    X      X
+  X    XXXX            XX
+@end example
+
+これが基本的な使用方法です。あとは, オプションで細かい指定がそれなりにで
+きます。
+
+@c --------------------------------------------------------------------
+@node  コマンド形式, ヘルプオプション, 簡単な使いかた, 使用方法
+@comment  node-name,  next,  previous,  up
+@section コマンド形式
+
+@file{jbanner}のコマンド形式は以下の通りです。
+
+@example
+jbanner [options] 表示文字列
+@end example
+
+@code{表示文字列}で指定した文字列を拡大して, バナーとして, 画面に表示し
+ます。オプションは, @code{-}又は@code{--}から始まる文字又は文字列で, 出
+力形式に対する指示を行う事ができます。オプションの中には, 引数を必要とす
+るものもあります。その場合の引数は, コマンドの次の引数として記述する事も
+できますし, @code{=}で連結して指定する事も可能です。例えば, 以下の二つは
+どちらも同じ意味になります。
+
+@example
+--option argument
+--option=argument
+@end example
+
+因みにjbannerには@code{--option}というオプションは存在しません。上記はあ
+くまで例です。
+
+@c --------------------------------------------------------------------
+@node  ヘルプオプション, 全体的なオプション, コマンド形式, 使用方法
+@comment  node-name,  next,  previous,  up
+@section ヘルプオプション
+
+ヘルプオプションを指定した場合は, jbanner に関連する情報を表示し, 直ちに
+コマンドを終了します。表示文字列を指定した場合も, バナー処理を行いません。
+
+@table @kbd
+
+@item -?
+@itemx --help
+
+詳細な使用方法を表示し, 処理を終了します。
+
+@item --usage
+簡潔な使用方法を表示し, 処理を終了します。
+
+@item --version
+ヴァージョン情報を表示し, 処理を終了します。
+@end table
+
+@c --------------------------------------------------------------------
+@node  全体的なオプション, 特殊オプション(WIN32), ヘルプオプション, 使用方法
+@comment  node-name,  next,  previous,  up
+@section 全体的なオプション
+
+@table @kbd
+
+@item -c=X
+@itemx --char=X
+
+バナーを作成する為に使用する文字列を指定します。このオプションを指定しな
+かった場合は, バナーを作成する文字列として@code{X}を使用します。このオプ
+ションで指定するのは文字ではなく, @strong{文字列}です。例えば, @code{AB}
+を指定した場合は, 以下のようになります。
+
+@example
+[513] ~/WORK/jbanner/src: ./jbanner -c AB 漢字
+  AB          AB      AB                      AB
+    AB  ABABABABABABABABABABAB                AB
+      AB      AB      AB        ABABABABABABABABABABABABABABAB
+                                AB                          AB
+AB        ABABABABABABABABAB    AB                          AB
+  AB      AB      AB      AB          ABABABABABABABABAB
+    AB    ABABABABABABABABAB                        AB
+                  AB                              AB
+          ABABABABABABABABAB                  ABAB
+    AB            AB                          AB
+    AB  ABABABABABABABABABABAB  ABABABABABABABABABABABABABABAB
+  AB              AB                          AB
+  AB            AB  AB                        AB
+AB          ABAB      ABAB                    AB
+AB      ABAB              ABAB            ABABAB
+@end example
+
+@item -w=80
+@itemx --width=80
+
+バナーの表示幅を設定します。このオプションを指定しなかった場合の表示幅は
+80文字です。表示幅は 1以上, 1024未満の範囲で指定可能です。表示幅を超えた
+分部はカットされます。表示幅を 45に指定した場合の例を以下に示します。
+
+@example
+[517] ~/WORK/jbanner/src: ./jbanner -c AB --width=45 漢字
+  AB          AB      AB
+    AB  ABABABABABABABABABABAB
+      AB      AB      AB        ABABABABABAB
+                                AB
+AB        ABABABABABABABABAB    AB
+  AB      AB      AB      AB          ABABAB
+    AB    ABABABABABABABABAB
+                  AB
+          ABABABABABABABABAB
+    AB            AB
+    AB  ABABABABABABABABABABAB  ABABABABABAB
+  AB              AB
+  AB            AB  AB
+AB          ABAB      ABAB
+AB      ABAB              ABAB            AB
+@end example
+@end table
+
+@c --------------------------------------------------------------------
+@node  特殊オプション(WIN32),  , 全体的なオプション, 使用方法
+@comment  node-name,  next,  previous,  up
+@section 特殊オプション(WIN32)
+
+@file{jbanner}は, Windows のフォントを使用してバナーを作成しています。そ
+のために, フォントに関連するオプションを用意しています。
+
+@table @kbd
+
+@item -F="ＭＳ ゴシック"
+@itemx --fontname="ＭＳ ゴシック"
+
+バナー作成に使用するフォント名を指定します。このオプションを指定しなかっ
+た場合は, @code{MS ゴシック}を使用します。以下の例は, フォントに
+@code{@@FixedSys}を使用した場合の例です。
+
+@example
+[537] ~/WORK/jbanner/src: ./jbanner -c '漢' -F=@@FixedSys 漢字
+　
+　
+　
+　漢　　　　　　　　漢　　　漢　　　漢漢漢　　　　　漢
+　漢　　漢漢漢　漢　漢　　　漢　　　漢　　　　　　　漢
+　漢　　漢　漢　漢　漢　　漢　　　　漢　　　　　　　漢
+漢漢漢　漢　漢　漢　漢　　漢　　　　漢　　漢　　　　漢
+　漢　　漢　漢　漢　漢　漢　　　　　漢　　漢漢　　　漢
+　漢　　漢漢漢漢漢漢漢漢　　　　　　漢　　漢　漢　　漢
+　漢　　漢　漢　漢　漢　漢　　　　　漢　　漢　　漢　漢
+漢漢漢　漢　漢　漢　漢　　漢　　漢漢漢　　漢　　漢漢漢漢漢漢漢
+　漢　　漢　漢　漢　漢　　漢　　　　漢　　漢　　　　漢　　　漢
+　漢　　漢漢漢　漢　漢　　　漢　　　漢　　漢　　　　漢　　　漢
+　漢　　　　　　　　漢　　　漢　　　漢　　漢　　　　漢
+　　漢　　　　　　　　　　　　　　　漢　　漢　　　　漢
+　漢　　　　漢　　漢漢　　　　　　　漢　　　　　　　漢
+漢　　　　漢　　　　　漢漢　　　　　漢　　　　　　　漢
+　　　　漢　　　　　　　　漢漢　　　漢漢漢　　　　　漢
+@end example
+
+このオプションで指定するのは, 書体名(フォントフェイス)ではなく, フォント
+名なので, 以下のように指定する事も出来ます。
+
+@example
+[538] ~/WORK/jbanner/src: ./jbanner -F="Times New Roman Bold Italic" Hoge
+ 
+ 
+ 
+ 
+   XXXX  XXXX
+    XX    XX
+    XX    XX
+   XX    XX
+   XX    XX    XXX    XXXXXX   XXXX
+   XXXXXXXX   X  XX  XXX XX   X  XX
+  XX    XX   XX  XX  XX  XX  X  XX
+  XX    XX  XX   XX  XX XXX XXXXX
+  XX    XX  XX  XX    XXXX  XX
+ XX    XX   XX  XX   XX     XX  XX
+XXXX  XXXX   XXX     XXXX    XXX
+                    X  XXX
+                   XX   XX
+                    XXXXX
+@end example
+
+@item -f=16
+@itemx --fontsize=16
+
+バナー作成に使用するフォントのフォントサイズを指定します。このサイズはフォ
+ントの高さを意味します。フォントの幅は, アスペクトル比から自動算出します。
+このオプションを指定しなかった場合のフォントサイズは 16を指定した事にな
+ります。フォントサイズに 24を指定した場合の例を以下に示します(行書体は16
+ドットだと辛いですね)。
+
+@example
+[546] ~/WORK/jbanner/src: ./jbanner -c '##' -F=HGS行書体 -f 24 あ
+ 
+ 
+ 
+                      ##
+                    ##  ##
+                  ####    ####
+                  ####  ########
+            ##    ############
+              ############
+                ####
+                ####        ##
+                ####  ############
+                ########    ##    ##
+              ######      ####      ##
+            ########    ####        ####
+          ####    ##########        ####
+        ##        ########          ####
+        ##      ######              ####
+          ########  ####          ######
+                                ######
+                          ########
+@end example
+
+@item --lsfont[=family]
+
+familyで指定したフォントファミリのフォント情報を列挙し、コマンドを終了し
+ます。フォント名を指定する時に、システムに使用できるフォントを調べる場合
+に使用する事を想定しています。familyを指定しなかった場合は、使用可能な全
+てのフォントを列挙します。フォント情報は、左から
+
+@itemize
+@item フォント名
+@item スタイル名
+@item 書体名
+@end itemize
+
+の順に列挙します。以下に例を示します。
+
+@example
+[551] ~/WORK/jbanner/src: ./jbanner --lsfont=times
+"Times New Roman"	"Regular"	"Times"
+"Times New Roman"	"Regular"	"Times"
+"Times New Roman"	"Regular"	"Times"
+---中略---
+"Times New Roman Bold"	"Bold"	"Times"
+"Times New Roman Bold"	"Bold"	"Times"
+"Times New Roman Bold"	"Bold"	"Times"
+---中略---
+"Times New Roman Bold Italic"	"Bold Italic"	"Times"
+"Times New Roman Bold Italic"	"Bold Italic"	"Times"
+...以下省略...
+
+[552] ~/WORK/jbanner/src: ./jbanner --lsfont="ＭＳ ゴシック"
+"ＭＳ ゴシック"	"標準"	"ＭＳ ゴシック"
+@end example
+
+jbanner のオプションで指定するのは, フォント名です。フォント名から使用す
+る書体名を得ています。日本語のフォントの場合は, フォント名と書体名は殆ど
+一致しているようです。
+@end table
+
+@c --------------------------------------------------------------------
+@node 蛇足, 取り扱い, 使用方法, Top
+@comment  node-name,  next,  previous,  up
+@chapter 蛇足
+
+@menu
+* コンパイル方法::              
+* コマンドライン引数の解析::    
+* 蛇足の蛇足::                  
+@end menu
+
+@node コンパイル方法, コマンドライン引数の解析, 蛇足, 蛇足
+@comment  node-name,  next,  previous,  up
+@section コンパイル方法
+
+コンパイルは, VC6.0と Cygwin の gcc で確認しています。特殊な事は行ってい
+ないつもりですので, もっと古いものでも, 多分大丈夫だと思います。gcc でコ
+ンパイルを通す為に姑息な事(といっても, 昔 MS-DOS の MSC-3あたりを使用し
+ていた頃もこんな事をしていましたが)をしています。早い話が, 日本語を正し
+く処理できない分部の対応をしているだけです。もう少し詳しくいうと, エスケー
+プコード@code{0x5C}が, SHIFT-JIS での漢字コードの 2バイト目と一致してし
+まい, 特定の漢字コード(2バイト目がエスケープコードと一致するコード)が正
+しく処理されないのです。例えば, 「表」(@code{0x955c})がそれにあたります。
+
+@example
+printf("表示\n")
+@end example
+
+だとエラーになりますので、
+
+@example
+printf("\x95\x5c示\n")
+@end example
+
+と記述しています。
+
+一応, 私がコンパイルを確認したコンパイラを以下に列挙します。
+
+@itemize
+@item
+Microsoft (R) 32-bit C/C++ Optimizing Compiler Version 12.00.8804 for
+80x86
+
+@item
+gcc (GCC) 3.2 20020818 (prerelease)
+@end itemize
+
+コンパイルは, nmake または make 一発で行えるように考慮したつもりですが, 
+環境によっては, makefile を書き換える必要があるかもしれません(と, いうよ
+り, 私と全く同じ環境の筈がありませんので, 何らかの書き換えは必要になりま
+す)。修正方法は, makefile 内に記述していますので, そちらを参照して下さい。
+
+@c --------------------------------------------------------------------
+@node   コマンドライン引数の解析, 蛇足の蛇足, コンパイル方法, 蛇足
+@comment  node-name,  next,  previous,  up
+@section コマンドライン引数の解析
+
+恥ずかしながら, 今回デバッグをしていて始めて判ったのですが, gcc でコンパ
+イルしたものと, MSVC でコンパイルしたもので, コマンドライン引数の処理が異
+なるようです。Windows のコマンドプロンプトから, 以下のコマンドを入力して, 
+その引数の渡り方を調べてみました。
+
+@itemize
+@item
+@samp{jbanner --fontname='Times New Roman' hoge}
+
+@enumerate
+@item
+MSVCでコンパイルした場合
+
+@example
+ARGV[0]=<jbanner>
+ARGV[1]=<--fontname='Times>
+ARGV[2]=<New>
+ARGV[3]=<Roman'>
+ARGV[4]=<hoge>
+@end example
+
+@code{Times New Roman}を一つの引数として渡すつもりで@code{'}で括ったので
+すが, 見事に引数が三つに分割されてしまいました。
+
+@item gccでコンパイルした場合
+
+@example
+ARGV[0]=<jbanner>
+ARGV[1]=<--fontname=Times New Roman>
+ARGV[2]=<hoge>
+@end example
+
+こちらは, 意図した通りです。
+
+@end enumerate
+
+@item
+@samp{jbanner --fontname="Times New Roman" hoge}
+
+今度は, @code{'}ではなく, @code{"}で括ってみました。
+
+@enumerate
+
+@item MSVCでコンパイルした場合
+
+@example
+ARGV[0]=<jbanner>
+ARGV[1]=<--fontname=Times New Roman>
+ARGV[2]=<hoge>
+@end example
+
+意図した通りです。
+
+@item gcc でコンパイルした場合
+
+@example
+ARGV[0]=<./jbanner>
+ARGV[1]=<--fontname=Times New Roman>
+ARGV[2]=<hoge>
+@end example
+
+意図した通りです。
+
+@end enumerate
+@end itemize
+
+といった結果になりました。私は殆ど bash を使用していますので, シェルが処
+理してくれるので, 気が付きませんでした。
+
+@c --------------------------------------------------------------------
+@node  蛇足の蛇足,  , コマンドライン引数の解析, 蛇足
+@comment  node-name,  next,  previous,  up
+@section 蛇足の蛇足
+
+一部, デバッグ用に Syslog 出力しています。Syslogd を起動している方は, ご
+注意(べつに悪さは与えないと思いますが)ください。
+
+
+@c --------------------------------------------------------------------
+@node  取り扱い,  , 蛇足, Top
+@comment  node-name,  next,  previous,  up
+@chapter 取り扱い
+
+@menu
+* 著作権、免責等::              
+* バグ報告等::                  
+@end menu
+
+@node  著作権、免責等, バグ報告等, 取り扱い, 取り扱い
+@comment  node-name,  next,  previous,  up
+@section 著作権、免責等
+
+本プログラムはフリーソフトウェアです。本プログラムを使用して生じたいかな
+る結果に対しても作者は責任を負わないこととします。個人の責任に於いて使用
+して下さい。入手したアーカイブのままの形式であれば, 再頒布, 転載は可能と
+します。常識的に扱ってください。
+
+@node  バグ報告等,  , 著作権、免責等, 取り扱い
+@comment  node-name,  next,  previous,  up
+@section バグ報告等
+
+バグ報告, 改善案(あるいは, 自分で改善した), 質問等ありましたら, 是非作者
+へ「励ましのお便り」@code{(^^;}を送って下さい。特にご自分で改善なさった
+場合は, 私も恩恵に預かりたいので, 是非教えて下さい。改善案のご連絡を下さっ
+ても, 仕事に忙殺されている関係上, ご希望に添える事は出来ないかもしれませ
+んが, バグ修正はなるべく行うつもりです。自分の名誉の為にも@dots{}(^^;
+
+メールアドレスは, 以下の通りです。
+
+@flushright
+@ifhtml
+T.Furukawa <tfuruka1@@nifty.com>
+@end ifhtml
+@ifnothtml
+T.Furukawa @email{tfuruka1@@nifty.com}
+@end ifnothtml
+@end flushright
+
+@c --------------------------
+@c Part 6: ドキュメントの終り
+@c --------------------------
+@c @node  索引,  , 取り扱い, Top
+@c @unnumbered 索引
+
+@c @printindex cp
+@c @printindex fn
+@c @printindex vr
+
+@c インデックスは要らないや
+@bye
