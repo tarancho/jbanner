@@ -1,5 +1,5 @@
 # -*- mode: makefile; coding: sjis-dos; -*-
-# Time-stamp: <2003-06-09 12:04:33 tfuruka1>
+# Time-stamp: <2004-01-19 18:14:33 tfuruka1>
 # Copyright (C) 2003 Tadamegu Furukawa#
 #
 # jbanner の makefile
@@ -43,8 +43,11 @@
 #
 # と入力して下さい。
 #
-# $Id: makefile,v 1.1 2004/01/19 09:01:28 tfuruka1 Exp $
+# $Id: makefile,v 1.2 2004/01/19 09:16:49 tfuruka1 Exp $
 # $Log: makefile,v $
+# Revision 1.2  2004/01/19 09:16:49  tfuruka1
+# clean で　docディレクトリを削除するようにしました。
+#
 # Revision 1.1  2004/01/19 09:01:28  tfuruka1
 # リビジョン管理をRCSからCVSへ変更しました。
 #
@@ -123,7 +126,7 @@ HTML = $(BASE_NAME).html
 MAKEINFO=/usr/local/bin/makeinfo
 TEXINDEX=/usr/local/bin/texindex
 DVIPDF=/usr/local/bin/dvipdfmx
-ETAGS=/usr/local/Meadow/1.15/bin/etags.exe
+ETAGS=/usr/local/Meadow/2.00b1/bin/etags.exe
 
 SHELL=/bin/sh
 
@@ -230,3 +233,7 @@ clean :
 	rm -f *.info
 	rm -f ../$(TAR_GZ)
 	rm -f $(EXE)
+	rm -f ../doc/*.html
+	rm -f ../doc/*.pdf
+	rm -f ../doc/*.txt
+	rm -f ../doc/*.info
