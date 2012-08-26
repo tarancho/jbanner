@@ -1,8 +1,8 @@
 # -*- mode: makefile; coding: sjis-dos; -*-
-# Time-stamp: <2004-01-19 18:14:33 tfuruka1>
+# Time-stamp: <2012-08-26 18:53:31 tfuruka1>
 # Copyright (C) 2003 Tadamegu Furukawa#
 #
-# jbanner の makefile
+# jbanner の makefile (nmake が必要です)
 
 # (while (re-search-forward "^#!" nil t) (replace-match "!"))
 # (while (re-search-forward "^!" nil t) (replace-match "#!"))
@@ -11,7 +11,7 @@
 # この makefaile は概ね以下の構造になっています。
 #
 #        !if defined(CYGWIN)    ←(1)
-#        
+#
 #        << CYGWIN の定義部>>    ←(2)
 #
 #        !else                  ←(1)
@@ -22,7 +22,7 @@
 #
 #        << 共通の定義 >>
 #
-# (1)の分部は, nmake でのみ有効な文法ですので, make を使用する場合は, 
+# (1)の分部は, nmake でのみ有効な文法ですので, make を使用する場合は,
 # コメントアウトして下さい。nmake を使用する場合は, (2), (3)のコメント
 # を外して下さい。そして, gcc でコンパイルする場合はコマンドプロンプト
 # 等から
@@ -35,7 +35,7 @@
 #
 # として下さい。make を使用する場合は, !if 文は使用出来ませんので, (1)
 # の分部をコメントアウトして下さい。そして, gcc でコンパイルする場合は,
-# (2)分部のコメントを外して, (3)の分部をコメントアウトして下さい。MSVC 
+# (2)分部のコメントを外して, (3)の分部をコメントアウトして下さい。MSVC
 # でコンパイルする場合は, (3)分部のコメントを外して, (2)の分部をコメン
 # トアウトして下さい。そして, コマンドプロンプト等から
 #
@@ -53,7 +53,7 @@
 #
 
 
-# 
+#
 # ↓ nmake 以外はコメントアウトして下さい
 !if defined(CYGWIN)
 
@@ -75,6 +75,9 @@
 # ソケットを使用する場合は、__USE_W32_SOCKETS を定義したほうが良いよう
 # です。特に不具合を発見した事は無いのですが、一応ウォーニングが消えな
 # いので入れてます。
+
+# 新しいCygwinを使用している場合は gcc で -mno-cygwin オプションが削除
+# されています。その場合は gcc-3 を使用して下さい。
 
 O = o
 RES = o
@@ -126,11 +129,11 @@ HTML = $(BASE_NAME).html
 MAKEINFO=/usr/local/bin/makeinfo
 TEXINDEX=/usr/local/bin/texindex
 DVIPDF=/usr/local/bin/dvipdfmx
-ETAGS=/usr/local/Meadow/2.00b1/bin/etags.exe
+ETAGS=/usr/local/emacs/bin/etags.exe
 
 SHELL=/bin/sh
 
-$(EXE) : $(OBJS) $(OBJ_RES)
+../$(EXE) : $(OBJS) $(OBJ_RES)
 	$(CC) -o $@ $(CFLAGS) $(OBJS) $(OBJ_RES) $(LDFLAGS)
 
 # リソースのコンパイル。MSVCのrcとCYGWINのwindresで出力ファイルのオプ
@@ -146,8 +149,8 @@ tags:
 
 # tar で固める。nmake だとshellが呼び出されないので、強制的にshを呼び
 # 出しています。
-tar: clean tags
-	$(SHELL) -c "(cd ..; tar cvzf $(TAR_GZ) src)"
+tar: ../$(EXE) doc clean tags
+	$(SHELL) -c "(cd ../..; tar cvzf $(TAR_GZ) jbanner --exclude .git)"
 
 #
 # --- ドキュメント
@@ -206,10 +209,10 @@ clean :
 	rm -f *.obj
 	rm -f *.o
 	rm -f *.*~
-	rm -f *~
-	rm -f *.pdb
+	rm -f *~ *.tmp
+	rm -f *.pdb ../*.pdb
 	rm -f *.res
-	rm -f *.ilk
+	rm -f *.ilk ../*.ilk
 	rm -f *.html
 	rm -f *.dvi
 	rm -f *.txt
@@ -231,9 +234,11 @@ clean :
 	rm -f *.ky
 	rm -f *.kys
 	rm -f *.info
-	rm -f ../$(TAR_GZ)
-	rm -f $(EXE)
+clean-all : clean
+	rm -f ../../$(TAR_GZ)
+	rm -f ../$(EXE)
 	rm -f ../doc/*.html
 	rm -f ../doc/*.pdf
 	rm -f ../doc/*.txt
 	rm -f ../doc/*.info
+	rm -f TAGS

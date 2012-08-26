@@ -9,7 +9,8 @@
 @c
 @c
 
-@documentlanguage{ja}
+@c ↓ pTeXでエラーが出るので、取り敢えずコメントアウト
+@c @documentlanguage{ja} 
 
 @c 現在, これは makeinfo の HTML 出力のみで使われます.ドキュメントエンコード
 @c enc が指定された場合, `<meta>'タグで出力の`<head>'に含められます. <meta
@@ -53,7 +54,7 @@ Copyright @copyright{} 2003 Tadamegu Furukawa
 @titlepage
 @title JBANNER
 @subtitle 日本語を含む文字列を拡大し, バナーとして画面に表示する
-@author tfuruka1@@nifty.com
+@author tfuruka1 at nifty dot com
 @author Copyright @copyright 2003 Tadamegu Furukawa
 
 @c the following two commands start the copyright page.
@@ -757,10 +758,10 @@ ARGV[2]=<hoge>
 
 @flushright
 @ifhtml
-T.Furukawa <tfuruka1@@nifty.com>
+T.Furukawa <tfuruka1 at nifty dot com>
 @end ifhtml
 @ifnothtml
-T.Furukawa @email{tfuruka1@@nifty.com}
+T.Furukawa @email{tfuruka1 at nifty dot com}
 @end ifnothtml
 @end flushright
 

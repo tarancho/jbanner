@@ -1,11 +1,12 @@
 -*- mode: text; coding: sjis-dos -*-
-Time-stamp: <2003-06-09 16:26:41 tfuruka1>
+Time-stamp: <2012-08-26 18:00:05 tfuruka1>
 
          日本語を含む文字列を拡大しバナーとして画面に表示する
                                JBANNER
+                                   
+                 Copyright(C) 2003 Tadamegu Furukawa
 
-                   Copyright(C) 2003 Tadamegu Furukawa
-                          tfuruka1@nifty.com
+                      tfuruka1 at nifty dot com
 
 本アーカイブに含まれるファイルは以下の通りです。詳細な仕様及び, 操作方
 法については, doc フォルダ内の何れかのドキュメントを参照して下さい。全
