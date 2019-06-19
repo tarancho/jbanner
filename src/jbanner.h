@@ -1,19 +1,18 @@
-/* -*- mode: c++; coding: sjis-dos; -*-
- * Time-stamp: <2003-06-08 20:18:00 tfuruka1>
+/* -*- mode: c++; coding: utf-8; -*-
  * Copyright (C) 2003 Tadamegu Furukawa
  *
- * jbanner�̗B��̃w�b�_�t�@�C��
+ * jbannerの唯一のヘッダファイル
  *
  * $Id: jbanner.h,v 1.1 2004/01/19 09:01:28 tfuruka1 Exp $
  * $Log: jbanner.h,v $
  * Revision 1.1  2004/01/19 09:01:28  tfuruka1
- * ���r�W�����Ǘ���RCS����CVS�֕ύX���܂����B
+ * リビジョン管理をRCSからCVSへ変更しました。
  *
  * Revision 1.3  2003/06/08 11:18:45  tfuruka1
- * �t�H���g�̗񋓊֐��ǉ��ɔ����v���g�^�C�v�̒ǉ�
+ * フォントの列挙関数追加に伴うプロトタイプの追加
  *
  * Revision 1.2  2003/06/05 13:51:35  tfuruka1
- * �� DrawBanner�֐��̏C���ɔ����A�v���g�^�C�v���C��
+ * ● DrawBanner関数の修正に伴い、プロトタイプを修正
  *
  * Revision 1.1  2003/06/01 08:23:29  tfuruka1
  * Initial revision
@@ -23,55 +22,58 @@
 #define _JBANNER_H_
 
 /*
- * Cygwin��gcc�ŁA���{���ʂ��ׂɁA�ȉ��̕����̓R�[�h�Ŗ��ߍ���ł���
- * ���B
+ * Cygwinのgccで、日本語を通す為に、以下の文字はコードで埋め込んでいま
+ * す。
  *
- * �\=\x95\x5c
- * �\=\x83\x5c
+ * 表=\x95\x5c
+ * ソ=\x83\x5c
+ *
+ * ↑ 現在は上記の対応は不要です。ソースと実行ファイルのエンコーディン
+ * グを指定できるようになった為です。
  */
 #define VERSION "jbanner version 1.0\n"\
 "    Copyright 2002, 2003 Tadamegu Furukawa\n"\
-"    ���{����܂ޕ�������g�債�A�o�i�[�Ƃ��ĉ�ʂ�\x95\x5c�����܂��B\n\n"\
-"    ����\x83\x5c�t�g�E�G�A�̓t���[\x83\x5c�t�g�E�G�A�ł��B�]�ځA"\
-"�Еz�͓��肵���A�[\n"\
-"    �J�C�u�̂܂܂ł���΁A���R�ɍs���Ă��������B\n"\
+"    日本語を含む文字列を拡大し、バナーとして画面に表示します。\n\n"\
+"    このソフトウエアはフリーソフトウエアです。転載、"\
+"頒布は入手したアー\n"\
+"    カイブのままであれば、自由に行ってください。\n"\
 "\n $Id: jbanner.h,v 1.1 2004/01/19 09:01:28 tfuruka1 Exp $\n"
 
 #include <windows.h>
 #include <stdio.h>
 
-// �����̃`�F�b�N
+// 漢字のチェック
 #define isKanjiSJIS(c)  (((c) >= 0x81 && (c) <= 0x9f) ||\
                          ((c) >= 0xe0 && (c) <= 0xfc))
 
-#define DEFAULT_WIDTH 80                        // �f�t�H���g�̕\����
-#define DEFAULT_CHAR "X"                        // �f�t�H���g�̕���
-#define DEFAULT_FONT TEXT("�l�r �S�V�b�N")      // �f�t�H���g�̃t�H���g
-#define DEFAULT_FSIZE 16                        // �f�t�H���g�̃t�H���g�T�C�Y
+#define DEFAULT_WIDTH 80                        // デフォルトの表示幅
+#define DEFAULT_CHAR "X"                        // デフォルトの文字
+#define DEFAULT_FONT TEXT("ＭＳ ゴシック")      // デフォルトのフォント
+#define DEFAULT_FSIZE 16                        // デフォルトのフォントサイズ
 
-#define MAX_WIDTH 1024                          // �ő�\����
+#define MAX_WIDTH 1024                          // 最大表示幅
 
-#define Z_SPACE "\x81\x40"                      // �S�p�X�y�[�X
+#define Z_SPACE "\x81\x40"                      // 全角スペース
 // ----------------
-// �v���g�^�C�v�錾
+// プロトタイプ宣言
 // ----------------
 
 // -- comm.c
 VOID WINAPI
-Syslogger(BOOL bStdOut,                         // T:stdout�ɂ��o��
-          LPCSTR lpstr,                         // ����printf�Ɠ���
-          ...                                   // ����
+Syslogger(BOOL bStdOut,                         // T:stdoutにも出力
+          LPCSTR lpstr,                         // 書式printfと同じ
+          ...                                   // 引数
     );
 LPCTSTR WINAPI GetLongBaseName(LPCTSTR lpszPath);
 LPCSTR WINAPI GetLastErrorMessage(LPCSTR lpsz, DWORD dwErr);
 
 // -- gdi_wrap.c
 BOOL WINAPI DrawBanner(
-    LPTSTR lpszUseChar,                         // �\������
-    int ScreenWidth,                            // �\����
-    int FontSize,                               // �t�H���g�T�C�Y
-    LPTSTR lpszString,                          // �\��������
-    BOOL bDebug                                 // T:�f�o�b�O
+    LPTSTR lpszUseChar,                         // 表示文字
+    int ScreenWidth,                            // 表示幅
+    int FontSize,                               // フォントサイズ
+    LPTSTR lpszString,                          // 表示文字列
+    BOOL bDebug                                 // T:デバッグ
     );
 BOOL WINAPI SetLogFont(LPCTSTR lpszFamily);
 VOID WINAPI LsFont(LPTSTR lpszFamily);

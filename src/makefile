@@ -1,69 +1,68 @@
-# -*- mode: makefile; coding: sjis-dos; -*-
-# Time-stamp: <2012-08-26 18:53:31 tfuruka1>
+# -*- mode: makefile; coding: utf-8; -*-
 # Copyright (C) 2003 Tadamegu Furukawa#
+# $Id: makefile,v 1.2 2004/01/19 09:16:49 tfuruka1 Exp $
 #
-# jbanner �� makefile (nmake ���K�v�ł�)
+# 全般的に MinGWでのBuildに変更しました。以下のコメントは履歴として残
+# しておきます。
+#
+# jbanner の makefile (nmake が必要です) ← make になりました
 
 # (while (re-search-forward "^#!" nil t) (replace-match "!"))
 # (while (re-search-forward "^!" nil t) (replace-match "#!"))
 
 #
-# ���� makefaile �͊T�ˈȉ��̍\���ɂȂ��Ă��܂��B
+# この makefaile は概ね以下の構造になっています。
 #
-#        !if defined(CYGWIN)    ��(1)
+#        !if defined(CYGWIN)    ←(1)
 #
-#        << CYGWIN �̒�`��>>    ��(2)
+#        << CYGWIN の定義部>>    ←(2)
 #
-#        !else                  ��(1)
+#        !else                  ←(1)
 #
-#        << MSVC �̒�`�� >>     ��(3)
+#        << MSVC の定義部 >>     ←(3)
 #
-#        !endif                 ��(1)
+#        !endif                 ←(1)
 #
-#        << ���ʂ̒�` >>
+#        << 共通の定義 >>
 #
-# (1)�̕�����, nmake �ł̂ݗL���ȕ��@�ł��̂�, make ���g�p����ꍇ��,
-# �R�����g�A�E�g���ĉ������Bnmake ���g�p����ꍇ��, (2), (3)�̃R�����g
-# ���O���ĉ������B������, gcc �ŃR���p�C������ꍇ�̓R�}���h�v�����v�g
-# ������
+# (1)の分部は, nmake でのみ有効な文法ですので, make を使用する場合は,
+# コメントアウトして下さい。nmake を使用する場合は, (2), (3)のコメント
+# を外して下さい。そして, gcc でコンパイルする場合はコマンドプロンプト
+# 等から
 #
 #     nmake CYGWIN=1
 #
-# �Ɠ��͂��ĉ������BMSVC �ŃR���p�C������ꍇ��
+# と入力して下さい。MSVC でコンパイルする場合は
 #
 #     nmake
 #
-# �Ƃ��ĉ������Bmake ���g�p����ꍇ��, !if ���͎g�p�o���܂���̂�, (1)
-# �̕������R�����g�A�E�g���ĉ������B������, gcc �ŃR���p�C������ꍇ��,
-# (2)�����̃R�����g���O����, (3)�̕������R�����g�A�E�g���ĉ������BMSVC
-# �ŃR���p�C������ꍇ��, (3)�����̃R�����g���O����, (2)�̕������R����
-# �g�A�E�g���ĉ������B������, �R�}���h�v�����v�g������
+# として下さい。make を使用する場合は, !if 文は使用出来ませんので, (1)
+# の分部をコメントアウトして下さい。そして, gcc でコンパイルする場合は,
+# (2)分部のコメントを外して, (3)の分部をコメントアウトして下さい。MSVC
+# でコンパイルする場合は, (3)分部のコメントを外して, (2)の分部をコメン
+# トアウトして下さい。そして, コマンドプロンプト等から
 #
 #     make
 #
-# �Ɠ��͂��ĉ������B
+# と入力して下さい。
 #
-# $Id: makefile,v 1.2 2004/01/19 09:16:49 tfuruka1 Exp $
+
 # $Log: makefile,v $
 # Revision 1.2  2004/01/19 09:16:49  tfuruka1
-# clean �Ł@doc�f�B���N�g�����폜����悤�ɂ��܂����B
+# clean で　docディレクトリを削除するようにしました。
 #
 # Revision 1.1  2004/01/19 09:01:28  tfuruka1
-# ���r�W�����Ǘ���RCS����CVS�֕ύX���܂����B
+# リビジョン管理をRCSからCVSへ変更しました。
 #
 
 
-#
-# �� nmake �ȊO�̓R�����g�A�E�g���ĉ�����
-!if defined(CYGWIN)
-
 #######
-####### CYGWIN�p
+####### CYGWIN用 → MinGW へ変更しました
 #######
 
-# CYGWIN �̃��\�[�X�R���p�C����ʂ��R�c�BIDC_STATIC ����`����Ă��Ȃ�
-# ����MFC�̃��\�[�X�p�w�b�_�t�@�C�����g�p���Ȃ��悤�ɂ���΁A���͒�
-# ��܂��B�ȉ��͗�ł�
+# CYGWIN のリソースコンパイラを通すコツ。IDC_STATIC が定義されていない
+# 事とMFCのリソース用ヘッダファイルを使用しないようにすれば、大抵は通
+# ります。以下は例です
 
 #    #ifdef CYGWIN
 #    #   include <windows.h>
@@ -72,41 +71,27 @@
 #    #   include "afxres.h"
 #    #endif
 
-# �\�P�b�g���g�p����ꍇ�́A__USE_W32_SOCKETS ���`�����ق����ǂ��悤
-# �ł��B���ɕs��𔭌��������͖����̂ł����A�ꉞ�E�H�[�j���O��������
-# ���̂œ���Ă܂��B
+# ソケットを使用する場合は、__USE_W32_SOCKETS を定義したほうが良いよう
+# です。特に不具合を発見した事は無いのですが、一応ウォーニングが消えな
+# いので入れてます。
 
-# �V����Cygwin���g�p���Ă���ꍇ�� gcc �� -mno-cygwin �I�v�V�������폜
-# ����Ă��܂��B���̏ꍇ�� gcc-3 ���g�p���ĉ������B
+# 新しいCygwinを使用している場合は gcc で -mno-cygwin オプションが削除
+# されています。その場合は gcc-3 を使用して下さい。
+#
+# ↑ 現在は MinGWにしました。
 
 O = o
 RES = o
-CC = gcc
-CFLAGS = -g -DCYGWIN -Wall -D__USE_W32_SOCKETS -mno-cygwin
+CC = i686-w64-mingw32-gcc
+CFLAGS = -g -DCYGWIN -Wall -D__USE_W32_SOCKETS --input-charset=utf-8 \
+	--exec-charset=cp932
+
 LDFLAGS = -lwsock32 -lgdi32
-RC = windres
+RC = i686-w64-mingw32-windres
 RCFLAGS = --define CYGWIN --define IDC_STATIC=-1 -o
 
-# �� nmake �ȊO�̓R�����g�A�E�g���ĉ�����
-!else
-
 #######
-####### MSC(VC)�p
-#######
-
-O=obj
-RES=res
-CC=cl
-CFLAGS=/W3 /Zi
-LDFLAGS=/link user32.lib wsock32.lib gdi32.lib
-RC=rc
-RCFLAGS= /fo
-
-# �� nmake �ȊO�̓R�����g�A�E�g���ĉ�����
-!endif
-
-#######
-####### �ȉ���MSVC, gcc����
+####### 以下はMSVC, gcc共通
 #######
 
 .SUFFIXES:	.$(O) .c
@@ -136,9 +121,9 @@ SHELL=/bin/sh
 ../$(EXE) : $(OBJS) $(OBJ_RES)
 	$(CC) -o $@ $(CFLAGS) $(OBJS) $(OBJ_RES) $(LDFLAGS)
 
-# ���\�[�X�̃R���p�C���BMSVC��rc��CYGWIN��windres�ŏo�̓t�@�C���̃I�v
-# �V�������قȂ�̂ŁARCFLAGS�̈�ԍŌ�̃I�v�V�������o�̓t�@�C������
-# ���Ă��܂��B
+# リソースのコンパイル。MSVCのrcとCYGWINのwindresで出力ファイルのオプ
+# ションが異なるので、RCFLAGSの一番最後のオプションを出力ファイル名に
+# しています。
 $(OBJ_RES) : $(RES_BASE).rc
 	$(RC) $(RCFLAGS) $@ $(RES_BASE).rc
 
@@ -147,13 +132,13 @@ $(OBJS) : makefile jbanner.h
 tags:
 	$(ETAGS) *.c *.h
 
-# tar �Ōł߂�Bnmake ����shell���Ăяo����Ȃ��̂ŁA�����I��sh���Ă�
-# �o���Ă��܂��B
+# tar で固める。nmake だとshellが呼び出されないので、強制的にshを呼び
+# 出しています。
 tar: ../$(EXE) doc clean tags
 	$(SHELL) -c "(cd ../..; tar cvzf $(TAR_GZ) jbanner --exclude .git)"
 
 #
-# --- �h�L�������g
+# --- ドキュメント
 #
 doc : $(INFO) $(PDF) $(BASE_NAME).ps $(PLAIN_TXT) $(HTML)
 
@@ -186,10 +171,10 @@ $(PDF) : $(BASE_NAME).dvi
 	$(DVIPDF) $(BASE_NAME).dvi
 	cp $@ ../doc/.
 
-# --- dvi --- CYGWIN��texindex���Ɠ��{�ꂪ�����������ł��Ȃ��̂ŁApTeX
-# �Ŕz�z����Ă���texindex���g�p���Ă��܂��B�Ƃ��낪�ApTeX��texindex��
-# �ƁA���C���h�J�[�h�̓W�J�����܂��o���Ȃ��悤�Ȃ̂ŁAsh�������I�ɌĂ�
-# �o���ď������Ă��܂��B
+# --- dvi --- CYGWINのtexindexだと日本語が正しく処理できないので、pTeX
+# で配布されているtexindexを使用しています。ところが、pTeXのtexindexだ
+# と、ワイルドカードの展開がうまく出来ないようなので、shを強制的に呼び
+# 出して処理しています。
 $(BASE_NAME).dvi : $(TEXINFO) makefile
 	@echo ---
 	@echo --- make dvi ---
