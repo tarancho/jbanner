@@ -111,7 +111,7 @@ PLAIN_TXT = $(BASE_NAME).txt
 PDF = $(BASE_NAME).pdf
 HTML = $(BASE_NAME).html
 
-MAKEINFO=/usr/local/bin/makeinfo
+MAKEINFO=/bin/makeinfo
 TEXINDEX=/usr/local/bin/texindex
 DVIPDF=/usr/local/bin/dvipdfmx
 ETAGS=/usr/local/emacs/bin/etags.exe
@@ -140,7 +140,7 @@ tar: ../$(EXE) doc clean tags
 #
 # --- ドキュメント
 #
-doc : $(INFO) $(PDF) $(BASE_NAME).ps $(PLAIN_TXT) $(HTML)
+doc : $(INFO) $(PLAIN_TXT) $(HTML) $(PDF) $(BASE_NAME).ps 
 
 # --- html
 $(HTML) : $(TEXINFO) makefile
@@ -179,8 +179,8 @@ $(BASE_NAME).dvi : $(TEXINFO) makefile
 	@echo ---
 	@echo --- make dvi ---
 	@echo ---
-	ptex $(TEXINFO)
-	$(SHELL) -c "$(TEXINDEX) $(BASE_NAME).??"
+	ptex -kanji=utf8 $(TEXINFO)
+	$(TEXINDEX) $(BASE_NAME).??
 	ptex $(TEXINFO)
 	ptex $(TEXINFO)
 # --- ps
