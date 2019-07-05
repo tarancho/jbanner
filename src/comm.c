@@ -1,13 +1,12 @@
-/* -*- mode: c++; coding: sjis-dos; -*-
- * Time-stamp: <2003-06-01 15:29:26 tfuruka1>
+/* -*- mode: c++; coding: utf-8; -*-
  * Copyright (C) 2003 Tadamegu Furukawa
  *
- * ‹¤’Êƒ‚ƒWƒ…[ƒ‹
+ * å…±é€šãƒ¢ã‚¸ãƒ¥ãƒ¼ãƒ«
  *
  * $Id: comm.c,v 1.1 2004/01/19 09:01:28 tfuruka1 Exp $
  * $Log: comm.c,v $
  * Revision 1.1  2004/01/19 09:01:28  tfuruka1
- * ƒŠƒrƒWƒ‡ƒ“ŠÇ—‚ğRCS‚©‚çCVS‚Ö•ÏX‚µ‚Ü‚µ‚½B
+ * ãƒªãƒ“ã‚¸ãƒ§ãƒ³ç®¡ç†ã‚’RCSã‹ã‚‰CVSã¸å¤‰æ›´ã—ã¾ã—ãŸã€‚
  *
  * Revision 1.1  2003/06/01 08:23:11  tfuruka1
  * Initial revision
@@ -24,8 +23,8 @@
 #endif
 
 /*--------------------------------------------------------------------
- * Unix‚Ìbasename‚Æ“¯‚¶B•Ô‹p‚·‚éƒ|ƒCƒ“ƒ^‚Íˆê“I‚Èƒ|ƒCƒ“ƒ^‚È‚Ì‚ÅA•K
- * ‚¸ƒRƒs[‚µ‚Äg—p‚·‚é•K—v‚ª‚ ‚éB
+ * Unixã®basenameã¨åŒã˜ã€‚è¿”å´ã™ã‚‹ãƒã‚¤ãƒ³ã‚¿ã¯ä¸€æ™‚çš„ãªãƒã‚¤ãƒ³ã‚¿ãªã®ã§ã€å¿…
+ * ãšã‚³ãƒ”ãƒ¼ã—ã¦ä½¿ç”¨ã™ã‚‹å¿…è¦ãŒã‚ã‚‹ã€‚
  * *-------------------------------------------------------------------*/
 LPCTSTR WINAPI
 BaseName(LPCTSTR lpszPath)
@@ -39,16 +38,16 @@ BaseName(LPCTSTR lpszPath)
     b = strchr(lpszPath, '/');
 #endif
 
-    if (a == b) {                               // “™‚µ‚¢‚Í NULL‚µ‚©‚È‚¢
+    if (a == b) {                               // ç­‰ã—ã„æ™‚ã¯ NULLã—ã‹ãªã„
         return lpszPath;
     }
 
     return ((ULONG)a > (ULONG)b ? a : b) + 1;
 }
 /*--------------------------------------------------------------------
- * Unix‚Ìbasename‚Æ“¯‚¶B•Ô‹p‚·‚éƒ|ƒCƒ“ƒ^‚Íˆê“I‚Èƒ|ƒCƒ“ƒ^‚È‚Ì‚ÅA•K
- * ‚¸ƒRƒs[‚µ‚Äg—p‚·‚é•K—v‚ª‚ ‚éBƒVƒ‡[ƒgƒtƒ@ƒCƒ‹–¼‚ªw’è‚³‚ê‚Ä‚àA
- * ƒƒ“ƒOƒtƒ@ƒCƒ‹–¼‚Ö•ÏŠ·‚µ‚Ü‚·B
+ * Unixã®basenameã¨åŒã˜ã€‚è¿”å´ã™ã‚‹ãƒã‚¤ãƒ³ã‚¿ã¯ä¸€æ™‚çš„ãªãƒã‚¤ãƒ³ã‚¿ãªã®ã§ã€å¿…
+ * ãšã‚³ãƒ”ãƒ¼ã—ã¦ä½¿ç”¨ã™ã‚‹å¿…è¦ãŒã‚ã‚‹ã€‚ã‚·ãƒ§ãƒ¼ãƒˆãƒ•ã‚¡ã‚¤ãƒ«åãŒæŒ‡å®šã•ã‚Œã¦ã‚‚ã€
+ * ãƒ­ãƒ³ã‚°ãƒ•ã‚¡ã‚¤ãƒ«åã¸å¤‰æ›ã—ã¾ã™ã€‚
  * *-------------------------------------------------------------------*/
 LPCTSTR WINAPI
 GetLongBaseName(LPCTSTR lpszPath)
@@ -65,14 +64,14 @@ GetLongBaseName(LPCTSTR lpszPath)
 }
 
 /*--------------------------------------------------------------------
- * dwErr‚É‘Î‰‚·‚éƒGƒ‰[ƒƒbƒZ[ƒW‚ğ•Ô‹p‚·‚éBdwErr‚ÍGetLastError()‚Å
- * æ“¾‚µ‚½’l‚ğw’è‚·‚éB
+ * dwErrã«å¯¾å¿œã™ã‚‹ã‚¨ãƒ©ãƒ¼ãƒ¡ãƒƒã‚»ãƒ¼ã‚¸ã‚’è¿”å´ã™ã‚‹ã€‚dwErrã¯GetLastError()ã§
+ * å–å¾—ã—ãŸå€¤ã‚’æŒ‡å®šã™ã‚‹ã€‚
  * *-------------------------------------------------------------------*/
 LPCSTR WINAPI
 GetLastErrorMessage(LPCSTR lpsz, DWORD dwErr)
 {
 #ifdef _WIN32_WCE
-    static LPTSTR sz = "WindowsCE ‚Å‚Í GetLastErrorMessage ‚Í–¢ƒTƒ|[ƒg‚Å‚·";
+    static LPTSTR sz = "WindowsCE ã§ã¯ GetLastErrorMessage ã¯æœªã‚µãƒãƒ¼ãƒˆã§ã™";
     return sz;
 #else
     static TCHAR sz[1024];
@@ -99,12 +98,12 @@ GetLastErrorMessage(LPCSTR lpsz, DWORD dwErr)
 }
 
 /*--------------------------------------------------------------------
- * UNIX‚ÌSyslog‚ÌŠÈˆÕ”ÅBí‚Édebug.local7‚µ‚©o—Í‚µ‚Ü‚¹‚ñB
+ * UNIXã®Syslogã®ç°¡æ˜“ç‰ˆã€‚å¸¸ã«debug.local7ã—ã‹å‡ºåŠ›ã—ã¾ã›ã‚“ã€‚
  * *-------------------------------------------------------------------*/
 VOID WINAPI
-Syslogger(BOOL bStdOut,                         // T:stdout‚É‚ào—Í
-          LPCSTR lpstr,                         // ‘®printf‚Æ“¯‚¶
-          ...                                   // ˆø”
+Syslogger(BOOL bStdOut,                         // T:stdoutã«ã‚‚å‡ºåŠ›
+          LPCSTR lpstr,                         // æ›¸å¼printfã¨åŒã˜
+          ...                                   // å¼•æ•°
     )
 {
     WSADATA wsaData;
@@ -112,21 +111,21 @@ Syslogger(BOOL bStdOut,                         // T:stdout‚É‚ào—Í
     PSERVENT sp;
     SOCKADDR_IN sin;
     LPHOSTENT lpHost;
-    va_list args;                               // ˆø”“WŠJ—p
+    va_list args;                               // å¼•æ•°å±•é–‹ç”¨
     char szLine[1024 * 64], szBuf[1024], *p;
 
-    // ƒ‚ƒWƒ…[ƒ‹–¼‚Ìƒtƒ‹ƒpƒX‚ğ“¾‚é
+    // ãƒ¢ã‚¸ãƒ¥ãƒ¼ãƒ«åã®ãƒ•ãƒ«ãƒ‘ã‚¹ã‚’å¾—ã‚‹
     if (!GetModuleFileName(GetModuleHandle(NULL), szBuf, 1024)) {
         return;
     }
-    // ƒtƒ@ƒCƒ‹–¼•”•ª‚¾‚¯Ø‚èo‚·
+    // ãƒ•ã‚¡ã‚¤ãƒ«åéƒ¨åˆ†ã ã‘åˆ‡ã‚Šå‡ºã™
     if (NULL == (p = strrchr(szBuf, '\\'))) {
         return;
     }
     // FACILITY = 23, LEVEL = 7
     sprintf(szLine, "<%d>[%s] ", 7 + 23 * 8, p + 1);
 
-    // •¶š—ñ‚ğ‘®‚É‡‚¹‚Ä®Œ`‚·‚é
+    // æ–‡å­—åˆ—ã‚’æ›¸å¼ã«åˆã›ã¦æ•´å½¢ã™ã‚‹
     va_start(args, lpstr);
     vsprintf(szLine + strlen(szLine), lpstr, args);
     va_end(args);

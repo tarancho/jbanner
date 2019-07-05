@@ -1,20 +1,19 @@
-/* -*- mode: c++; coding: sjis-dos; -*-
- * Time-stamp: <2003-06-07 21:59:35 tfuruka1>
+/* -*- mode: c++; coding: utf-8; -*-
  * Copyright (C) 2003 Tadamegu Furukawa
  *
- * gdi�Ɋ֘A����֐� - ���ۂɂ̓t�H���g�����������݂��Ă��Ȃ����E�E�E
+ * gdiに関連する関数 - 実際にはフォント部分しか存在していないが・・・
  *
  * $Id: gdi_wrap.c,v 1.1 2004/01/19 09:01:28 tfuruka1 Exp $
  * $Log: gdi_wrap.c,v $
  * Revision 1.1  2004/01/19 09:01:28  tfuruka1
- * ���r�W�����Ǘ���RCS����CVS�֕ύX���܂����B
+ * リビジョン管理をRCSからCVSへ変更しました。
  *
  * Revision 1.3  2003/06/08 11:22:10  tfuruka1
- * �t�H���g��񋓂���֐���ǉ������B
+ * フォントを列挙する関数を追加した。
  *
  * Revision 1.2  2003/06/05 13:50:40  tfuruka1
- * �� -c �I�v�V�����ŕ�������ł���悤�ɏC���������ɔ����C���B
- * �� �t�H���g�ŎΆA�{�[���h�A���������̂܂ܔ��f����悤�ɏC���B
+ * ● -c オプションで文字列をできるように修正した事に伴う修正。
+ * ● フォントで斜体、ボールド、中線をそのまま反映するように修正。
  *
  * Revision 1.1  2003/06/01 08:22:11  tfuruka1
  * Initial revision
@@ -24,22 +23,22 @@
 #include "jbanner.h"
 
 /*
- * SDK32:�R���\�[���E�B���h�E�̃n���h���擾
+ * SDK32:コンソールウィンドウのハンドル取得
  *
- * �{�֐��͈ȉ��̋L�����Q�l�ɂ��č쐬���܂����B
+ * 本関数は以下の記事を参考にして作成しました。
  *
- * �ŏI�X�V��: 1999/02/09
- * �����ԍ�: J046738  
- * 
- * ���̎����͈ȉ��ɂ��ċL�q�������̂ł��B
- * 
+ * 最終更新日: 1999/02/09
+ * 文書番号: J046738
+ *
+ * この資料は以下について記述したものです。
+ *
  * Microsoft(R) Win32(R) Software Development Kit (SDK)
- * 
- * ���̎����́A�č� Microsoft Corporation ����񋟂���Ă��� Knowledge
- * Base �� Article ID Q124103 (�ŏI�X�V�� 1988-12-23) �����Ƃɍ쐬����
- * ���̂ł��B
+ *
+ * この資料は、米国 Microsoft Corporation から提供されている Knowledge
+ * Base の Article ID Q124103 (最終更新日 1988-12-23) をもとに作成した
+ * ものです。
  */
-#define MY_BUFSIZE 1024                         // �R���\�[���̃^�C�g���p
+#define MY_BUFSIZE 1024                         // コンソールのタイトル用
 HWND GetConsoleHwnd(VOID)
 {
     HWND hwndFound;
@@ -47,30 +46,30 @@ HWND GetConsoleHwnd(VOID)
     char pszOldWindowTitle[MY_BUFSIZE];
     int i;
 
-    // �R���\�[���^�C�g���̎擾
+    // コンソールタイトルの取得
     GetConsoleTitle(pszOldWindowTitle, MY_BUFSIZE);
 
-    // �Ǝ��ɁA�E�B���h�E�̐V�K�^�C�g�����t�H�[�}�b�g���܂�
+    // 独自に、ウィンドウの新規タイトルをフォーマットします
     wsprintf(pszNewWindowTitle,"%d/%d-%s",
              GetTickCount(),
              GetCurrentProcessId(),
              pszOldWindowTitle);
 
-    // ���݂̃E�B���h�E�^�C�g����ύX���܂�
+    // 現在のウィンドウタイトルを変更します
     SetConsoleTitle(pszNewWindowTitle);
 
     for (i = 0; i < 100; i++) {
-        // �E�B���h�E�̐V�K�^�C�g����T���ɂ����܂�
+        // ウィンドウの新規タイトルを探しにいきます
         hwndFound = FindWindow(NULL, pszNewWindowTitle);
         if (hwndFound) {
-            Syslogger(FALSE, "GetConsoleHwnd(): ��=%d, T=%s",
+            Syslogger(FALSE, "GetConsoleHwnd(): 回数=%d, T=%s",
                       i, pszNewWindowTitle);
-            break;                              // ��������
+            break;                              // 見つかった
         }
         Sleep(10);                              // 10m Wait
     }
 
-    // ���̃E�B���h�E�^�C�g���֖߂��܂�
+    // 元のウィンドウタイトルへ戻します
     SetConsoleTitle(pszOldWindowTitle);
 
     return hwndFound;
@@ -78,11 +77,11 @@ HWND GetConsoleHwnd(VOID)
 
 
 /*
- * �t�H���g�֘A�̏����i���`��B�����������ɂ�BC++�ŃN���X������������
- * �������ȁ`�j
+ * フォント関連の処理（う〜ん。汚い処理だにゃ。C++でクラス化した方が良
+ * かったな〜）
  */
 static LOGFONT lft = {-13, 0, 0, 0, 800, 0, 0, 0, SHIFTJIS_CHARSET,
-                      3, 2, 1, 49, TEXT("�l�r �S�V�b�N")};
+                      3, 2, 1, 49, TEXT("ＭＳ ゴシック")};
 static int numCallBack = 0;
 static int CALLBACK
 EnumFontFamProc(
@@ -92,22 +91,22 @@ EnumFontFamProc(
     LPARAM lParam                       // address of application-defined data
     )
 {
-    // �f�[�^�����݂��Ȃ��ꍇ�͏������Ȃ�
+    // データが存在しない場合は処理しない
     if (!lpelf) {
         return 0;
     }
 
     // ------------------------------
-    // �t�H���g�̍쐬�v���̏ꍇ�̏���
+    // フォントの作成要求の場合の処理
     // ------------------------------
     if (0 == lParam) {
-        // �ŏ��ȊO�̌Ăяo���̏ꍇ�͏������Ȃ�
+        // 最初以外の呼び出しの場合は処理しない
         if (numCallBack) {
             return 0;
         }
         numCallBack++;
 
-        Syslogger(FALSE, "�I���t�H���g�t�@�~��: %s, %s",
+        Syslogger(FALSE, "選択フォントファミリ: %s, %s",
                   lpelf->elfFullName,
                   (FontType == DEVICE_FONTTYPE) ? "Device-Font"
                   : ((FontType == RASTER_FONTTYPE) ? "Raster-Font"
@@ -117,11 +116,11 @@ EnumFontFamProc(
     }
     else {
         // ------------------------
-        // �t�H���g�̈ꗗ�\���̏ꍇ
+        // フォントの一覧表示の場合
         // ------------------------
 
-        // �t�H���g�̈�ӂȖ��O, �t�H���g�̃X�^�C��, �t�H���g�̏��̖�
-        // ��\������
+        // フォントの一意な名前, フォントのスタイル, フォントの書体名
+        // を表示する
         printf("\"%s\"\t\"%s\"\t\"%s\"\n", lpelf->elfFullName,
                lpelf->elfStyle, lpelf->elfLogFont.lfFaceName);
     }
@@ -129,7 +128,7 @@ EnumFontFamProc(
 }
 
 /*
- * �t�H���g�̈ꗗ��\������
+ * フォントの一覧を表示する
  */
 VOID WINAPI
 LsFont(LPTSTR lpszFamily)
@@ -139,7 +138,7 @@ LsFont(LPTSTR lpszFamily)
     DeleteDC(hDC);
 }
 /*
- * �t�H���g�t�@�~��������f�t�H���g�̘_���t�H���g���쐬����
+ * フォントファミリ名からデフォルトの論理フォントを作成する
  */
 BOOL WINAPI SetLogFont(LPCTSTR lpszFamily)
 {
@@ -151,9 +150,9 @@ BOOL WINAPI SetLogFont(LPCTSTR lpszFamily)
     return numCallBack;
 }
 
-/* 
- * �t�H���g���쐬����B�t�H���g�t�@�~�����ύX�ɂȂ�ꍇ�́A�\�� 
- * SetLogFont�֐��Ř_���t�H���g���������������K�v������܂��B
+/*
+ * フォントを作成する。フォントファミリが変更になる場合は、予め
+ * SetLogFont関数で論理フォントを初期化し直す必要があります。
  */
 static HFONT WINAPI
 CreateBannerFont(int nHeight)
@@ -169,36 +168,36 @@ CreateBannerFont(int nHeight)
 }
 
 /*
- * �o�i�[��`�悷��B�Ȃ�炩�̃G���[�����������ꍇ�́A0(FALSE)��ԋp
- * ���A����ɏI�������ꍇ�́A0�ȊO(TRUE)��ԋp���܂��B
+ * バナーを描画する。なんらかのエラーが発生した場合は、0(FALSE)を返却
+ * し、正常に終了した場合は、0以外(TRUE)を返却します。
  */
 BOOL WINAPI
 DrawBanner(
-    LPTSTR lpszUseChar,                         // �\������
-    int nScreenWidth,                           // �\����
-    int nFontSize,                              // �t�H���g�T�C�Y
-    LPTSTR lpszString,                          // �\��������
-    BOOL bDebug                                 // T:�f�o�b�O
+    LPTSTR lpszUseChar,                         // 表示文字
+    int nScreenWidth,                           // 表示幅
+    int nFontSize,                              // フォントサイズ
+    LPTSTR lpszString,                          // 表示文字列
+    BOOL bDebug                                 // T:デバッグ
     )
 {
-    HWND hWnd;                                  // �E�C���h�E�n���h��
-    HFONT hFont;                                // �t�H���g
-    HFONT hOldFont;                             // �Â��t�H���g
-    RECT rc;                                    // �`�搈
-    HDC hDC;                                    // �f�o�C�X�R���e�L�X�g
-    HDC hMemDC;                                 // �f�o�C�X�R���e�L�X�g�i���z�j
-    HBITMAP hBitMap;                            // �r�b�g�}�b�v
-    HBITMAP hOldBitmap;                         // �Â��r�b�g�}�b�v
+    HWND hWnd;                                  // ウインドウハンドル
+    HFONT hFont;                                // フォント
+    HFONT hOldFont;                             // 古いフォント
+    RECT rc;                                    // 描画粋
+    HDC hDC;                                    // デバイスコンテキスト
+    HDC hMemDC;                                 // デバイスコンテキスト（仮想）
+    HBITMAP hBitMap;                            // ビットマップ
+    HBITMAP hOldBitmap;                         // 古いビットマップ
 
-    BYTE szLine[MAX_WIDTH];                     // �o�i�[�̈�s
-    LPTSTR lpszBgChar;                          // �w�i�̕���
+    char szLine[MAX_WIDTH];                     // バナーの一行
+    LPTSTR lpszBgChar;                          // 背景の文字
 
-    int x, y, ht;                               // ���ƍ���
-    int i;                                      // �ėp
+    int x, y, ht;                               // 幅と高さ
+    int i;                                      // 汎用
 
-    // �w�i�̕�����ݒ肷��
+    // 背景の文字を設定する
     if (!(lpszBgChar = malloc(strlen(lpszUseChar + 1)))) {
-        fprintf(stderr, "�������̊m�ۂɎ��s[%s:%d]", __FILE__, __LINE__);
+        fprintf(stderr, "メモリの確保に失敗[%s:%d]", __FILE__, __LINE__);
         return FALSE;
     }
 
@@ -212,24 +211,24 @@ DrawBanner(
         }
     }
 
-    // �E�C���h�E�n���h���̎擾
+    // ウインドウハンドルの取得
     if (!(hWnd = GetConsoleHwnd())) {
-        fprintf(stderr, "�E�C���h�E�n���h���̎擾�Ɏ��s���܂���\n");
+        fprintf(stderr, "ウインドウハンドルの取得に失敗しました\n");
         return FALSE;
     }
 
-    // �`�搈�̐ݒ�
+    // 描画粋の設定
     rc.top = rc.left = 0;
     rc.right = nScreenWidth;
-    rc.bottom = nFontSize * 2;                  // ��������g�Ƃ��̈�2�{
+    rc.bottom = nFontSize * 2;                  // 小文字のgとかの為2倍
 
-    // �f�o�C�X�R���e�L�X�g�̎擾
+    // デバイスコンテキストの取得
     if (!(hDC = GetDC(hWnd))) {
-        fprintf(stderr, "�f�o�C�X�R���e�L�X�g�̎擾�Ɏ��s���܂����B\n");
+        fprintf(stderr, "デバイスコンテキストの取得に失敗しました。\n");
         return FALSE;
     }
 
-    // ���z�f�o�C�X�R���e�L�X�g���쐬����
+    // 仮想デバイスコンテキストを作成する
     if (!(hMemDC = CreateCompatibleDC(hDC))) {
         fprintf(stderr, "%s\n",
                 GetLastErrorMessage("CreateCompatibleDC",
@@ -238,59 +237,59 @@ DrawBanner(
         return FALSE;
     }
 
-    // �r�b�g�}�b�v�̍쐬
+    // ビットマップの作成
     if (!(hBitMap = CreateBitmap(nScreenWidth, rc.bottom, 1, 1, NULL))) {
-        fprintf(stderr, "�r�b�g�}�b�v�̍쐬�Ɏ��s���܂���\n");
-        DeleteDC(hMemDC);                       // �f�o�C�X�R���e�L�X�g�폜
-        ReleaseDC(hWnd, hDC);                   // �f�o�C�X�R���e�L�X�g�̊J��
+        fprintf(stderr, "ビットマップの作成に失敗しました\n");
+        DeleteDC(hMemDC);                       // デバイスコンテキスト削除
+        ReleaseDC(hWnd, hDC);                   // デバイスコンテキストの開放
         return FALSE;
     }
 
-    // �r�b�g�}�b�v�̑I��
+    // ビットマップの選択
     if (!(hOldBitmap = SelectObject(hMemDC, hBitMap))) {
-        fprintf(stderr, "�r�b�g�}�b�v�̑I���Ɏ��s���܂����B\n");
-        DeleteDC(hMemDC);                       // �f�o�C�X�R���e�L�X�g�폜
-        DeleteObject(hBitMap);                  // �r�b�g�}�b�v�폜
-        ReleaseDC(hWnd, hDC);                   // �f�o�C�X�R���e�L�X�g�̊J��
+        fprintf(stderr, "ビットマップの選択に失敗しました。\n");
+        DeleteDC(hMemDC);                       // デバイスコンテキスト削除
+        DeleteObject(hBitMap);                  // ビットマップ削除
+        ReleaseDC(hWnd, hDC);                   // デバイスコンテキストの開放
         return FALSE;
     }
 
-    // �t�H���g�̍쐬
+    // フォントの作成
     if (!(hFont = CreateBannerFont(-nFontSize))) {
         fprintf(stderr, "%s\n",
                 GetLastErrorMessage("CreateFont", GetLastError()));
-        SelectObject(hMemDC, hOldBitmap);       // �r�b�g�}�b�v��߂�
-        DeleteDC(hMemDC);                       // �f�o�C�X�R���e�L�X�g�폜
-        DeleteObject(hBitMap);                  // �r�b�g�}�b�v�̍폜
-        ReleaseDC(hWnd, hDC);                   // �f�o�C�X�R���e�L�X�g�̊J��
+        SelectObject(hMemDC, hOldBitmap);       // ビットマップを戻す
+        DeleteDC(hMemDC);                       // デバイスコンテキスト削除
+        DeleteObject(hBitMap);                  // ビットマップの削除
+        ReleaseDC(hWnd, hDC);                   // デバイスコンテキストの開放
         return FALSE;
     }
 
-    // �t�H���g�̑I��
+    // フォントの選択
     if (!(hOldFont = SelectObject(hMemDC, hFont))) {
-        fprintf(stderr, "�I�u�W�F�N�g�̑I��(FONT)�Ɏ��s���܂����B\n");
-        DeleteObject(hFont);                    // �t�H���g�̍폜
-        SelectObject(hMemDC, hOldBitmap);       // �r�b�g�}�b�v��߂�
-        DeleteDC(hMemDC);                       // �f�o�C�X�R���e�L�X�g�폜
-        DeleteObject(hBitMap);                  // �r�b�g�}�b�v�̍폜
-        ReleaseDC(hWnd, hDC);                   // �f�o�C�X�R���e�L�X�g�J��
+        fprintf(stderr, "オブジェクトの選択(FONT)に失敗しました。\n");
+        DeleteObject(hFont);                    // フォントの削除
+        SelectObject(hMemDC, hOldBitmap);       // ビットマップを戻す
+        DeleteDC(hMemDC);                       // デバイスコンテキスト削除
+        DeleteObject(hBitMap);                  // ビットマップの削除
+        ReleaseDC(hWnd, hDC);                   // デバイスコンテキスト開放
         return FALSE;
     }
 
-    // �t�H���g�̐F�̐ݒ�
+    // フォントの色の設定
     SetTextColor(hMemDC, RGB(255, 255, 255));
     SetBkColor(hMemDC, RGB(0, 0, 0));
 
-    // �`��
+    // 描画
     ht = DrawText(hMemDC, lpszString, -1, &rc,
                   DT_LEFT | DT_TOP | DT_SINGLELINE);
 
-    // �f�o�b�O���[�h�̏ꍇ�̓R���\�[���ɓ]������
+    // デバッグモードの場合はコンソールに転送する
     if (bDebug) {
         BitBlt(hDC, 0, 0, rc.right, rc.bottom, hMemDC, 0, 0, SRCCOPY);
     }
 
-    // �o�i�[�ɕϊ�����
+    // バナーに変換する
     for (y = 0; y < ht; y++) {
         szLine[0] = '\0';
         for (x = 0; x < nScreenWidth; x++) {
@@ -300,13 +299,13 @@ DrawBanner(
         printf("%s\n", TrimRightJa(TrimRight(szLine)));
     }
 
-    // ��n��
-    SelectObject(hMemDC, hOldFont);             // �t�H���g��߂�
-    SelectObject(hMemDC, hOldBitmap);           // �r�b�g�}�b�v��߂�
-    ReleaseDC(hWnd, hDC);                       // �f�o�C�X�R���e�L�X�g�J��
-    DeleteObject(hFont);                        // �t�H���g�폜
-    DeleteObject(hBitMap);                      // �r�b�g�}�b�v�폜
-    DeleteDC(hMemDC);                           // ���zDC�폜
+    // 後始末
+    SelectObject(hMemDC, hOldFont);             // フォントを戻す
+    SelectObject(hMemDC, hOldBitmap);           // ビットマップを戻す
+    ReleaseDC(hWnd, hDC);                       // デバイスコンテキスト開放
+    DeleteObject(hFont);                        // フォント削除
+    DeleteObject(hBitMap);                      // ビットマップ削除
+    DeleteDC(hMemDC);                           // 仮想DC削除
 
     return TRUE;
 }

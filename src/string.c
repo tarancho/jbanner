@@ -1,13 +1,12 @@
-/* -*- mode: c++; coding: sjis-dos; -*-
- * Time-stamp: <2003-06-01 15:28:34 tfuruka1>
+/* -*- mode: c++; coding: utf-8; -*-
  * Copyright (C) 2003 Tadamegu Furukawa
  *
- *  �����񑀍�֐�
+ *  文字列操作関数
  *
  * $Id: string.c,v 1.1 2004/01/19 09:01:27 tfuruka1 Exp $
  * $Log: string.c,v $
  * Revision 1.1  2004/01/19 09:01:27  tfuruka1
- * ���r�W�����Ǘ���RCS����CVS�֕ύX���܂����B
+ * リビジョン管理をRCSからCVSへ変更しました。
  *
  */
 // (replace-regexp "/\\*\\(.+\\)\\*/" "//\\1")
@@ -16,10 +15,10 @@
 #include <windows.h>
 #include <stdio.h>
 
-#define Z_SPACE "\x81\x40"                      // �S�p�X�y�[�X
+#define Z_SPACE "\x81\x40"                      // 全角スペース
 
 /* -------------------------------------------------------------------
- * ������̉E���̃X�y�[�X��������菜��
+ * 文字列の右側のスペース文字を取り除く
  * *-----------------------------------------------------------------*/
 LPTSTR TrimRight(LPTSTR lpszStr)
 {
@@ -41,7 +40,7 @@ LPTSTR TrimRight(LPTSTR lpszStr)
 }
 
 /* -------------------------------------------------------------------
- * ������̉E���̑S�p�X�y�[�X��������菜��
+ * 文字列の右側の全角スペース文字を取り除く
  * *-----------------------------------------------------------------*/
 LPTSTR TrimRightJa(LPTSTR lpszStr)
 {
@@ -59,7 +58,7 @@ LPTSTR TrimRightJa(LPTSTR lpszStr)
 }
 
 /* -------------------------------------------------------------------
- * ������̍����̃X�y�[�X��������菜��
+ * 文字列の左側のスペース文字を取り除く
  * *-----------------------------------------------------------------*/
 LPTSTR TrimLeft(LPTSTR lpszStr)
 {
@@ -75,7 +74,7 @@ LPTSTR TrimLeft(LPTSTR lpszStr)
         }
     }
 
-    if (pFrom == pTo) {                         // �]���ȕ����͖���
+    if (pFrom == pTo) {                         // 余分な文字は無い
         return lpszStr;
     }
     for (; *pFrom; pFrom++, pTo++) {
@@ -86,7 +85,7 @@ LPTSTR TrimLeft(LPTSTR lpszStr)
 }
 
 /* -------------------------------------------------------------------
- * ������̍��E�̃X�y�[�X��������菜��
+ * 文字列の左右のスペース文字を取り除く
  * *-----------------------------------------------------------------*/
 LPTSTR TrimString(LPSTR lpszStr)
 {
@@ -94,16 +93,16 @@ LPTSTR TrimString(LPSTR lpszStr)
 }
 
 /* -------------------------------------------------------------------
- * fgets�Ɠ��l�̏������s�����A�^�u���X�y�[�X������֓W�J����B�A���A�^
- * �u�̓W�J��r���Ŏ~�߂鎖�͖����̂ŁA�ő啶���񒷂̓^�u�X�g�b�v���l
- * ������K�v������B
+ * fgetsと同様の処理を行うが、タブをスペース文字列へ展開する。但し、タ
+ * ブの展開を途中で止める事は無いので、最大文字列長はタブストップを考
+ * 慮する必要がある。
  * *-----------------------------------------------------------------*/
 LPTSTR
 ufgets(
-    LPTSTR szBuf,                               // �i�[�o�b�t�@
-    int cbMax,                                  // �ő啶����
-    FILE *fp,                                   // �t�@�C���|�C���^
-    int nTab                                    // �^�u�X�g�b�v
+    LPTSTR szBuf,                               // 格納バッファ
+    int cbMax,                                  // 最大文字列長
+    FILE *fp,                                   // ファイルポインタ
+    int nTab                                    // タブストップ
     )
 {
     int i, j, c;
@@ -133,9 +132,9 @@ ufgets(
 }
 
 /* -------------------------------------------------------------------
- * str�̕��������؂蕶��c�ŋ�؂�A��؂�ꂽ������̐擪�A�h���X��
- * ���ꂼ��*into�Ɋi�[����B�A��max�Ŏw�肳�ꂽ����葽���͋�؂�Ȃ��B
- * �A��������؂蕶����1�ƌ���B
+ * strの文字列を区切り文字cで区切り、区切られた文字列の先頭アドレスを
+ * それぞれ*intoに格納する。但しmaxで指定された数より多くは区切らない。
+ * 連続した区切り文字は1つと見る。
  * *-----------------------------------------------------------------*/
 int unstr(char *str, int c, char *into[], int max)
 {

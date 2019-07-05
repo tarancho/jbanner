@@ -1,28 +1,26 @@
-\input texinfo @c -*- mode: texinfo; coding: sjis-dos -*-
+\input texinfo @c -*- mode: texinfo; coding: utf-8 -*-
 @c $Id: jbanner.texinfo,v 1.1 2004/01/19 09:01:28 tfuruka1 Exp $
 @c $Log: jbanner.texinfo,v $
 @c Revision 1.1  2004/01/19 09:01:28  tfuruka1
-@c ƒŠƒrƒWƒ‡ƒ“ŠÇ—‚ðRCS‚©‚çCVS‚Ö•ÏX‚µ‚Ü‚µ‚½B
+@c ãƒªãƒ“ã‚¸ãƒ§ãƒ³ç®¡ç†ã‚’RCSã‹ã‚‰CVSã¸å¤‰æ›´ã—ã¾ã—ãŸã€‚
 @c
 @c Revision 1.1  2003/06/09 07:09:06  tfuruka1
 @c Initial revision
 @c
 @c
 
-@c « pTeX‚ÅƒGƒ‰[‚ªo‚é‚Ì‚ÅAŽæ‚èŠ¸‚¦‚¸ƒRƒƒ“ƒgƒAƒEƒg
-@c @documentlanguage{ja} 
+@documentlanguage ja
 
-@c Œ»Ý, ‚±‚ê‚Í makeinfo ‚Ì HTML o—Í‚Ì‚Ý‚ÅŽg‚í‚ê‚Ü‚·.ƒhƒLƒ…ƒƒ“ƒgƒGƒ“ƒR[ƒh
-@c enc ‚ªŽw’è‚³‚ê‚½ê‡, `<meta>'ƒ^ƒO‚Åo—Í‚Ì`<head>'‚ÉŠÜ‚ß‚ç‚ê‚Ü‚·. <meta
-@c http-equiv="Content-Type" content="text/html; charset=enc"> ‚Ä‚ÈŽ–‚ð‘‚¢
-@c ‚Ä‚¢‚é‚ñ‚Å‚·‚ª, Ž„‚Ì makeinfo ‚¾‚Æ, I‚­s‚©‚È‚¢‚æ‚¤‚È‚È‚Ì‚Å, Žè“®‚Å html ‚ð
-@c ‘‚«Š·‚¦‚Ä‚¢‚Ü‚·B
-@c <meta http-equiv="Content-Type" content="text/html; charset=iso-2022-jp">
-@documentencoding{iso-2022-jp}
-
+@c ç¾åœ¨, ã“ã‚Œã¯ makeinfo ã® HTML å‡ºåŠ›ã®ã¿ã§ä½¿ã‚ã‚Œã¾ã™.ãƒ‰ã‚­ãƒ¥ãƒ¡ãƒ³ãƒˆã‚¨ãƒ³ã‚³ãƒ¼ãƒ‰
+@c enc ãŒæŒ‡å®šã•ã‚ŒãŸå ´åˆ, `<meta>'ã‚¿ã‚°ã§å‡ºåŠ›ã®`<head>'ã«å«ã‚ã‚‰ã‚Œã¾ã™. <meta
+@c http-equiv="Content-Type" content="text/html; charset=enc"> ã¦ãªäº‹ã‚’æ›¸ã„
+@c ã¦ã„ã‚‹ã‚“ã§ã™ãŒ, ç§ã® makeinfo ã ã¨, å·§ãè¡Œã‹ãªã„ã‚ˆã†ãªãªã®ã§, æ‰‹å‹•ã§ html ã‚’
+@c æ›¸ãæ›ãˆã¦ã„ã¾ã™ã€‚
+@c <meta http-equiv="Content-Type" content="text/html; utf-8">
+@documentencoding utf-8
 
 @c --------------
-@c part 1: ƒwƒbƒ_
+@c part 1: ãƒ˜ãƒƒãƒ€
 @c --------------
 
 @c %**start of header
@@ -32,30 +30,30 @@
 @c %**end of header
 
 @c --------------------------
-@c part 2: —v–ñ‚Ì‹Lq‚Æ’˜ìŒ 
+@c part 2: è¦ç´„ã®è¨˜è¿°ã¨è‘—ä½œæ¨©
 @c --------------------------
 @copying
-‚±‚ÌƒhƒLƒ…ƒƒ“ƒg‚Í, jbanner ‚É‚Â‚¢‚Ä‹Lq‚µ‚Ä‚¢‚Ü‚·Bjbanner ‚Í“ú–{Œê‚ðŠÜ
-‚Þ•¶Žš—ñ‚ðŠg‘å‚µ, ƒoƒi[‚Æ‚µ‚Ä‰æ–Ê‚É•\Ž¦‚·‚éƒRƒ}ƒ“ƒh‚Å‚·BCYGWIN ‚Ì 
-banner ‚Æ“¯‚¶“®ì‚É‚È‚é‚æ‚¤‚Éì¬‚µ‚½‚Â‚à‚è‚Å‚·‚ª, ƒ\[ƒX‚ð‘S‚­ŽQÆ‚µ‚Ä
-‚¢‚Ü‚¹‚ñ‚Ì‚Å, “à•”ˆ—‚Í‘S‚­ˆÙ‚È‚Á‚Ä‚¢‚é‚Å‚µ‚å‚¤B‚Ü‚½, ×‚©‚¢“®ì‚ÍˆÙ‚È‚Á
-‚Ä‚¢‚é‚ÆŽv‚í‚ê‚Ü‚·B
+ã“ã®ãƒ‰ã‚­ãƒ¥ãƒ¡ãƒ³ãƒˆã¯, jbanner ã«ã¤ã„ã¦è¨˜è¿°ã—ã¦ã„ã¾ã™ã€‚jbanner ã¯æ—¥æœ¬èªžã‚’å«
+ã‚€æ–‡å­—åˆ—ã‚’æ‹¡å¤§ã—, ãƒãƒŠãƒ¼ã¨ã—ã¦ç”»é¢ã«è¡¨ç¤ºã™ã‚‹ã‚³ãƒžãƒ³ãƒ‰ã§ã™ã€‚CYGWIN ã® 
+banner ã¨åŒã˜å‹•ä½œã«ãªã‚‹ã‚ˆã†ã«ä½œæˆã—ãŸã¤ã‚‚ã‚Šã§ã™ãŒ, ã‚½ãƒ¼ã‚¹ã‚’å…¨ãå‚ç…§ã—ã¦
+ã„ã¾ã›ã‚“ã®ã§, å†…éƒ¨å‡¦ç†ã¯å…¨ãç•°ãªã£ã¦ã„ã‚‹ã§ã—ã‚‡ã†ã€‚ã¾ãŸ, ç´°ã‹ã„å‹•ä½œã¯ç•°ãªã£
+ã¦ã„ã‚‹ã¨æ€ã‚ã‚Œã¾ã™ã€‚
 
 @flushright
 Copyright @copyright{} 2003 Tadamegu Furukawa
 @end flushright
 
-‚±‚ÌƒhƒLƒ…ƒƒ“ƒg‚Ì”Å”‚Í $Revision: 1.1 $ ‚Å‚·B
+ã“ã®ãƒ‰ã‚­ãƒ¥ãƒ¡ãƒ³ãƒˆã®ç‰ˆæ•°ã¯ $Revision: 1.1 $ ã§ã™ã€‚
 @end copying
 
 @c ------------------------------------
-@c part 3: ƒ^ƒCƒgƒ‹ƒy[ƒW, –ÚŽŸ, ’˜ìŒ 
+@c part 3: ã‚¿ã‚¤ãƒˆãƒ«ãƒšãƒ¼ã‚¸, ç›®æ¬¡, è‘—ä½œæ¨©
 @c ------------------------------------
 @titlepage
 @title JBANNER
-@subtitle “ú–{Œê‚ðŠÜ‚Þ•¶Žš—ñ‚ðŠg‘å‚µ, ƒoƒi[‚Æ‚µ‚Ä‰æ–Ê‚É•\Ž¦‚·‚é
+@subtitle æ—¥æœ¬èªžã‚’å«ã‚€æ–‡å­—åˆ—ã‚’æ‹¡å¤§ã—, ãƒãƒŠãƒ¼ã¨ã—ã¦ç”»é¢ã«è¡¨ç¤ºã™ã‚‹
 @author tfuruka1 at nifty dot com
-@author Copyright @copyright 2003 Tadamegu Furukawa
+@author Copyright @copyright{} 2003 Tadamegu Furukawa
 
 @c the following two commands start the copyright page.
 @page
@@ -67,7 +65,7 @@ Copyright @copyright{} 2003 Tadamegu Furukawa
 @contents
 
 @c ------------
-@c ƒCƒ“ƒXƒg[ƒ‹
+@c ã‚¤ãƒ³ã‚¹ãƒˆãƒ¼ãƒ«
 @c ------------
 @dircategory Individual utilities
 @direntry
@@ -75,83 +73,83 @@ Copyright @copyright{} 2003 Tadamegu Furukawa
 @end direntry
 
 @c -------------------------------------
-@c Part 4: `Top'ƒm[ƒh‚Æƒ}ƒXƒ^[ƒƒjƒ…[
+@c Part 4: `Top'ãƒŽãƒ¼ãƒ‰ã¨ãƒžã‚¹ã‚¿ãƒ¼ãƒ¡ãƒ‹ãƒ¥ãƒ¼
 @c -------------------------------------
 @ifnottex
-@node Top, —vŽ|, (dir), (dir)
+@node Top, è¦æ—¨, (dir), (dir)
 @top JBANNER
 @end ifnottex
 
 @insertcopying
 
 @menu
-* —vŽ|::                        
-* ‹@”\ŠT—v::                    
-* “®ìŠÂ‹«::                    
-* ƒCƒ“ƒXƒg[ƒ‹‚ÆƒAƒ“ƒCƒ“ƒXƒg[ƒ‹•û–@::  
-* Žg—p•û–@::                    
-* ŽÖ‘«::                        
-* Žæ‚èˆµ‚¢::                    
+* è¦æ—¨::                        
+* æ©Ÿèƒ½æ¦‚è¦::                    
+* å‹•ä½œç’°å¢ƒ::                    
+* ã‚¤ãƒ³ã‚¹ãƒˆãƒ¼ãƒ«ã¨ã‚¢ãƒ³ã‚¤ãƒ³ã‚¹ãƒˆãƒ¼ãƒ«æ–¹æ³•::  
+* ä½¿ç”¨æ–¹æ³•::                    
+* è›‡è¶³::                        
+* å–ã‚Šæ‰±ã„::                    
 
 @detailmenu
  --- The Detailed Node Listing ---
 
-ƒCƒ“ƒXƒg[ƒ‹‚ÆƒAƒ“ƒCƒ“ƒXƒg[ƒ‹•û–@
+ã‚¤ãƒ³ã‚¹ãƒˆãƒ¼ãƒ«ã¨ã‚¢ãƒ³ã‚¤ãƒ³ã‚¹ãƒˆãƒ¼ãƒ«æ–¹æ³•
 
-* ƒCƒ“ƒXƒg[ƒ‹::                
-* ƒAƒ“ƒCƒ“ƒXƒg[ƒ‹::            
+* ã‚¤ãƒ³ã‚¹ãƒˆãƒ¼ãƒ«::                
+* ã‚¢ãƒ³ã‚¤ãƒ³ã‚¹ãƒˆãƒ¼ãƒ«::            
 
-Žg—p•û–@
+ä½¿ç”¨æ–¹æ³•
 
-* ŠÈ’P‚ÈŽg‚¢‚©‚½::              
-* ƒRƒ}ƒ“ƒhŒ`Ž®::                
-* ƒwƒ‹ƒvƒIƒvƒVƒ‡ƒ“::            
-* ‘S‘Ì“I‚ÈƒIƒvƒVƒ‡ƒ“::          
-* “ÁŽêƒIƒvƒVƒ‡ƒ“(WIN32)::       
+* ç°¡å˜ãªä½¿ã„ã‹ãŸ::              
+* ã‚³ãƒžãƒ³ãƒ‰å½¢å¼::                
+* ãƒ˜ãƒ«ãƒ—ã‚ªãƒ—ã‚·ãƒ§ãƒ³::            
+* å…¨ä½“çš„ãªã‚ªãƒ—ã‚·ãƒ§ãƒ³::          
+* ç‰¹æ®Šã‚ªãƒ—ã‚·ãƒ§ãƒ³(WIN32)::       
 
-ŽÖ‘«
+è›‡è¶³
 
-* ƒRƒ“ƒpƒCƒ‹•û–@::              
-* ƒRƒ}ƒ“ƒhƒ‰ƒCƒ“ˆø”‚Ì‰ðÍ::    
-* ŽÖ‘«‚ÌŽÖ‘«::                  
+* ã‚³ãƒ³ãƒ‘ã‚¤ãƒ«æ–¹æ³•::              
+* ã‚³ãƒžãƒ³ãƒ‰ãƒ©ã‚¤ãƒ³å¼•æ•°ã®è§£æž::    
+* è›‡è¶³ã®è›‡è¶³::                  
 
-Žæ‚èˆµ‚¢
+å–ã‚Šæ‰±ã„
 
-* ’˜ìŒ A–ÆÓ“™::              
-* ƒoƒO•ñ“™::                  
+* è‘—ä½œæ¨©ã€å…è²¬ç­‰::              
+* ãƒã‚°å ±å‘Šç­‰::                  
 
 @end detailmenu
 @end menu
 
 @c --------------------------
-@c Part 5: ƒhƒLƒ…ƒƒ“ƒg‚Ì–{‘Ì
+@c Part 5: ãƒ‰ã‚­ãƒ¥ãƒ¡ãƒ³ãƒˆã®æœ¬ä½“
 @c --------------------------
-@node —vŽ|, ‹@”\ŠT—v, Top, Top
-@chapter —vŽ|
+@node è¦æ—¨, æ©Ÿèƒ½æ¦‚è¦, Top, Top
+@chapter è¦æ—¨
 
-jbanner ‚Í, “ú–{Œê‚ðŠÜ‚Þ•¶Žš—ñ‚ðŠg‘å‚µ, ƒoƒi[‚Æ‚µ‚Ä‰æ–Ê‚É•\Ž¦‚·‚éƒRƒ}ƒ“
-ƒh‚Å‚·BˆÈ‰º‚Ìo—Í—á‚ðŒ©‚ê‚Î‰½‚ð‚·‚éƒRƒ}ƒ“ƒh‚È‚Ì‚©‚Íˆê–Ú—Ä‘R‚Å‚µ‚å‚¤B
+jbanner ã¯, æ—¥æœ¬èªžã‚’å«ã‚€æ–‡å­—åˆ—ã‚’æ‹¡å¤§ã—, ãƒãƒŠãƒ¼ã¨ã—ã¦ç”»é¢ã«è¡¨ç¤ºã™ã‚‹ã‚³ãƒžãƒ³
+ãƒ‰ã§ã™ã€‚ä»¥ä¸‹ã®å‡ºåŠ›ä¾‹ã‚’è¦‹ã‚Œã°ä½•ã‚’ã™ã‚‹ã‚³ãƒžãƒ³ãƒ‰ãªã®ã‹ã¯ä¸€ç›®çž­ç„¶ã§ã—ã‚‡ã†ã€‚
 
 @example
-[491] ~/WORK/jbanner/src: ./jbanner -c Š¿ Š¿Žš
+[491] ~/WORK/jbanner/src: ./jbanner -c æ¼¢ æ¼¢å­—
 
-@Š¿@@@@@Š¿@@@Š¿@@@@@@@@@@@Š¿
-@@Š¿@Š¿Š¿Š¿Š¿Š¿Š¿Š¿Š¿Š¿Š¿Š¿@@@@@@@@Š¿
-@@@Š¿@@@Š¿@@@Š¿@@@@Š¿Š¿Š¿Š¿Š¿Š¿Š¿Š¿Š¿Š¿Š¿Š¿Š¿Š¿Š¿
-@@@@@@@@@@@@@@@@Š¿@@@@@@@@@@@@@Š¿
-Š¿@@@@Š¿Š¿Š¿Š¿Š¿Š¿Š¿Š¿Š¿@@Š¿@@@@@@@@@@@@@Š¿
-@Š¿@@@Š¿@@@Š¿@@@Š¿@@@@@Š¿Š¿Š¿Š¿Š¿Š¿Š¿Š¿Š¿
-@@Š¿@@Š¿Š¿Š¿Š¿Š¿Š¿Š¿Š¿Š¿@@@@@@@@@@@@Š¿
-@@@@@@@@@Š¿@@@@@@@@@@@@@@@Š¿
-@@@@@Š¿Š¿Š¿Š¿Š¿Š¿Š¿Š¿Š¿@@@@@@@@@Š¿Š¿
-@@Š¿@@@@@@Š¿@@@@@@@@@@@@@Š¿
-@@Š¿@Š¿Š¿Š¿Š¿Š¿Š¿Š¿Š¿Š¿Š¿Š¿@Š¿Š¿Š¿Š¿Š¿Š¿Š¿Š¿Š¿Š¿Š¿Š¿Š¿Š¿Š¿
-@Š¿@@@@@@@Š¿@@@@@@@@@@@@@Š¿
-@Š¿@@@@@@Š¿@Š¿@@@@@@@@@@@@Š¿
-Š¿@@@@@Š¿Š¿@@@Š¿Š¿@@@@@@@@@@Š¿
-Š¿@@@Š¿Š¿@@@@@@@Š¿Š¿@@@@@@Š¿Š¿Š¿
+ã€€æ¼¢ã€€ã€€ã€€ã€€ã€€æ¼¢ã€€ã€€ã€€æ¼¢ã€€ã€€ã€€ã€€ã€€ã€€ã€€ã€€ã€€ã€€ã€€æ¼¢
+ã€€ã€€æ¼¢ã€€æ¼¢æ¼¢æ¼¢æ¼¢æ¼¢æ¼¢æ¼¢æ¼¢æ¼¢æ¼¢æ¼¢ã€€ã€€ã€€ã€€ã€€ã€€ã€€ã€€æ¼¢
+ã€€ã€€ã€€æ¼¢ã€€ã€€ã€€æ¼¢ã€€ã€€ã€€æ¼¢ã€€ã€€ã€€ã€€æ¼¢æ¼¢æ¼¢æ¼¢æ¼¢æ¼¢æ¼¢æ¼¢æ¼¢æ¼¢æ¼¢æ¼¢æ¼¢æ¼¢æ¼¢
+ã€€ã€€ã€€ã€€ã€€ã€€ã€€ã€€ã€€ã€€ã€€ã€€ã€€ã€€ã€€ã€€æ¼¢ã€€ã€€ã€€ã€€ã€€ã€€ã€€ã€€ã€€ã€€ã€€ã€€ã€€æ¼¢
+æ¼¢ã€€ã€€ã€€ã€€æ¼¢æ¼¢æ¼¢æ¼¢æ¼¢æ¼¢æ¼¢æ¼¢æ¼¢ã€€ã€€æ¼¢ã€€ã€€ã€€ã€€ã€€ã€€ã€€ã€€ã€€ã€€ã€€ã€€ã€€æ¼¢
+ã€€æ¼¢ã€€ã€€ã€€æ¼¢ã€€ã€€ã€€æ¼¢ã€€ã€€ã€€æ¼¢ã€€ã€€ã€€ã€€ã€€æ¼¢æ¼¢æ¼¢æ¼¢æ¼¢æ¼¢æ¼¢æ¼¢æ¼¢
+ã€€ã€€æ¼¢ã€€ã€€æ¼¢æ¼¢æ¼¢æ¼¢æ¼¢æ¼¢æ¼¢æ¼¢æ¼¢ã€€ã€€ã€€ã€€ã€€ã€€ã€€ã€€ã€€ã€€ã€€ã€€æ¼¢
+ã€€ã€€ã€€ã€€ã€€ã€€ã€€ã€€ã€€æ¼¢ã€€ã€€ã€€ã€€ã€€ã€€ã€€ã€€ã€€ã€€ã€€ã€€ã€€ã€€ã€€æ¼¢
+ã€€ã€€ã€€ã€€ã€€æ¼¢æ¼¢æ¼¢æ¼¢æ¼¢æ¼¢æ¼¢æ¼¢æ¼¢ã€€ã€€ã€€ã€€ã€€ã€€ã€€ã€€ã€€æ¼¢æ¼¢
+ã€€ã€€æ¼¢ã€€ã€€ã€€ã€€ã€€ã€€æ¼¢ã€€ã€€ã€€ã€€ã€€ã€€ã€€ã€€ã€€ã€€ã€€ã€€ã€€æ¼¢
+ã€€ã€€æ¼¢ã€€æ¼¢æ¼¢æ¼¢æ¼¢æ¼¢æ¼¢æ¼¢æ¼¢æ¼¢æ¼¢æ¼¢ã€€æ¼¢æ¼¢æ¼¢æ¼¢æ¼¢æ¼¢æ¼¢æ¼¢æ¼¢æ¼¢æ¼¢æ¼¢æ¼¢æ¼¢æ¼¢
+ã€€æ¼¢ã€€ã€€ã€€ã€€ã€€ã€€ã€€æ¼¢ã€€ã€€ã€€ã€€ã€€ã€€ã€€ã€€ã€€ã€€ã€€ã€€ã€€æ¼¢
+ã€€æ¼¢ã€€ã€€ã€€ã€€ã€€ã€€æ¼¢ã€€æ¼¢ã€€ã€€ã€€ã€€ã€€ã€€ã€€ã€€ã€€ã€€ã€€ã€€æ¼¢
+æ¼¢ã€€ã€€ã€€ã€€ã€€æ¼¢æ¼¢ã€€ã€€ã€€æ¼¢æ¼¢ã€€ã€€ã€€ã€€ã€€ã€€ã€€ã€€ã€€ã€€æ¼¢
+æ¼¢ã€€ã€€ã€€æ¼¢æ¼¢ã€€ã€€ã€€ã€€ã€€ã€€ã€€æ¼¢æ¼¢ã€€ã€€ã€€ã€€ã€€ã€€æ¼¢æ¼¢æ¼¢
 
-[492] ~/WORK/jbanner/src: ./jbanner -c '_/' Š¿Žš
+[492] ~/WORK/jbanner/src: ./jbanner -c '_/' æ¼¢å­—
 
   _/          _/      _/                      _/
     _/  _/_/_/_/_/_/_/_/_/_/_/                _/
@@ -171,161 +169,161 @@ _/      _/_/              _/_/            _/_/_/
 
 @end example
 
-‚Ó‚Æ‚µ‚½Ž–‚©‚ç, banner ‚ðŽg—p‚µ‚½‚­‚È‚Á‚½‚Ì‚Å‚·‚ª, Cygwin ‚Ì banner ‚Í“ú
-–{Œê‚ð’Ê‚µ‚Ä‚­‚ê‚Ü‚¹‚ñ‚Å‚µ‚½(“–‚½‚è‘O‚Å‚·‚¯‚Ç)B‘½•ª, ”ŽžŠÔ‚Åì¬‚Å‚«‚é
-‚¾‚ë‚¤‚ÆŽv‚Á‚Äì‚èŽn‚ß‚½‚Ì‚Å‚·‚ª, FX‚Æ‹@”\‚ð’Ç‰Á‚µ‚Ä‚Ííœ‚µ‚½‚è‚µ‚Ä, 
-Œ‹\‚È“ú”‚ð”ï‚â‚µ‚Ä‚µ‚Ü‚µ‚Ü‚µ‚½B
+ãµã¨ã—ãŸäº‹ã‹ã‚‰, banner ã‚’ä½¿ç”¨ã—ãŸããªã£ãŸã®ã§ã™ãŒ, Cygwin ã® banner ã¯æ—¥
+æœ¬èªžã‚’é€šã—ã¦ãã‚Œã¾ã›ã‚“ã§ã—ãŸ(å½“ãŸã‚Šå‰ã§ã™ã‘ã©)ã€‚å¤šåˆ†, æ•°æ™‚é–“ã§ä½œæˆã§ãã‚‹
+ã ã‚ã†ã¨æ€ã£ã¦ä½œã‚Šå§‹ã‚ãŸã®ã§ã™ãŒ, è‰²ã€…ã¨æ©Ÿèƒ½ã‚’è¿½åŠ ã—ã¦ã¯å‰Šé™¤ã—ãŸã‚Šã—ã¦, 
+çµæ§‹ãªæ—¥æ•°ã‚’è²»ã‚„ã—ã¦ã—ã¾ã—ã¾ã—ãŸã€‚
 
 @c --------------------------------------------------------------------
-@node  ‹@”\ŠT—v, “®ìŠÂ‹«, —vŽ|, Top
+@node  æ©Ÿèƒ½æ¦‚è¦, å‹•ä½œç’°å¢ƒ, è¦æ—¨, Top
 @comment  node-name,  next,  previous,  up
-@chapter ‹@”\ŠT—v
+@chapter æ©Ÿèƒ½æ¦‚è¦
 
-jbanner ‚Í, “ú–{Œê‚ðŠÜ‚Þ•¶Žš—ñ‚ðŠg‘å‚µ, ƒoƒi[‚Æ‚µ‚Ä‰æ–Ê‚É•\Ž¦‚·‚éƒRƒ}ƒ“
-ƒh‚Å‚·B
+jbanner ã¯, æ—¥æœ¬èªžã‚’å«ã‚€æ–‡å­—åˆ—ã‚’æ‹¡å¤§ã—, ãƒãƒŠãƒ¼ã¨ã—ã¦ç”»é¢ã«è¡¨ç¤ºã™ã‚‹ã‚³ãƒžãƒ³
+ãƒ‰ã§ã™ã€‚
 
-‚ ‚é“ú, ƒ[ƒ‹‚É“ú–{Œê‚Ìƒoƒi[‚ð“ü‚ê‚½‚¢‚ÆŽv‚Á‚Ä, Cygwin ‚Ì banner ‚ðŽg
-—p‚µ‚½‚Æ‚±‚ë, Žv‚Á‚½’Ê‚è, “ú–{Œê‚Í’Ê‚µ‚Ä‚­‚ê‚Ü‚¹‚ñ‚Å‚µ‚½B‘½•ª, “ú–{Œê‰»
-‚³‚ê‚½‚à‚Ì‚ª—L‚é‚ÆŽv‚¢, ƒCƒ“ƒ^[ƒlƒbƒg“™‚ÅŒŸõ‚µ‚Ä‚Ý‚½‚Ì‚Å‚·‚ª, ˆá‚¤ƒoƒi[
-‚ª‘òŽRƒqƒbƒg‚µ‚Ä‚µ‚Ü‚¢, Œ‹‹Ç–Ú“I‚Ì‚à‚Ì‚Í’T‚µo‚¹‚Ü‚¹‚ñ‚Å‚µ‚½B
+ã‚ã‚‹æ—¥, ãƒ¡ãƒ¼ãƒ«ã«æ—¥æœ¬èªžã®ãƒãƒŠãƒ¼ã‚’å…¥ã‚ŒãŸã„ã¨æ€ã£ã¦, Cygwin ã® banner ã‚’ä½¿
+ç”¨ã—ãŸã¨ã“ã‚, æ€ã£ãŸé€šã‚Š, æ—¥æœ¬èªžã¯é€šã—ã¦ãã‚Œã¾ã›ã‚“ã§ã—ãŸã€‚å¤šåˆ†, æ—¥æœ¬èªžåŒ–
+ã•ã‚ŒãŸã‚‚ã®ãŒæœ‰ã‚‹ã¨æ€ã„, ã‚¤ãƒ³ã‚¿ãƒ¼ãƒãƒƒãƒˆç­‰ã§æ¤œç´¢ã—ã¦ã¿ãŸã®ã§ã™ãŒ, é•ã†ãƒãƒŠãƒ¼
+ãŒæ²¢å±±ãƒ’ãƒƒãƒˆã—ã¦ã—ã¾ã„, çµå±€ç›®çš„ã®ã‚‚ã®ã¯æŽ¢ã—å‡ºã›ã¾ã›ã‚“ã§ã—ãŸã€‚
 
 @quotation
-u‚µ‚å‚¤‚ª‚È‚¢Bì‚é‚©`Bv
+ã€Œã—ã‚‡ã†ãŒãªã„ã€‚ä½œã‚‹ã‹ã€œã€‚ã€
 
-u‘½•ª, “ñ`ŽOŽžŠÔ‚à‚ ‚ê‚Îì‚ê‚é‚¾‚ë‚¤v
+ã€Œå¤šåˆ†, äºŒã€œä¸‰æ™‚é–“ã‚‚ã‚ã‚Œã°ä½œã‚Œã‚‹ã ã‚ã†ã€
 @end quotation
 
-‚ÆŽv‚Á‚Ä, ì‚èŽn‚ß‚Ü‚µ‚½B‚Ü`, ‚¾‚¢‚½‚¢‚Í“ñŽžŠÔ‚®‚ç‚¢‚Åo—ˆ‚½‚Ì‚Å‚·‚ª, 
-‚Ç‚¤‚¹‚È‚ç, ƒIƒŠƒWƒiƒ‹‚Æ“¯‚¶“®ì‚É‚µ‚æ‚¤‚ÆŽv‚¢, ƒIƒŠƒWƒiƒ‹‚ð‘€ì‚µ‚È‚ª‚ç, 
-“®ì‚ð^Ž—‚Äì‚è‚Ü‚µ‚½B
+ã¨æ€ã£ã¦, ä½œã‚Šå§‹ã‚ã¾ã—ãŸã€‚ã¾ã€œ, ã ã„ãŸã„ã¯äºŒæ™‚é–“ãã‚‰ã„ã§å‡ºæ¥ãŸã®ã§ã™ãŒ, 
+ã©ã†ã›ãªã‚‰, ã‚ªãƒªã‚¸ãƒŠãƒ«ã¨åŒã˜å‹•ä½œã«ã—ã‚ˆã†ã¨æ€ã„, ã‚ªãƒªã‚¸ãƒŠãƒ«ã‚’æ“ä½œã—ãªãŒã‚‰, 
+å‹•ä½œã‚’çœŸä¼¼ã¦ä½œã‚Šã¾ã—ãŸã€‚
 
-–Ê“|‚¾‚Á‚½‚Ì‚Å, ƒIƒŠƒWƒiƒ‹‚Ìƒ\[ƒX‚ÍŒ©‚È‚¢‚Åì¬‚µ‚½‚Ì‚Å, ×‚©‚¢•”•ª‚Ü‚Å
-‚Í^Ž—‚µ‚«‚ê‚Ä‚È‚¢‚ÆŽv‚¢‚Ü‚·B‰½‚ê‚É‚µ‚ë, ƒIƒŠƒWƒiƒ‹‚Í‘½•ªƒvƒƒOƒ‰ƒ€“à•”
-‚ÉƒtƒHƒ“ƒgî•ñ‚ðŽ‚Á‚Ä‚¢‚é‚Å‚µ‚å‚¤(ˆá‚¤‚©‚È?)B‰¢•¶‚Ì‚æ‚¤‚É”‚ª­‚È‚¯‚ê
-‚Î‰Â”\‚È‚Ì‚Å‚·‚ª, “ú–{Œê‚Í”‚ª‘½‚¢‚Ì‚ÅƒtƒHƒ“ƒg‚ð“à•”‚ÉŽ‚Â‚Ì‚Í“¾ô‚Å‚Í‚È
-‚¢‚Æ”»’f‚µ‚Ä, OS ‚©‚çƒtƒHƒ“ƒgî•ñ‚ð“¾‚Ä‚¢‚Ü‚·B‚»‚ñ‚È–ó‚ÅƒIƒŠƒWƒiƒ‹‚É‚Í
-‘¶Ý‚µ‚È‚¢‹@”\‚Æ‚µ‚Ä, ˆÈ‰º‚Ì‹@”\‚ª‚ ‚è‚Ü‚·B
+é¢å€’ã ã£ãŸã®ã§, ã‚ªãƒªã‚¸ãƒŠãƒ«ã®ã‚½ãƒ¼ã‚¹ã¯è¦‹ãªã„ã§ä½œæˆã—ãŸã®ã§, ç´°ã‹ã„éƒ¨åˆ†ã¾ã§
+ã¯çœŸä¼¼ã—ãã‚Œã¦ãªã„ã¨æ€ã„ã¾ã™ã€‚ä½•ã‚Œã«ã—ã‚, ã‚ªãƒªã‚¸ãƒŠãƒ«ã¯å¤šåˆ†ãƒ—ãƒ­ã‚°ãƒ©ãƒ å†…éƒ¨
+ã«ãƒ•ã‚©ãƒ³ãƒˆæƒ…å ±ã‚’æŒã£ã¦ã„ã‚‹ã§ã—ã‚‡ã†(é•ã†ã‹ãª?)ã€‚æ¬§æ–‡ã®ã‚ˆã†ã«æ•°ãŒå°‘ãªã‘ã‚Œ
+ã°å¯èƒ½ãªã®ã§ã™ãŒ, æ—¥æœ¬èªžã¯æ•°ãŒå¤šã„ã®ã§ãƒ•ã‚©ãƒ³ãƒˆã‚’å†…éƒ¨ã«æŒã¤ã®ã¯å¾—ç­–ã§ã¯ãª
+ã„ã¨åˆ¤æ–­ã—ã¦, OS ã‹ã‚‰ãƒ•ã‚©ãƒ³ãƒˆæƒ…å ±ã‚’å¾—ã¦ã„ã¾ã™ã€‚ãã‚“ãªè¨³ã§ã‚ªãƒªã‚¸ãƒŠãƒ«ã«ã¯
+å­˜åœ¨ã—ãªã„æ©Ÿèƒ½ã¨ã—ã¦, ä»¥ä¸‹ã®æ©Ÿèƒ½ãŒã‚ã‚Šã¾ã™ã€‚
 
 @itemize
 @item
-“ú–{Œê‚ðˆ—‚Å‚«‚Ü‚·
+æ—¥æœ¬èªžã‚’å‡¦ç†ã§ãã¾ã™
 
 @item
-ƒtƒHƒ“ƒg‚ÌŽw’è‚ª‰Â”\‚Å‚·
+ãƒ•ã‚©ãƒ³ãƒˆã®æŒ‡å®šãŒå¯èƒ½ã§ã™
 
 @item
-ƒtƒHƒ“ƒgƒTƒCƒY‚ÌŽw’è‚ª‰Â”\‚Å‚·
+ãƒ•ã‚©ãƒ³ãƒˆã‚µã‚¤ã‚ºã®æŒ‡å®šãŒå¯èƒ½ã§ã™
 
 @item
-ƒtƒHƒ“ƒgƒtƒ@ƒ~ƒŠ‚ð—ñ‹“‚·‚éŽ–‚ª‚Å‚«‚Ü‚·B
+ãƒ•ã‚©ãƒ³ãƒˆãƒ•ã‚¡ãƒŸãƒªã‚’åˆ—æŒ™ã™ã‚‹äº‹ãŒã§ãã¾ã™ã€‚
 
 @end itemize
 
-ƒtƒHƒ“ƒg‚ÌŽw’è‚ª‰Â”\‚É‚È‚Á‚½Ž–‚É‚æ‚è, 
+ãƒ•ã‚©ãƒ³ãƒˆã®æŒ‡å®šãŒå¯èƒ½ã«ãªã£ãŸäº‹ã«ã‚ˆã‚Š, 
 
 @example
-[498] ~/WORK/jbanner/src: ./jbanner -c Š¿ --fontname='@@‚l‚r –¾’©' Š¿Žš
-@
-@Š¿@@@@@@@@Š¿@@@Š¿@@@Š¿@@@@@@Š¿
-@Š¿@@Š¿Š¿Š¿@Š¿@Š¿@@@Š¿@@Š¿Š¿Š¿@@@@Š¿Š¿
-@Š¿@@Š¿@Š¿@Š¿@Š¿@@Š¿@@@@Š¿@@@@@@Š¿
-Š¿Š¿Š¿@Š¿@Š¿@Š¿@Š¿@Š¿@@@@@Š¿@@Š¿@@@Š¿
-@Š¿@@Š¿@Š¿@Š¿@Š¿Š¿@@@@@@Š¿@Š¿Š¿@@@Š¿
-@Š¿@@Š¿Š¿Š¿Š¿Š¿Š¿Š¿@@@@@@@Š¿@@Š¿Š¿@@Š¿
-@Š¿@@Š¿@Š¿@Š¿@Š¿Š¿@@@@Š¿@Š¿@@Š¿@Š¿@Š¿
-Š¿Š¿Š¿@Š¿@Š¿@Š¿@Š¿@Š¿@@@Š¿Š¿Š¿@@Š¿@Š¿Š¿Š¿Š¿Š¿Š¿Š¿
-@Š¿@@Š¿@Š¿@Š¿@Š¿@@Š¿@@@@Š¿@@Š¿@@@Š¿@@@Š¿Š¿
-@Š¿@@Š¿Š¿Š¿@Š¿@Š¿@@@Š¿@@@Š¿@@Š¿@@@Š¿@@@Š¿
-@Š¿@@@@@@@@Š¿@@@Š¿@@@Š¿@@Š¿@@@Š¿@@@Š¿
-@@@@Š¿Š¿Š¿@@@@@@@@@@@Š¿@@Š¿@@@Š¿
-@Š¿Š¿@@@@Š¿Š¿Š¿@@@@@@@@Š¿@@@@@@Š¿
-Š¿@@@Š¿Š¿@@@@Š¿Š¿Š¿Š¿Š¿@@Š¿Š¿Š¿@@@@@Š¿
-@@@Š¿@@@@@@Š¿@@@@@@@@Š¿Š¿@@@@Š¿
+[498] ~/WORK/jbanner/src: ./jbanner -c æ¼¢ --fontname='@@ï¼­ï¼³ æ˜Žæœ' æ¼¢å­—
+ã€€
+ã€€æ¼¢ã€€ã€€ã€€ã€€ã€€ã€€ã€€ã€€æ¼¢ã€€ã€€ã€€æ¼¢ã€€ã€€ã€€æ¼¢ã€€ã€€ã€€ã€€ã€€ã€€æ¼¢
+ã€€æ¼¢ã€€ã€€æ¼¢æ¼¢æ¼¢ã€€æ¼¢ã€€æ¼¢ã€€ã€€ã€€æ¼¢ã€€ã€€æ¼¢æ¼¢æ¼¢ã€€ã€€ã€€ã€€æ¼¢æ¼¢
+ã€€æ¼¢ã€€ã€€æ¼¢ã€€æ¼¢ã€€æ¼¢ã€€æ¼¢ã€€ã€€æ¼¢ã€€ã€€ã€€ã€€æ¼¢ã€€ã€€ã€€ã€€ã€€ã€€æ¼¢
+æ¼¢æ¼¢æ¼¢ã€€æ¼¢ã€€æ¼¢ã€€æ¼¢ã€€æ¼¢ã€€æ¼¢ã€€ã€€ã€€ã€€ã€€æ¼¢ã€€ã€€æ¼¢ã€€ã€€ã€€æ¼¢
+ã€€æ¼¢ã€€ã€€æ¼¢ã€€æ¼¢ã€€æ¼¢ã€€æ¼¢æ¼¢ã€€ã€€ã€€ã€€ã€€ã€€æ¼¢ã€€æ¼¢æ¼¢ã€€ã€€ã€€æ¼¢
+ã€€æ¼¢ã€€ã€€æ¼¢æ¼¢æ¼¢æ¼¢æ¼¢æ¼¢æ¼¢ã€€ã€€ã€€ã€€ã€€ã€€ã€€æ¼¢ã€€ã€€æ¼¢æ¼¢ã€€ã€€æ¼¢
+ã€€æ¼¢ã€€ã€€æ¼¢ã€€æ¼¢ã€€æ¼¢ã€€æ¼¢æ¼¢ã€€ã€€ã€€ã€€æ¼¢ã€€æ¼¢ã€€ã€€æ¼¢ã€€æ¼¢ã€€æ¼¢
+æ¼¢æ¼¢æ¼¢ã€€æ¼¢ã€€æ¼¢ã€€æ¼¢ã€€æ¼¢ã€€æ¼¢ã€€ã€€ã€€æ¼¢æ¼¢æ¼¢ã€€ã€€æ¼¢ã€€æ¼¢æ¼¢æ¼¢æ¼¢æ¼¢æ¼¢æ¼¢
+ã€€æ¼¢ã€€ã€€æ¼¢ã€€æ¼¢ã€€æ¼¢ã€€æ¼¢ã€€ã€€æ¼¢ã€€ã€€ã€€ã€€æ¼¢ã€€ã€€æ¼¢ã€€ã€€ã€€æ¼¢ã€€ã€€ã€€æ¼¢æ¼¢
+ã€€æ¼¢ã€€ã€€æ¼¢æ¼¢æ¼¢ã€€æ¼¢ã€€æ¼¢ã€€ã€€ã€€æ¼¢ã€€ã€€ã€€æ¼¢ã€€ã€€æ¼¢ã€€ã€€ã€€æ¼¢ã€€ã€€ã€€æ¼¢
+ã€€æ¼¢ã€€ã€€ã€€ã€€ã€€ã€€ã€€ã€€æ¼¢ã€€ã€€ã€€æ¼¢ã€€ã€€ã€€æ¼¢ã€€ã€€æ¼¢ã€€ã€€ã€€æ¼¢ã€€ã€€ã€€æ¼¢
+ã€€ã€€ã€€ã€€æ¼¢æ¼¢æ¼¢ã€€ã€€ã€€ã€€ã€€ã€€ã€€ã€€ã€€ã€€ã€€æ¼¢ã€€ã€€æ¼¢ã€€ã€€ã€€æ¼¢
+ã€€æ¼¢æ¼¢ã€€ã€€ã€€ã€€æ¼¢æ¼¢æ¼¢ã€€ã€€ã€€ã€€ã€€ã€€ã€€ã€€æ¼¢ã€€ã€€ã€€ã€€ã€€ã€€æ¼¢
+æ¼¢ã€€ã€€ã€€æ¼¢æ¼¢ã€€ã€€ã€€ã€€æ¼¢æ¼¢æ¼¢æ¼¢æ¼¢ã€€ã€€æ¼¢æ¼¢æ¼¢ã€€ã€€ã€€ã€€ã€€æ¼¢
+ã€€ã€€ã€€æ¼¢ã€€ã€€ã€€ã€€ã€€ã€€æ¼¢ã€€ã€€ã€€ã€€ã€€ã€€ã€€ã€€æ¼¢æ¼¢ã€€ã€€ã€€ã€€æ¼¢
 @end example
 
-‚±‚ñ‚ÈŽ–‚ào—ˆ‚é‚æ‚¤‚É‚È‚è‚Ü‚µ‚½B
+ã“ã‚“ãªäº‹ã‚‚å‡ºæ¥ã‚‹ã‚ˆã†ã«ãªã‚Šã¾ã—ãŸã€‚
 
 @c --------------------------------------------------------------------
-@node “®ìŠÂ‹«, ƒCƒ“ƒXƒg[ƒ‹‚ÆƒAƒ“ƒCƒ“ƒXƒg[ƒ‹•û–@, ‹@”\ŠT—v, Top
+@node å‹•ä½œç’°å¢ƒ, ã‚¤ãƒ³ã‚¹ãƒˆãƒ¼ãƒ«ã¨ã‚¢ãƒ³ã‚¤ãƒ³ã‚¹ãƒˆãƒ¼ãƒ«æ–¹æ³•, æ©Ÿèƒ½æ¦‚è¦, Top
 @comment  node-name,  next,  previous,  up
-@chapter “®ìŠÂ‹«
+@chapter å‹•ä½œç’°å¢ƒ
 
-ˆê‰ž, Windows(32bit)”Ä—p‚Ì‚Â‚à‚è‚Å‚·B“ÁŽê‚È API ‚ÍˆêØŽg—p‚µ‚Ä‚¢‚Ü‚¹‚ñ
-‚Ì‚Å, ‘½•ª Windows 95/98/98SE/ME/NT/2000/Xp ‚Ì‰½‚ê‚Å‚à“®ì‚·‚é‚ÆŽv‚¢‚Ü‚·B
-‚à‚µ‚©‚·‚é‚Æ, Win32s ‚Å‚à“®ì‚·‚é‚©‚à‚µ‚ê‚Ü‚¹‚ñB’A‚µŽ„‚ª“®ìŠm”F‚ðs‚Á
-‚½ŠÂ‹«‚Í
+ä¸€å¿œ, Windows(32bit)æ±Žç”¨ã®ã¤ã‚‚ã‚Šã§ã™ã€‚ç‰¹æ®Šãª API ã¯ä¸€åˆ‡ä½¿ç”¨ã—ã¦ã„ã¾ã›ã‚“
+ã®ã§, å¤šåˆ† Windows 95/98/98SE/ME/NT/2000/Xp ã®ä½•ã‚Œã§ã‚‚å‹•ä½œã™ã‚‹ã¨æ€ã„ã¾ã™ã€‚
+ã‚‚ã—ã‹ã™ã‚‹ã¨, Win32s ã§ã‚‚å‹•ä½œã™ã‚‹ã‹ã‚‚ã—ã‚Œã¾ã›ã‚“ã€‚ä½†ã—ç§ãŒå‹•ä½œç¢ºèªã‚’è¡Œã£
+ãŸç’°å¢ƒã¯
 
 @itemize
 @item Windows 2000
 @item Windows Xp
 @end itemize
 
-‚Ì‚Ý‚Å‚·B
+ã®ã¿ã§ã™ã€‚
 
 @c --------------------------------------------------------------------
-@node ƒCƒ“ƒXƒg[ƒ‹‚ÆƒAƒ“ƒCƒ“ƒXƒg[ƒ‹•û–@, Žg—p•û–@, “®ìŠÂ‹«, Top
+@node ã‚¤ãƒ³ã‚¹ãƒˆãƒ¼ãƒ«ã¨ã‚¢ãƒ³ã‚¤ãƒ³ã‚¹ãƒˆãƒ¼ãƒ«æ–¹æ³•, ä½¿ç”¨æ–¹æ³•, å‹•ä½œç’°å¢ƒ, Top
 @comment  node-name,  next,  previous,  up
-@chapter ƒCƒ“ƒXƒg[ƒ‹‚ÆƒAƒ“ƒCƒ“ƒXƒg[ƒ‹•û–@
+@chapter ã‚¤ãƒ³ã‚¹ãƒˆãƒ¼ãƒ«ã¨ã‚¢ãƒ³ã‚¤ãƒ³ã‚¹ãƒˆãƒ¼ãƒ«æ–¹æ³•
 
 @menu
-* ƒCƒ“ƒXƒg[ƒ‹::                
-* ƒAƒ“ƒCƒ“ƒXƒg[ƒ‹::            
+* ã‚¤ãƒ³ã‚¹ãƒˆãƒ¼ãƒ«::                
+* ã‚¢ãƒ³ã‚¤ãƒ³ã‚¹ãƒˆãƒ¼ãƒ«::            
 @end menu
 
-@node  ƒCƒ“ƒXƒg[ƒ‹, ƒAƒ“ƒCƒ“ƒXƒg[ƒ‹, ƒCƒ“ƒXƒg[ƒ‹‚ÆƒAƒ“ƒCƒ“ƒXƒg[ƒ‹•û–@, ƒCƒ“ƒXƒg[ƒ‹‚ÆƒAƒ“ƒCƒ“ƒXƒg[ƒ‹•û–@
+@node  ã‚¤ãƒ³ã‚¹ãƒˆãƒ¼ãƒ«, ã‚¢ãƒ³ã‚¤ãƒ³ã‚¹ãƒˆãƒ¼ãƒ«, ã‚¤ãƒ³ã‚¹ãƒˆãƒ¼ãƒ«ã¨ã‚¢ãƒ³ã‚¤ãƒ³ã‚¹ãƒˆãƒ¼ãƒ«æ–¹æ³•, ã‚¤ãƒ³ã‚¹ãƒˆãƒ¼ãƒ«ã¨ã‚¢ãƒ³ã‚¤ãƒ³ã‚¹ãƒˆãƒ¼ãƒ«æ–¹æ³•
 @comment  node-name,  next,  previous,  up
-@section ƒCƒ“ƒXƒg[ƒ‹
+@section ã‚¤ãƒ³ã‚¹ãƒˆãƒ¼ãƒ«
 
-ƒCƒ“ƒXƒg[ƒ‹‚Í, “ÁŽê‚ÈŽ–‚Í‰½‚às‚¤•K—v‚Í‚ ‚è‚Ü‚¹‚ñB@file{jbanner.exe}‚ð
-”CˆÓ‚ÌƒtƒHƒ‹ƒ_(ƒfƒBƒŒƒNƒgƒŠ)‚ÉƒRƒs[‚µ‚Ä‰º‚³‚¢Bjbanner ‚ÍƒRƒ}ƒ“ƒhƒvƒƒ“
-ƒvƒg‚©‚çŽg—p‚·‚éƒc[ƒ‹‚Å‚·‚Ì‚Å, ŠÂ‹«•Ï”@code{Path}‚ÉŠÜ‚Ü‚ê‚Ä‚¢‚éƒfƒBƒŒ
-ƒNƒgƒŠ‚ÉƒRƒs[‚·‚éŽ–‚ð‚¨Š©‚ß’v‚µ‚Ü‚·BƒGƒNƒXƒvƒ[ƒ‰‚©‚ç, ƒNƒŠƒbƒN‚µ‚Ä‚à
-‰½‚à‹N‚±‚è‚Ü‚¹‚ñ‚Ì‚Åˆ«‚µ‚©‚ç‚¸@code{:-p} B
+ã‚¤ãƒ³ã‚¹ãƒˆãƒ¼ãƒ«ã¯, ç‰¹æ®Šãªäº‹ã¯ä½•ã‚‚è¡Œã†å¿…è¦ã¯ã‚ã‚Šã¾ã›ã‚“ã€‚@file{jbanner.exe}ã‚’
+ä»»æ„ã®ãƒ•ã‚©ãƒ«ãƒ€(ãƒ‡ã‚£ãƒ¬ã‚¯ãƒˆãƒª)ã«ã‚³ãƒ”ãƒ¼ã—ã¦ä¸‹ã•ã„ã€‚jbanner ã¯ã‚³ãƒžãƒ³ãƒ‰ãƒ—ãƒ­ãƒ³
+ãƒ—ãƒˆã‹ã‚‰ä½¿ç”¨ã™ã‚‹ãƒ„ãƒ¼ãƒ«ã§ã™ã®ã§, ç’°å¢ƒå¤‰æ•°@code{Path}ã«å«ã¾ã‚Œã¦ã„ã‚‹ãƒ‡ã‚£ãƒ¬
+ã‚¯ãƒˆãƒªã«ã‚³ãƒ”ãƒ¼ã™ã‚‹äº‹ã‚’ãŠå‹§ã‚è‡´ã—ã¾ã™ã€‚ã‚¨ã‚¯ã‚¹ãƒ—ãƒ­ãƒ¼ãƒ©ã‹ã‚‰, ã‚¯ãƒªãƒƒã‚¯ã—ã¦ã‚‚
+ä½•ã‚‚èµ·ã“ã‚Šã¾ã›ã‚“ã®ã§æ‚ªã—ã‹ã‚‰ãš@code{:-p} ã€‚
 
-@node  ƒAƒ“ƒCƒ“ƒXƒg[ƒ‹,  , ƒCƒ“ƒXƒg[ƒ‹, ƒCƒ“ƒXƒg[ƒ‹‚ÆƒAƒ“ƒCƒ“ƒXƒg[ƒ‹•û–@
+@node  ã‚¢ãƒ³ã‚¤ãƒ³ã‚¹ãƒˆãƒ¼ãƒ«,  , ã‚¤ãƒ³ã‚¹ãƒˆãƒ¼ãƒ«, ã‚¤ãƒ³ã‚¹ãƒˆãƒ¼ãƒ«ã¨ã‚¢ãƒ³ã‚¤ãƒ³ã‚¹ãƒˆãƒ¼ãƒ«æ–¹æ³•
 @comment  node-name,  next,  previous,  up
-@section ƒAƒ“ƒCƒ“ƒXƒg[ƒ‹
+@section ã‚¢ãƒ³ã‚¤ãƒ³ã‚¹ãƒˆãƒ¼ãƒ«
 
-ƒAƒ“ƒCƒ“ƒXƒg[ƒ‹‚Í, @file{jbanner.exe}‚ðíœ‚·‚é‚¾‚¯‚Å‚·BƒŒƒWƒXƒgƒŠ‚Íˆê
-ØG‚Á‚Ä‚¢‚Ü‚¹‚ñ‚Ì‚Å, ‚»‚êˆÈŠO‚É‚Í‰½‚às‚¤•K—v‚Í‚ ‚è‚Ü‚¹‚ñB
+ã‚¢ãƒ³ã‚¤ãƒ³ã‚¹ãƒˆãƒ¼ãƒ«ã¯, @file{jbanner.exe}ã‚’å‰Šé™¤ã™ã‚‹ã ã‘ã§ã™ã€‚ãƒ¬ã‚¸ã‚¹ãƒˆãƒªã¯ä¸€
+åˆ‡è§¦ã£ã¦ã„ã¾ã›ã‚“ã®ã§, ãã‚Œä»¥å¤–ã«ã¯ä½•ã‚‚è¡Œã†å¿…è¦ã¯ã‚ã‚Šã¾ã›ã‚“ã€‚
 
 @c --------------------------------------------------------------------
-@node   Žg—p•û–@, ŽÖ‘«, ƒCƒ“ƒXƒg[ƒ‹‚ÆƒAƒ“ƒCƒ“ƒXƒg[ƒ‹•û–@, Top
+@node   ä½¿ç”¨æ–¹æ³•, è›‡è¶³, ã‚¤ãƒ³ã‚¹ãƒˆãƒ¼ãƒ«ã¨ã‚¢ãƒ³ã‚¤ãƒ³ã‚¹ãƒˆãƒ¼ãƒ«æ–¹æ³•, Top
 @comment  node-name,  next,  previous,  up
-@chapter Žg—p•û–@
+@chapter ä½¿ç”¨æ–¹æ³•
 
 @menu
-* ŠÈ’P‚ÈŽg‚¢‚©‚½::              
-* ƒRƒ}ƒ“ƒhŒ`Ž®::                
-* ƒwƒ‹ƒvƒIƒvƒVƒ‡ƒ“::            
-* ‘S‘Ì“I‚ÈƒIƒvƒVƒ‡ƒ“::          
-* “ÁŽêƒIƒvƒVƒ‡ƒ“(WIN32)::       
+* ç°¡å˜ãªä½¿ã„ã‹ãŸ::              
+* ã‚³ãƒžãƒ³ãƒ‰å½¢å¼::                
+* ãƒ˜ãƒ«ãƒ—ã‚ªãƒ—ã‚·ãƒ§ãƒ³::            
+* å…¨ä½“çš„ãªã‚ªãƒ—ã‚·ãƒ§ãƒ³::          
+* ç‰¹æ®Šã‚ªãƒ—ã‚·ãƒ§ãƒ³(WIN32)::       
 @end menu
 
 @c --------------------------------------------------------------------
-@node  ŠÈ’P‚ÈŽg‚¢‚©‚½, ƒRƒ}ƒ“ƒhŒ`Ž®, Žg—p•û–@, Žg—p•û–@
+@node  ç°¡å˜ãªä½¿ã„ã‹ãŸ, ã‚³ãƒžãƒ³ãƒ‰å½¢å¼, ä½¿ç”¨æ–¹æ³•, ä½¿ç”¨æ–¹æ³•
 @comment  node-name,  next,  previous,  up
-@section ŠÈ’P‚ÈŽg‚¢‚©‚½
+@section ç°¡å˜ãªä½¿ã„ã‹ãŸ
 
-@file{jbanner}‚Í Windows ‚ÌƒRƒ}ƒ“ƒhƒvƒƒ“ƒvƒg“™‚©‚çŽg—p‚µ‚Ü‚·BŽ„‚Í 
-Emacs ‚Ì shell ‚Å bash ‚ð‹N“®‚µ‚ÄŽg—p‚·‚éŽ–‚ª–w‚Ç‚Å‚·‚Ì‚Å, ‚±‚ÌƒhƒLƒ…ƒ
-ƒ“ƒg‚Ì—á‚àbash ‚Ì‚à‚Ì‚ðŽg—p‚µ‚Ä‚¢‚é‚Ì‚ª–w‚Ç‚Å‚·BƒRƒ}ƒ“ƒhƒvƒƒ“ƒvƒg‚ÅŽg
-—p‚·‚éê‡‚É‰—‚¢‚Ä‚à“Á‚É‘å‚«‚Èˆá‚¢‚Í‚ ‚è‚Ü‚¹‚ñ‚Ì‚Å, “K“–‚É“Ç‚Ý‘Ö‚¦‚Ä‰º‚³
-‚¢B
+@file{jbanner}ã¯ Windows ã®ã‚³ãƒžãƒ³ãƒ‰ãƒ—ãƒ­ãƒ³ãƒ—ãƒˆç­‰ã‹ã‚‰ä½¿ç”¨ã—ã¾ã™ã€‚ç§ã¯ 
+Emacs ã® shell ã§ bash ã‚’èµ·å‹•ã—ã¦ä½¿ç”¨ã™ã‚‹äº‹ãŒæ®†ã©ã§ã™ã®ã§, ã“ã®ãƒ‰ã‚­ãƒ¥ãƒ¡
+ãƒ³ãƒˆã®ä¾‹ã‚‚bash ã®ã‚‚ã®ã‚’ä½¿ç”¨ã—ã¦ã„ã‚‹ã®ãŒæ®†ã©ã§ã™ã€‚ã‚³ãƒžãƒ³ãƒ‰ãƒ—ãƒ­ãƒ³ãƒ—ãƒˆã§ä½¿
+ç”¨ã™ã‚‹å ´åˆã«æ–¼ã„ã¦ã‚‚ç‰¹ã«å¤§ããªé•ã„ã¯ã‚ã‚Šã¾ã›ã‚“ã®ã§, é©å½“ã«èª­ã¿æ›¿ãˆã¦ä¸‹ã•
+ã„ã€‚
 
-‚»‚Ì‚Ü‚ÜƒRƒ}ƒ“ƒhƒvƒƒ“ƒvƒg‚©‚ç@samp{jbanner}‚Æ“ü—Í‚·‚é‚Æ, 
+ãã®ã¾ã¾ã‚³ãƒžãƒ³ãƒ‰ãƒ—ãƒ­ãƒ³ãƒ—ãƒˆã‹ã‚‰@samp{jbanner}ã¨å…¥åŠ›ã™ã‚‹ã¨, 
 
 @example
 C:\home\tfuruka1>jbanner
-jbanner: ˆø”‚ª•s\•ª‚Å‚·B
-Usage: jbanner [-c X] [-w 80] [--usage] [--version] [--help] •\Ž¦‚·‚é•¶Žš—ñ
+jbanner: å¼•æ•°ãŒä¸ååˆ†ã§ã™ã€‚
+Usage: jbanner [-c X] [-w 80] [--usage] [--version] [--help] è¡¨ç¤ºã™ã‚‹æ–‡å­—åˆ—
 @end example
 
-‚Æ‚¢‚Á‚½, ŠÈ’P‚ÈŽg—p•û–@‚ð•\Ž¦‚µ‚Ü‚·B¡“x‚Íu•\Ž¦‚·‚é•¶Žš—ñv‚ð‰½‚©“ü—Í‚µ‚Ä‚Ý
-‚Ü‚·B‚±‚±‚Å‚Íu‚Ù‚°v‚Æ“ü—Í‚µ‚Ü‚·B
+ã¨ã„ã£ãŸ, ç°¡å˜ãªä½¿ç”¨æ–¹æ³•ã‚’è¡¨ç¤ºã—ã¾ã™ã€‚ä»Šåº¦ã¯ã€Œè¡¨ç¤ºã™ã‚‹æ–‡å­—åˆ—ã€ã‚’ä½•ã‹å…¥åŠ›ã—ã¦ã¿
+ã¾ã™ã€‚ã“ã“ã§ã¯ã€Œã»ã’ã€ã¨å…¥åŠ›ã—ã¾ã™ã€‚
 
 @example
-C:\home\tfuruka1>jbanner ‚Ù‚°
+C:\home\tfuruka1>jbanner ã»ã’
                             X X
   X               X         X X
   X   XXXXXXXX    X        X
@@ -342,74 +340,74 @@ C:\home\tfuruka1>jbanner ‚Ù‚°
   X    XXXX            XX
 @end example
 
-‚±‚ê‚ªŠî–{“I‚ÈŽg—p•û–@‚Å‚·B‚ ‚Æ‚Í, ƒIƒvƒVƒ‡ƒ“‚Å×‚©‚¢Žw’è‚ª‚»‚ê‚È‚è‚É‚Å
-‚«‚Ü‚·B
+ã“ã‚ŒãŒåŸºæœ¬çš„ãªä½¿ç”¨æ–¹æ³•ã§ã™ã€‚ã‚ã¨ã¯, ã‚ªãƒ—ã‚·ãƒ§ãƒ³ã§ç´°ã‹ã„æŒ‡å®šãŒãã‚Œãªã‚Šã«ã§
+ãã¾ã™ã€‚
 
 @c --------------------------------------------------------------------
-@node  ƒRƒ}ƒ“ƒhŒ`Ž®, ƒwƒ‹ƒvƒIƒvƒVƒ‡ƒ“, ŠÈ’P‚ÈŽg‚¢‚©‚½, Žg—p•û–@
+@node  ã‚³ãƒžãƒ³ãƒ‰å½¢å¼, ãƒ˜ãƒ«ãƒ—ã‚ªãƒ—ã‚·ãƒ§ãƒ³, ç°¡å˜ãªä½¿ã„ã‹ãŸ, ä½¿ç”¨æ–¹æ³•
 @comment  node-name,  next,  previous,  up
-@section ƒRƒ}ƒ“ƒhŒ`Ž®
+@section ã‚³ãƒžãƒ³ãƒ‰å½¢å¼
 
-@file{jbanner}‚ÌƒRƒ}ƒ“ƒhŒ`Ž®‚ÍˆÈ‰º‚Ì’Ê‚è‚Å‚·B
+@file{jbanner}ã®ã‚³ãƒžãƒ³ãƒ‰å½¢å¼ã¯ä»¥ä¸‹ã®é€šã‚Šã§ã™ã€‚
 
 @example
-jbanner [options] •\Ž¦•¶Žš—ñ
+jbanner [options] è¡¨ç¤ºæ–‡å­—åˆ—
 @end example
 
-@code{•\Ž¦•¶Žš—ñ}‚ÅŽw’è‚µ‚½•¶Žš—ñ‚ðŠg‘å‚µ‚Ä, ƒoƒi[‚Æ‚µ‚Ä, ‰æ–Ê‚É•\Ž¦‚µ
-‚Ü‚·BƒIƒvƒVƒ‡ƒ“‚Í, @code{-}–”‚Í@code{--}‚©‚çŽn‚Ü‚é•¶Žš–”‚Í•¶Žš—ñ‚Å, o
-—ÍŒ`Ž®‚É‘Î‚·‚éŽwŽ¦‚ðs‚¤Ž–‚ª‚Å‚«‚Ü‚·BƒIƒvƒVƒ‡ƒ“‚Ì’†‚É‚Í, ˆø”‚ð•K—v‚Æ‚·
-‚é‚à‚Ì‚à‚ ‚è‚Ü‚·B‚»‚Ìê‡‚Ìˆø”‚Í, ƒRƒ}ƒ“ƒh‚ÌŽŸ‚Ìˆø”‚Æ‚µ‚Ä‹Lq‚·‚éŽ–‚à
-‚Å‚«‚Ü‚·‚µ, @code{=}‚Å˜AŒ‹‚µ‚ÄŽw’è‚·‚éŽ–‚à‰Â”\‚Å‚·B—á‚¦‚Î, ˆÈ‰º‚Ì“ñ‚Â‚Í
-‚Ç‚¿‚ç‚à“¯‚¶ˆÓ–¡‚É‚È‚è‚Ü‚·B
+@code{è¡¨ç¤ºæ–‡å­—åˆ—}ã§æŒ‡å®šã—ãŸæ–‡å­—åˆ—ã‚’æ‹¡å¤§ã—ã¦, ãƒãƒŠãƒ¼ã¨ã—ã¦, ç”»é¢ã«è¡¨ç¤ºã—
+ã¾ã™ã€‚ã‚ªãƒ—ã‚·ãƒ§ãƒ³ã¯, @code{-}åˆã¯@code{--}ã‹ã‚‰å§‹ã¾ã‚‹æ–‡å­—åˆã¯æ–‡å­—åˆ—ã§, å‡º
+åŠ›å½¢å¼ã«å¯¾ã™ã‚‹æŒ‡ç¤ºã‚’è¡Œã†äº‹ãŒã§ãã¾ã™ã€‚ã‚ªãƒ—ã‚·ãƒ§ãƒ³ã®ä¸­ã«ã¯, å¼•æ•°ã‚’å¿…è¦ã¨ã™
+ã‚‹ã‚‚ã®ã‚‚ã‚ã‚Šã¾ã™ã€‚ãã®å ´åˆã®å¼•æ•°ã¯, ã‚³ãƒžãƒ³ãƒ‰ã®æ¬¡ã®å¼•æ•°ã¨ã—ã¦è¨˜è¿°ã™ã‚‹äº‹ã‚‚
+ã§ãã¾ã™ã—, @code{=}ã§é€£çµã—ã¦æŒ‡å®šã™ã‚‹äº‹ã‚‚å¯èƒ½ã§ã™ã€‚ä¾‹ãˆã°, ä»¥ä¸‹ã®äºŒã¤ã¯
+ã©ã¡ã‚‰ã‚‚åŒã˜æ„å‘³ã«ãªã‚Šã¾ã™ã€‚
 
 @example
 --option argument
 --option=argument
 @end example
 
-ˆö‚Ý‚Éjbanner‚É‚Í@code{--option}‚Æ‚¢‚¤ƒIƒvƒVƒ‡ƒ“‚Í‘¶Ý‚µ‚Ü‚¹‚ñBã‹L‚Í‚ 
-‚­‚Ü‚Å—á‚Å‚·B
+å› ã¿ã«jbannerã«ã¯@code{--option}ã¨ã„ã†ã‚ªãƒ—ã‚·ãƒ§ãƒ³ã¯å­˜åœ¨ã—ã¾ã›ã‚“ã€‚ä¸Šè¨˜ã¯ã‚
+ãã¾ã§ä¾‹ã§ã™ã€‚
 
 @c --------------------------------------------------------------------
-@node  ƒwƒ‹ƒvƒIƒvƒVƒ‡ƒ“, ‘S‘Ì“I‚ÈƒIƒvƒVƒ‡ƒ“, ƒRƒ}ƒ“ƒhŒ`Ž®, Žg—p•û–@
+@node  ãƒ˜ãƒ«ãƒ—ã‚ªãƒ—ã‚·ãƒ§ãƒ³, å…¨ä½“çš„ãªã‚ªãƒ—ã‚·ãƒ§ãƒ³, ã‚³ãƒžãƒ³ãƒ‰å½¢å¼, ä½¿ç”¨æ–¹æ³•
 @comment  node-name,  next,  previous,  up
-@section ƒwƒ‹ƒvƒIƒvƒVƒ‡ƒ“
+@section ãƒ˜ãƒ«ãƒ—ã‚ªãƒ—ã‚·ãƒ§ãƒ³
 
-ƒwƒ‹ƒvƒIƒvƒVƒ‡ƒ“‚ðŽw’è‚µ‚½ê‡‚Í, jbanner ‚ÉŠÖ˜A‚·‚éî•ñ‚ð•\Ž¦‚µ, ’¼‚¿‚É
-ƒRƒ}ƒ“ƒh‚ðI—¹‚µ‚Ü‚·B•\Ž¦•¶Žš—ñ‚ðŽw’è‚µ‚½ê‡‚à, ƒoƒi[ˆ—‚ðs‚¢‚Ü‚¹‚ñB
+ãƒ˜ãƒ«ãƒ—ã‚ªãƒ—ã‚·ãƒ§ãƒ³ã‚’æŒ‡å®šã—ãŸå ´åˆã¯, jbanner ã«é–¢é€£ã™ã‚‹æƒ…å ±ã‚’è¡¨ç¤ºã—, ç›´ã¡ã«
+ã‚³ãƒžãƒ³ãƒ‰ã‚’çµ‚äº†ã—ã¾ã™ã€‚è¡¨ç¤ºæ–‡å­—åˆ—ã‚’æŒ‡å®šã—ãŸå ´åˆã‚‚, ãƒãƒŠãƒ¼å‡¦ç†ã‚’è¡Œã„ã¾ã›ã‚“ã€‚
 
 @table @kbd
 
 @item -?
 @itemx --help
 
-Ú×‚ÈŽg—p•û–@‚ð•\Ž¦‚µ, ˆ—‚ðI—¹‚µ‚Ü‚·B
+è©³ç´°ãªä½¿ç”¨æ–¹æ³•ã‚’è¡¨ç¤ºã—, å‡¦ç†ã‚’çµ‚äº†ã—ã¾ã™ã€‚
 
 @item --usage
-ŠÈŒ‰‚ÈŽg—p•û–@‚ð•\Ž¦‚µ, ˆ—‚ðI—¹‚µ‚Ü‚·B
+ç°¡æ½”ãªä½¿ç”¨æ–¹æ³•ã‚’è¡¨ç¤ºã—, å‡¦ç†ã‚’çµ‚äº†ã—ã¾ã™ã€‚
 
 @item --version
-ƒ”ƒ@[ƒWƒ‡ƒ“î•ñ‚ð•\Ž¦‚µ, ˆ—‚ðI—¹‚µ‚Ü‚·B
+ãƒ´ã‚¡ãƒ¼ã‚¸ãƒ§ãƒ³æƒ…å ±ã‚’è¡¨ç¤ºã—, å‡¦ç†ã‚’çµ‚äº†ã—ã¾ã™ã€‚
 @end table
 
 @c --------------------------------------------------------------------
-@node  ‘S‘Ì“I‚ÈƒIƒvƒVƒ‡ƒ“, “ÁŽêƒIƒvƒVƒ‡ƒ“(WIN32), ƒwƒ‹ƒvƒIƒvƒVƒ‡ƒ“, Žg—p•û–@
+@node  å…¨ä½“çš„ãªã‚ªãƒ—ã‚·ãƒ§ãƒ³, ç‰¹æ®Šã‚ªãƒ—ã‚·ãƒ§ãƒ³(WIN32), ãƒ˜ãƒ«ãƒ—ã‚ªãƒ—ã‚·ãƒ§ãƒ³, ä½¿ç”¨æ–¹æ³•
 @comment  node-name,  next,  previous,  up
-@section ‘S‘Ì“I‚ÈƒIƒvƒVƒ‡ƒ“
+@section å…¨ä½“çš„ãªã‚ªãƒ—ã‚·ãƒ§ãƒ³
 
 @table @kbd
 
 @item -c=X
 @itemx --char=X
 
-ƒoƒi[‚ðì¬‚·‚éˆ×‚ÉŽg—p‚·‚é•¶Žš—ñ‚ðŽw’è‚µ‚Ü‚·B‚±‚ÌƒIƒvƒVƒ‡ƒ“‚ðŽw’è‚µ‚È
-‚©‚Á‚½ê‡‚Í, ƒoƒi[‚ðì¬‚·‚é•¶Žš—ñ‚Æ‚µ‚Ä@code{X}‚ðŽg—p‚µ‚Ü‚·B‚±‚ÌƒIƒv
-ƒVƒ‡ƒ“‚ÅŽw’è‚·‚é‚Ì‚Í•¶Žš‚Å‚Í‚È‚­, @strong{•¶Žš—ñ}‚Å‚·B—á‚¦‚Î, @code{AB}
-‚ðŽw’è‚µ‚½ê‡‚Í, ˆÈ‰º‚Ì‚æ‚¤‚É‚È‚è‚Ü‚·B
+ãƒãƒŠãƒ¼ã‚’ä½œæˆã™ã‚‹ç‚ºã«ä½¿ç”¨ã™ã‚‹æ–‡å­—åˆ—ã‚’æŒ‡å®šã—ã¾ã™ã€‚ã“ã®ã‚ªãƒ—ã‚·ãƒ§ãƒ³ã‚’æŒ‡å®šã—ãª
+ã‹ã£ãŸå ´åˆã¯, ãƒãƒŠãƒ¼ã‚’ä½œæˆã™ã‚‹æ–‡å­—åˆ—ã¨ã—ã¦@code{X}ã‚’ä½¿ç”¨ã—ã¾ã™ã€‚ã“ã®ã‚ªãƒ—
+ã‚·ãƒ§ãƒ³ã§æŒ‡å®šã™ã‚‹ã®ã¯æ–‡å­—ã§ã¯ãªã, @strong{æ–‡å­—åˆ—}ã§ã™ã€‚ä¾‹ãˆã°, @code{AB}
+ã‚’æŒ‡å®šã—ãŸå ´åˆã¯, ä»¥ä¸‹ã®ã‚ˆã†ã«ãªã‚Šã¾ã™ã€‚
 
 @example
-[513] ~/WORK/jbanner/src: ./jbanner -c AB Š¿Žš
+[513] ~/WORK/jbanner/src: ./jbanner -c AB æ¼¢å­—
   AB          AB      AB                      AB
     AB  ABABABABABABABABABABAB                AB
       AB      AB      AB        ABABABABABABABABABABABABABABAB
@@ -430,12 +428,12 @@ AB      ABAB              ABAB            ABABAB
 @item -w=80
 @itemx --width=80
 
-ƒoƒi[‚Ì•\Ž¦•‚ðÝ’è‚µ‚Ü‚·B‚±‚ÌƒIƒvƒVƒ‡ƒ“‚ðŽw’è‚µ‚È‚©‚Á‚½ê‡‚Ì•\Ž¦•‚Í
-80•¶Žš‚Å‚·B•\Ž¦•‚Í 1ˆÈã, 1024–¢–ž‚Ì”ÍˆÍ‚ÅŽw’è‰Â”\‚Å‚·B•\Ž¦•‚ð’´‚¦‚½
-•ª•”‚ÍƒJƒbƒg‚³‚ê‚Ü‚·B•\Ž¦•‚ð 45‚ÉŽw’è‚µ‚½ê‡‚Ì—á‚ðˆÈ‰º‚ÉŽ¦‚µ‚Ü‚·B
+ãƒãƒŠãƒ¼ã®è¡¨ç¤ºå¹…ã‚’è¨­å®šã—ã¾ã™ã€‚ã“ã®ã‚ªãƒ—ã‚·ãƒ§ãƒ³ã‚’æŒ‡å®šã—ãªã‹ã£ãŸå ´åˆã®è¡¨ç¤ºå¹…ã¯
+80æ–‡å­—ã§ã™ã€‚è¡¨ç¤ºå¹…ã¯ 1ä»¥ä¸Š, 1024æœªæº€ã®ç¯„å›²ã§æŒ‡å®šå¯èƒ½ã§ã™ã€‚è¡¨ç¤ºå¹…ã‚’è¶…ãˆãŸ
+åˆ†éƒ¨ã¯ã‚«ãƒƒãƒˆã•ã‚Œã¾ã™ã€‚è¡¨ç¤ºå¹…ã‚’ 45ã«æŒ‡å®šã—ãŸå ´åˆã®ä¾‹ã‚’ä»¥ä¸‹ã«ç¤ºã—ã¾ã™ã€‚
 
 @example
-[517] ~/WORK/jbanner/src: ./jbanner -c AB --width=45 Š¿Žš
+[517] ~/WORK/jbanner/src: ./jbanner -c AB --width=45 æ¼¢å­—
   AB          AB      AB
     AB  ABABABABABABABABABABAB
       AB      AB      AB        ABABABABABAB
@@ -455,46 +453,46 @@ AB      ABAB              ABAB            AB
 @end table
 
 @c --------------------------------------------------------------------
-@node  “ÁŽêƒIƒvƒVƒ‡ƒ“(WIN32),  , ‘S‘Ì“I‚ÈƒIƒvƒVƒ‡ƒ“, Žg—p•û–@
+@node  ç‰¹æ®Šã‚ªãƒ—ã‚·ãƒ§ãƒ³(WIN32),  , å…¨ä½“çš„ãªã‚ªãƒ—ã‚·ãƒ§ãƒ³, ä½¿ç”¨æ–¹æ³•
 @comment  node-name,  next,  previous,  up
-@section “ÁŽêƒIƒvƒVƒ‡ƒ“(WIN32)
+@section ç‰¹æ®Šã‚ªãƒ—ã‚·ãƒ§ãƒ³(WIN32)
 
-@file{jbanner}‚Í, Windows ‚ÌƒtƒHƒ“ƒg‚ðŽg—p‚µ‚Äƒoƒi[‚ðì¬‚µ‚Ä‚¢‚Ü‚·B‚»
-‚Ì‚½‚ß‚É, ƒtƒHƒ“ƒg‚ÉŠÖ˜A‚·‚éƒIƒvƒVƒ‡ƒ“‚ð—pˆÓ‚µ‚Ä‚¢‚Ü‚·B
+@file{jbanner}ã¯, Windows ã®ãƒ•ã‚©ãƒ³ãƒˆã‚’ä½¿ç”¨ã—ã¦ãƒãƒŠãƒ¼ã‚’ä½œæˆã—ã¦ã„ã¾ã™ã€‚ã
+ã®ãŸã‚ã«, ãƒ•ã‚©ãƒ³ãƒˆã«é–¢é€£ã™ã‚‹ã‚ªãƒ—ã‚·ãƒ§ãƒ³ã‚’ç”¨æ„ã—ã¦ã„ã¾ã™ã€‚
 
 @table @kbd
 
-@item -F="‚l‚r ƒSƒVƒbƒN"
-@itemx --fontname="‚l‚r ƒSƒVƒbƒN"
+@item -F="ï¼­ï¼³ ã‚´ã‚·ãƒƒã‚¯"
+@itemx --fontname="ï¼­ï¼³ ã‚´ã‚·ãƒƒã‚¯"
 
-ƒoƒi[ì¬‚ÉŽg—p‚·‚éƒtƒHƒ“ƒg–¼‚ðŽw’è‚µ‚Ü‚·B‚±‚ÌƒIƒvƒVƒ‡ƒ“‚ðŽw’è‚µ‚È‚©‚Á
-‚½ê‡‚Í, @code{MS ƒSƒVƒbƒN}‚ðŽg—p‚µ‚Ü‚·BˆÈ‰º‚Ì—á‚Í, ƒtƒHƒ“ƒg‚É
-@code{@@FixedSys}‚ðŽg—p‚µ‚½ê‡‚Ì—á‚Å‚·B
+ãƒãƒŠãƒ¼ä½œæˆã«ä½¿ç”¨ã™ã‚‹ãƒ•ã‚©ãƒ³ãƒˆåã‚’æŒ‡å®šã—ã¾ã™ã€‚ã“ã®ã‚ªãƒ—ã‚·ãƒ§ãƒ³ã‚’æŒ‡å®šã—ãªã‹ã£
+ãŸå ´åˆã¯, @code{MS ã‚´ã‚·ãƒƒã‚¯}ã‚’ä½¿ç”¨ã—ã¾ã™ã€‚ä»¥ä¸‹ã®ä¾‹ã¯, ãƒ•ã‚©ãƒ³ãƒˆã«
+@code{@@FixedSys}ã‚’ä½¿ç”¨ã—ãŸå ´åˆã®ä¾‹ã§ã™ã€‚
 
 @example
-[537] ~/WORK/jbanner/src: ./jbanner -c 'Š¿' -F=@@FixedSys Š¿Žš
-@
-@
-@
-@Š¿@@@@@@@@Š¿@@@Š¿@@@Š¿Š¿Š¿@@@@@Š¿
-@Š¿@@Š¿Š¿Š¿@Š¿@Š¿@@@Š¿@@@Š¿@@@@@@@Š¿
-@Š¿@@Š¿@Š¿@Š¿@Š¿@@Š¿@@@@Š¿@@@@@@@Š¿
-Š¿Š¿Š¿@Š¿@Š¿@Š¿@Š¿@@Š¿@@@@Š¿@@Š¿@@@@Š¿
-@Š¿@@Š¿@Š¿@Š¿@Š¿@Š¿@@@@@Š¿@@Š¿Š¿@@@Š¿
-@Š¿@@Š¿Š¿Š¿Š¿Š¿Š¿Š¿Š¿@@@@@@Š¿@@Š¿@Š¿@@Š¿
-@Š¿@@Š¿@Š¿@Š¿@Š¿@Š¿@@@@@Š¿@@Š¿@@Š¿@Š¿
-Š¿Š¿Š¿@Š¿@Š¿@Š¿@Š¿@@Š¿@@Š¿Š¿Š¿@@Š¿@@Š¿Š¿Š¿Š¿Š¿Š¿Š¿
-@Š¿@@Š¿@Š¿@Š¿@Š¿@@Š¿@@@@Š¿@@Š¿@@@@Š¿@@@Š¿
-@Š¿@@Š¿Š¿Š¿@Š¿@Š¿@@@Š¿@@@Š¿@@Š¿@@@@Š¿@@@Š¿
-@Š¿@@@@@@@@Š¿@@@Š¿@@@Š¿@@Š¿@@@@Š¿
-@@Š¿@@@@@@@@@@@@@@@Š¿@@Š¿@@@@Š¿
-@Š¿@@@@Š¿@@Š¿Š¿@@@@@@@Š¿@@@@@@@Š¿
-Š¿@@@@Š¿@@@@@Š¿Š¿@@@@@Š¿@@@@@@@Š¿
-@@@@Š¿@@@@@@@@Š¿Š¿@@@Š¿Š¿Š¿@@@@@Š¿
+[537] ~/WORK/jbanner/src: ./jbanner -c 'æ¼¢' -F=@@FixedSys æ¼¢å­—
+ã€€
+ã€€
+ã€€
+ã€€æ¼¢ã€€ã€€ã€€ã€€ã€€ã€€ã€€ã€€æ¼¢ã€€ã€€ã€€æ¼¢ã€€ã€€ã€€æ¼¢æ¼¢æ¼¢ã€€ã€€ã€€ã€€ã€€æ¼¢
+ã€€æ¼¢ã€€ã€€æ¼¢æ¼¢æ¼¢ã€€æ¼¢ã€€æ¼¢ã€€ã€€ã€€æ¼¢ã€€ã€€ã€€æ¼¢ã€€ã€€ã€€ã€€ã€€ã€€ã€€æ¼¢
+ã€€æ¼¢ã€€ã€€æ¼¢ã€€æ¼¢ã€€æ¼¢ã€€æ¼¢ã€€ã€€æ¼¢ã€€ã€€ã€€ã€€æ¼¢ã€€ã€€ã€€ã€€ã€€ã€€ã€€æ¼¢
+æ¼¢æ¼¢æ¼¢ã€€æ¼¢ã€€æ¼¢ã€€æ¼¢ã€€æ¼¢ã€€ã€€æ¼¢ã€€ã€€ã€€ã€€æ¼¢ã€€ã€€æ¼¢ã€€ã€€ã€€ã€€æ¼¢
+ã€€æ¼¢ã€€ã€€æ¼¢ã€€æ¼¢ã€€æ¼¢ã€€æ¼¢ã€€æ¼¢ã€€ã€€ã€€ã€€ã€€æ¼¢ã€€ã€€æ¼¢æ¼¢ã€€ã€€ã€€æ¼¢
+ã€€æ¼¢ã€€ã€€æ¼¢æ¼¢æ¼¢æ¼¢æ¼¢æ¼¢æ¼¢æ¼¢ã€€ã€€ã€€ã€€ã€€ã€€æ¼¢ã€€ã€€æ¼¢ã€€æ¼¢ã€€ã€€æ¼¢
+ã€€æ¼¢ã€€ã€€æ¼¢ã€€æ¼¢ã€€æ¼¢ã€€æ¼¢ã€€æ¼¢ã€€ã€€ã€€ã€€ã€€æ¼¢ã€€ã€€æ¼¢ã€€ã€€æ¼¢ã€€æ¼¢
+æ¼¢æ¼¢æ¼¢ã€€æ¼¢ã€€æ¼¢ã€€æ¼¢ã€€æ¼¢ã€€ã€€æ¼¢ã€€ã€€æ¼¢æ¼¢æ¼¢ã€€ã€€æ¼¢ã€€ã€€æ¼¢æ¼¢æ¼¢æ¼¢æ¼¢æ¼¢æ¼¢
+ã€€æ¼¢ã€€ã€€æ¼¢ã€€æ¼¢ã€€æ¼¢ã€€æ¼¢ã€€ã€€æ¼¢ã€€ã€€ã€€ã€€æ¼¢ã€€ã€€æ¼¢ã€€ã€€ã€€ã€€æ¼¢ã€€ã€€ã€€æ¼¢
+ã€€æ¼¢ã€€ã€€æ¼¢æ¼¢æ¼¢ã€€æ¼¢ã€€æ¼¢ã€€ã€€ã€€æ¼¢ã€€ã€€ã€€æ¼¢ã€€ã€€æ¼¢ã€€ã€€ã€€ã€€æ¼¢ã€€ã€€ã€€æ¼¢
+ã€€æ¼¢ã€€ã€€ã€€ã€€ã€€ã€€ã€€ã€€æ¼¢ã€€ã€€ã€€æ¼¢ã€€ã€€ã€€æ¼¢ã€€ã€€æ¼¢ã€€ã€€ã€€ã€€æ¼¢
+ã€€ã€€æ¼¢ã€€ã€€ã€€ã€€ã€€ã€€ã€€ã€€ã€€ã€€ã€€ã€€ã€€ã€€ã€€æ¼¢ã€€ã€€æ¼¢ã€€ã€€ã€€ã€€æ¼¢
+ã€€æ¼¢ã€€ã€€ã€€ã€€æ¼¢ã€€ã€€æ¼¢æ¼¢ã€€ã€€ã€€ã€€ã€€ã€€ã€€æ¼¢ã€€ã€€ã€€ã€€ã€€ã€€ã€€æ¼¢
+æ¼¢ã€€ã€€ã€€ã€€æ¼¢ã€€ã€€ã€€ã€€ã€€æ¼¢æ¼¢ã€€ã€€ã€€ã€€ã€€æ¼¢ã€€ã€€ã€€ã€€ã€€ã€€ã€€æ¼¢
+ã€€ã€€ã€€ã€€æ¼¢ã€€ã€€ã€€ã€€ã€€ã€€ã€€ã€€æ¼¢æ¼¢ã€€ã€€ã€€æ¼¢æ¼¢æ¼¢ã€€ã€€ã€€ã€€ã€€æ¼¢
 @end example
 
-‚±‚ÌƒIƒvƒVƒ‡ƒ“‚ÅŽw’è‚·‚é‚Ì‚Í, ‘‘Ì–¼(ƒtƒHƒ“ƒgƒtƒFƒCƒX)‚Å‚Í‚È‚­, ƒtƒHƒ“ƒg
-–¼‚È‚Ì‚Å, ˆÈ‰º‚Ì‚æ‚¤‚ÉŽw’è‚·‚éŽ–‚ào—ˆ‚Ü‚·B
+ã“ã®ã‚ªãƒ—ã‚·ãƒ§ãƒ³ã§æŒ‡å®šã™ã‚‹ã®ã¯, æ›¸ä½“å(ãƒ•ã‚©ãƒ³ãƒˆãƒ•ã‚§ã‚¤ã‚¹)ã§ã¯ãªã, ãƒ•ã‚©ãƒ³ãƒˆ
+åãªã®ã§, ä»¥ä¸‹ã®ã‚ˆã†ã«æŒ‡å®šã™ã‚‹äº‹ã‚‚å‡ºæ¥ã¾ã™ã€‚
 
 @example
 [538] ~/WORK/jbanner/src: ./jbanner -F="Times New Roman Bold Italic" Hoge
@@ -521,14 +519,14 @@ XXXX  XXXX   XXX     XXXX    XXX
 @item -f=16
 @itemx --fontsize=16
 
-ƒoƒi[ì¬‚ÉŽg—p‚·‚éƒtƒHƒ“ƒg‚ÌƒtƒHƒ“ƒgƒTƒCƒY‚ðŽw’è‚µ‚Ü‚·B‚±‚ÌƒTƒCƒY‚ÍƒtƒH
-ƒ“ƒg‚Ì‚‚³‚ðˆÓ–¡‚µ‚Ü‚·BƒtƒHƒ“ƒg‚Ì•‚Í, ƒAƒXƒyƒNƒgƒ‹”ä‚©‚çŽ©“®ŽZo‚µ‚Ü‚·B
-‚±‚ÌƒIƒvƒVƒ‡ƒ“‚ðŽw’è‚µ‚È‚©‚Á‚½ê‡‚ÌƒtƒHƒ“ƒgƒTƒCƒY‚Í 16‚ðŽw’è‚µ‚½Ž–‚É‚È
-‚è‚Ü‚·BƒtƒHƒ“ƒgƒTƒCƒY‚É 24‚ðŽw’è‚µ‚½ê‡‚Ì—á‚ðˆÈ‰º‚ÉŽ¦‚µ‚Ü‚·(s‘‘Ì‚Í16
-ƒhƒbƒg‚¾‚Æh‚¢‚Å‚·‚Ë)B
+ãƒãƒŠãƒ¼ä½œæˆã«ä½¿ç”¨ã™ã‚‹ãƒ•ã‚©ãƒ³ãƒˆã®ãƒ•ã‚©ãƒ³ãƒˆã‚µã‚¤ã‚ºã‚’æŒ‡å®šã—ã¾ã™ã€‚ã“ã®ã‚µã‚¤ã‚ºã¯ãƒ•ã‚©
+ãƒ³ãƒˆã®é«˜ã•ã‚’æ„å‘³ã—ã¾ã™ã€‚ãƒ•ã‚©ãƒ³ãƒˆã®å¹…ã¯, ã‚¢ã‚¹ãƒšã‚¯ãƒˆãƒ«æ¯”ã‹ã‚‰è‡ªå‹•ç®—å‡ºã—ã¾ã™ã€‚
+ã“ã®ã‚ªãƒ—ã‚·ãƒ§ãƒ³ã‚’æŒ‡å®šã—ãªã‹ã£ãŸå ´åˆã®ãƒ•ã‚©ãƒ³ãƒˆã‚µã‚¤ã‚ºã¯ 16ã‚’æŒ‡å®šã—ãŸäº‹ã«ãª
+ã‚Šã¾ã™ã€‚ãƒ•ã‚©ãƒ³ãƒˆã‚µã‚¤ã‚ºã« 24ã‚’æŒ‡å®šã—ãŸå ´åˆã®ä¾‹ã‚’ä»¥ä¸‹ã«ç¤ºã—ã¾ã™(è¡Œæ›¸ä½“ã¯16
+ãƒ‰ãƒƒãƒˆã ã¨è¾›ã„ã§ã™ã­)ã€‚
 
 @example
-[546] ~/WORK/jbanner/src: ./jbanner -c '##' -F=HGSs‘‘Ì -f 24 ‚ 
+[546] ~/WORK/jbanner/src: ./jbanner -c '##' -F=HGSè¡Œæ›¸ä½“ -f 24 ã‚
  
  
  
@@ -554,79 +552,79 @@ XXXX  XXXX   XXX     XXXX    XXX
 
 @item --lsfont[=family]
 
-family‚ÅŽw’è‚µ‚½ƒtƒHƒ“ƒgƒtƒ@ƒ~ƒŠ‚ÌƒtƒHƒ“ƒgî•ñ‚ð—ñ‹“‚µAƒRƒ}ƒ“ƒh‚ðI—¹‚µ
-‚Ü‚·BƒtƒHƒ“ƒg–¼‚ðŽw’è‚·‚éŽž‚ÉAƒVƒXƒeƒ€‚ÉŽg—p‚Å‚«‚éƒtƒHƒ“ƒg‚ð’²‚×‚éê‡
-‚ÉŽg—p‚·‚éŽ–‚ð‘z’è‚µ‚Ä‚¢‚Ü‚·Bfamily‚ðŽw’è‚µ‚È‚©‚Á‚½ê‡‚ÍAŽg—p‰Â”\‚È‘S
-‚Ä‚ÌƒtƒHƒ“ƒg‚ð—ñ‹“‚µ‚Ü‚·BƒtƒHƒ“ƒgî•ñ‚ÍA¶‚©‚ç
+familyã§æŒ‡å®šã—ãŸãƒ•ã‚©ãƒ³ãƒˆãƒ•ã‚¡ãƒŸãƒªã®ãƒ•ã‚©ãƒ³ãƒˆæƒ…å ±ã‚’åˆ—æŒ™ã—ã€ã‚³ãƒžãƒ³ãƒ‰ã‚’çµ‚äº†ã—
+ã¾ã™ã€‚ãƒ•ã‚©ãƒ³ãƒˆåã‚’æŒ‡å®šã™ã‚‹æ™‚ã«ã€ã‚·ã‚¹ãƒ†ãƒ ã«ä½¿ç”¨ã§ãã‚‹ãƒ•ã‚©ãƒ³ãƒˆã‚’èª¿ã¹ã‚‹å ´åˆ
+ã«ä½¿ç”¨ã™ã‚‹äº‹ã‚’æƒ³å®šã—ã¦ã„ã¾ã™ã€‚familyã‚’æŒ‡å®šã—ãªã‹ã£ãŸå ´åˆã¯ã€ä½¿ç”¨å¯èƒ½ãªå…¨
+ã¦ã®ãƒ•ã‚©ãƒ³ãƒˆã‚’åˆ—æŒ™ã—ã¾ã™ã€‚ãƒ•ã‚©ãƒ³ãƒˆæƒ…å ±ã¯ã€å·¦ã‹ã‚‰
 
 @itemize
-@item ƒtƒHƒ“ƒg–¼
-@item ƒXƒ^ƒCƒ‹–¼
-@item ‘‘Ì–¼
+@item ãƒ•ã‚©ãƒ³ãƒˆå
+@item ã‚¹ã‚¿ã‚¤ãƒ«å
+@item æ›¸ä½“å
 @end itemize
 
-‚Ì‡‚É—ñ‹“‚µ‚Ü‚·BˆÈ‰º‚É—á‚ðŽ¦‚µ‚Ü‚·B
+ã®é †ã«åˆ—æŒ™ã—ã¾ã™ã€‚ä»¥ä¸‹ã«ä¾‹ã‚’ç¤ºã—ã¾ã™ã€‚
 
 @example
 [551] ~/WORK/jbanner/src: ./jbanner --lsfont=times
 "Times New Roman"	"Regular"	"Times"
 "Times New Roman"	"Regular"	"Times"
 "Times New Roman"	"Regular"	"Times"
----’†—ª---
+---ä¸­ç•¥---
 "Times New Roman Bold"	"Bold"	"Times"
 "Times New Roman Bold"	"Bold"	"Times"
 "Times New Roman Bold"	"Bold"	"Times"
----’†—ª---
+---ä¸­ç•¥---
 "Times New Roman Bold Italic"	"Bold Italic"	"Times"
 "Times New Roman Bold Italic"	"Bold Italic"	"Times"
-...ˆÈ‰ºÈ—ª...
+...ä»¥ä¸‹çœç•¥...
 
-[552] ~/WORK/jbanner/src: ./jbanner --lsfont="‚l‚r ƒSƒVƒbƒN"
-"‚l‚r ƒSƒVƒbƒN"	"•W€"	"‚l‚r ƒSƒVƒbƒN"
+[552] ~/WORK/jbanner/src: ./jbanner --lsfont="ï¼­ï¼³ ã‚´ã‚·ãƒƒã‚¯"
+"ï¼­ï¼³ ã‚´ã‚·ãƒƒã‚¯"	"æ¨™æº–"	"ï¼­ï¼³ ã‚´ã‚·ãƒƒã‚¯"
 @end example
 
-jbanner ‚ÌƒIƒvƒVƒ‡ƒ“‚ÅŽw’è‚·‚é‚Ì‚Í, ƒtƒHƒ“ƒg–¼‚Å‚·BƒtƒHƒ“ƒg–¼‚©‚çŽg—p‚·
-‚é‘‘Ì–¼‚ð“¾‚Ä‚¢‚Ü‚·B“ú–{Œê‚ÌƒtƒHƒ“ƒg‚Ìê‡‚Í, ƒtƒHƒ“ƒg–¼‚Æ‘‘Ì–¼‚Í–w‚Ç
-ˆê’v‚µ‚Ä‚¢‚é‚æ‚¤‚Å‚·B
+jbanner ã®ã‚ªãƒ—ã‚·ãƒ§ãƒ³ã§æŒ‡å®šã™ã‚‹ã®ã¯, ãƒ•ã‚©ãƒ³ãƒˆåã§ã™ã€‚ãƒ•ã‚©ãƒ³ãƒˆåã‹ã‚‰ä½¿ç”¨ã™
+ã‚‹æ›¸ä½“åã‚’å¾—ã¦ã„ã¾ã™ã€‚æ—¥æœ¬èªžã®ãƒ•ã‚©ãƒ³ãƒˆã®å ´åˆã¯, ãƒ•ã‚©ãƒ³ãƒˆåã¨æ›¸ä½“åã¯æ®†ã©
+ä¸€è‡´ã—ã¦ã„ã‚‹ã‚ˆã†ã§ã™ã€‚
 @end table
 
 @c --------------------------------------------------------------------
-@node ŽÖ‘«, Žæ‚èˆµ‚¢, Žg—p•û–@, Top
+@node è›‡è¶³, å–ã‚Šæ‰±ã„, ä½¿ç”¨æ–¹æ³•, Top
 @comment  node-name,  next,  previous,  up
-@chapter ŽÖ‘«
+@chapter è›‡è¶³
 
 @menu
-* ƒRƒ“ƒpƒCƒ‹•û–@::              
-* ƒRƒ}ƒ“ƒhƒ‰ƒCƒ“ˆø”‚Ì‰ðÍ::    
-* ŽÖ‘«‚ÌŽÖ‘«::                  
+* ã‚³ãƒ³ãƒ‘ã‚¤ãƒ«æ–¹æ³•::              
+* ã‚³ãƒžãƒ³ãƒ‰ãƒ©ã‚¤ãƒ³å¼•æ•°ã®è§£æž::    
+* è›‡è¶³ã®è›‡è¶³::                  
 @end menu
 
-@node ƒRƒ“ƒpƒCƒ‹•û–@, ƒRƒ}ƒ“ƒhƒ‰ƒCƒ“ˆø”‚Ì‰ðÍ, ŽÖ‘«, ŽÖ‘«
+@node ã‚³ãƒ³ãƒ‘ã‚¤ãƒ«æ–¹æ³•, ã‚³ãƒžãƒ³ãƒ‰ãƒ©ã‚¤ãƒ³å¼•æ•°ã®è§£æž, è›‡è¶³, è›‡è¶³
 @comment  node-name,  next,  previous,  up
-@section ƒRƒ“ƒpƒCƒ‹•û–@
+@section ã‚³ãƒ³ãƒ‘ã‚¤ãƒ«æ–¹æ³•
 
-ƒRƒ“ƒpƒCƒ‹‚Í, VC6.0‚Æ Cygwin ‚Ì gcc ‚ÅŠm”F‚µ‚Ä‚¢‚Ü‚·B“ÁŽê‚ÈŽ–‚Ís‚Á‚Ä‚¢
-‚È‚¢‚Â‚à‚è‚Å‚·‚Ì‚Å, ‚à‚Á‚ÆŒÃ‚¢‚à‚Ì‚Å‚à, ‘½•ª‘åä•v‚¾‚ÆŽv‚¢‚Ü‚·Bgcc ‚ÅƒR
-ƒ“ƒpƒCƒ‹‚ð’Ê‚·ˆ×‚ÉŒÆ‘§‚ÈŽ–(‚Æ‚¢‚Á‚Ä‚à, Ì MS-DOS ‚Ì MSC-3‚ ‚½‚è‚ðŽg—p‚µ
-‚Ä‚¢‚½ ‚à‚±‚ñ‚ÈŽ–‚ð‚µ‚Ä‚¢‚Ü‚µ‚½‚ª)‚ð‚µ‚Ä‚¢‚Ü‚·B‘‚¢˜b‚ª, “ú–{Œê‚ð³‚µ
-‚­ˆ—‚Å‚«‚È‚¢•ª•”‚Ì‘Î‰ž‚ð‚µ‚Ä‚¢‚é‚¾‚¯‚Å‚·B‚à‚¤­‚µÚ‚µ‚­‚¢‚¤‚Æ, ƒGƒXƒP[
-ƒvƒR[ƒh@code{0x5C}‚ª, SHIFT-JIS ‚Å‚ÌŠ¿ŽšƒR[ƒh‚Ì 2ƒoƒCƒg–Ú‚Æˆê’v‚µ‚Ä‚µ
-‚Ü‚¢, “Á’è‚ÌŠ¿ŽšƒR[ƒh(2ƒoƒCƒg–Ú‚ªƒGƒXƒP[ƒvƒR[ƒh‚Æˆê’v‚·‚éƒR[ƒh)‚ª³
-‚µ‚­ˆ—‚³‚ê‚È‚¢‚Ì‚Å‚·B—á‚¦‚Î, u•\v(@code{0x955c})‚ª‚»‚ê‚É‚ ‚½‚è‚Ü‚·B
-
-@example
-printf("•\Ž¦\n")
-@end example
-
-‚¾‚ÆƒGƒ‰[‚É‚È‚è‚Ü‚·‚Ì‚ÅA
+ã‚³ãƒ³ãƒ‘ã‚¤ãƒ«ã¯, VC6.0ã¨ Cygwin ã® gcc ã§ç¢ºèªã—ã¦ã„ã¾ã™ã€‚ç‰¹æ®Šãªäº‹ã¯è¡Œã£ã¦ã„
+ãªã„ã¤ã‚‚ã‚Šã§ã™ã®ã§, ã‚‚ã£ã¨å¤ã„ã‚‚ã®ã§ã‚‚, å¤šåˆ†å¤§ä¸ˆå¤«ã ã¨æ€ã„ã¾ã™ã€‚gcc ã§ã‚³
+ãƒ³ãƒ‘ã‚¤ãƒ«ã‚’é€šã™ç‚ºã«å§‘æ¯ãªäº‹(ã¨ã„ã£ã¦ã‚‚, æ˜” MS-DOS ã® MSC-3ã‚ãŸã‚Šã‚’ä½¿ç”¨ã—
+ã¦ã„ãŸé ƒã‚‚ã“ã‚“ãªäº‹ã‚’ã—ã¦ã„ã¾ã—ãŸãŒ)ã‚’ã—ã¦ã„ã¾ã™ã€‚æ—©ã„è©±ãŒ, æ—¥æœ¬èªžã‚’æ­£ã—
+ãå‡¦ç†ã§ããªã„åˆ†éƒ¨ã®å¯¾å¿œã‚’ã—ã¦ã„ã‚‹ã ã‘ã§ã™ã€‚ã‚‚ã†å°‘ã—è©³ã—ãã„ã†ã¨, ã‚¨ã‚¹ã‚±ãƒ¼
+ãƒ—ã‚³ãƒ¼ãƒ‰@code{0x5C}ãŒ, SHIFT-JIS ã§ã®æ¼¢å­—ã‚³ãƒ¼ãƒ‰ã® 2ãƒã‚¤ãƒˆç›®ã¨ä¸€è‡´ã—ã¦ã—
+ã¾ã„, ç‰¹å®šã®æ¼¢å­—ã‚³ãƒ¼ãƒ‰(2ãƒã‚¤ãƒˆç›®ãŒã‚¨ã‚¹ã‚±ãƒ¼ãƒ—ã‚³ãƒ¼ãƒ‰ã¨ä¸€è‡´ã™ã‚‹ã‚³ãƒ¼ãƒ‰)ãŒæ­£
+ã—ãå‡¦ç†ã•ã‚Œãªã„ã®ã§ã™ã€‚ä¾‹ãˆã°, ã€Œè¡¨ã€(@code{0x955c})ãŒãã‚Œã«ã‚ãŸã‚Šã¾ã™ã€‚
 
 @example
-printf("\x95\x5cŽ¦\n")
+printf("è¡¨ç¤º\n")
 @end example
 
-‚Æ‹Lq‚µ‚Ä‚¢‚Ü‚·B
+ã ã¨ã‚¨ãƒ©ãƒ¼ã«ãªã‚Šã¾ã™ã®ã§ã€
 
-ˆê‰ž, Ž„‚ªƒRƒ“ƒpƒCƒ‹‚ðŠm”F‚µ‚½ƒRƒ“ƒpƒCƒ‰‚ðˆÈ‰º‚É—ñ‹“‚µ‚Ü‚·B
+@example
+printf("\x95\x5cç¤º\n")
+@end example
+
+ã¨è¨˜è¿°ã—ã¦ã„ã¾ã™ã€‚
+
+ä¸€å¿œ, ç§ãŒã‚³ãƒ³ãƒ‘ã‚¤ãƒ«ã‚’ç¢ºèªã—ãŸã‚³ãƒ³ãƒ‘ã‚¤ãƒ©ã‚’ä»¥ä¸‹ã«åˆ—æŒ™ã—ã¾ã™ã€‚
 
 @itemize
 @item
@@ -637,20 +635,20 @@ Microsoft (R) 32-bit C/C++ Optimizing Compiler Version 12.00.8804 for
 gcc (GCC) 3.2 20020818 (prerelease)
 @end itemize
 
-ƒRƒ“ƒpƒCƒ‹‚Í, nmake ‚Ü‚½‚Í make ˆê”­‚Ås‚¦‚é‚æ‚¤‚Él—¶‚µ‚½‚Â‚à‚è‚Å‚·‚ª, 
-ŠÂ‹«‚É‚æ‚Á‚Ä‚Í, makefile ‚ð‘‚«Š·‚¦‚é•K—v‚ª‚ ‚é‚©‚à‚µ‚ê‚Ü‚¹‚ñ(‚Æ, ‚¢‚¤‚æ
-‚è, Ž„‚Æ‘S‚­“¯‚¶ŠÂ‹«‚Ì”¤‚ª‚ ‚è‚Ü‚¹‚ñ‚Ì‚Å, ‰½‚ç‚©‚Ì‘‚«Š·‚¦‚Í•K—v‚É‚È‚è‚Ü
-‚·)BC³•û–@‚Í, makefile “à‚É‹Lq‚µ‚Ä‚¢‚Ü‚·‚Ì‚Å, ‚»‚¿‚ç‚ðŽQÆ‚µ‚Ä‰º‚³‚¢B
+ã‚³ãƒ³ãƒ‘ã‚¤ãƒ«ã¯, nmake ã¾ãŸã¯ make ä¸€ç™ºã§è¡Œãˆã‚‹ã‚ˆã†ã«è€ƒæ…®ã—ãŸã¤ã‚‚ã‚Šã§ã™ãŒ, 
+ç’°å¢ƒã«ã‚ˆã£ã¦ã¯, makefile ã‚’æ›¸ãæ›ãˆã‚‹å¿…è¦ãŒã‚ã‚‹ã‹ã‚‚ã—ã‚Œã¾ã›ã‚“(ã¨, ã„ã†ã‚ˆ
+ã‚Š, ç§ã¨å…¨ãåŒã˜ç’°å¢ƒã®ç­ˆãŒã‚ã‚Šã¾ã›ã‚“ã®ã§, ä½•ã‚‰ã‹ã®æ›¸ãæ›ãˆã¯å¿…è¦ã«ãªã‚Šã¾
+ã™)ã€‚ä¿®æ­£æ–¹æ³•ã¯, makefile å†…ã«è¨˜è¿°ã—ã¦ã„ã¾ã™ã®ã§, ãã¡ã‚‰ã‚’å‚ç…§ã—ã¦ä¸‹ã•ã„ã€‚
 
 @c --------------------------------------------------------------------
-@node   ƒRƒ}ƒ“ƒhƒ‰ƒCƒ“ˆø”‚Ì‰ðÍ, ŽÖ‘«‚ÌŽÖ‘«, ƒRƒ“ƒpƒCƒ‹•û–@, ŽÖ‘«
+@node   ã‚³ãƒžãƒ³ãƒ‰ãƒ©ã‚¤ãƒ³å¼•æ•°ã®è§£æž, è›‡è¶³ã®è›‡è¶³, ã‚³ãƒ³ãƒ‘ã‚¤ãƒ«æ–¹æ³•, è›‡è¶³
 @comment  node-name,  next,  previous,  up
-@section ƒRƒ}ƒ“ƒhƒ‰ƒCƒ“ˆø”‚Ì‰ðÍ
+@section ã‚³ãƒžãƒ³ãƒ‰ãƒ©ã‚¤ãƒ³å¼•æ•°ã®è§£æž
 
-’p‚¸‚©‚µ‚È‚ª‚ç, ¡‰ñƒfƒoƒbƒO‚ð‚µ‚Ä‚¢‚ÄŽn‚ß‚Ä”»‚Á‚½‚Ì‚Å‚·‚ª, gcc ‚ÅƒRƒ“ƒp
-ƒCƒ‹‚µ‚½‚à‚Ì‚Æ, MSVC ‚ÅƒRƒ“ƒpƒCƒ‹‚µ‚½‚à‚Ì‚Å, ƒRƒ}ƒ“ƒhƒ‰ƒCƒ“ˆø”‚Ìˆ—‚ªˆÙ
-‚È‚é‚æ‚¤‚Å‚·BWindows ‚ÌƒRƒ}ƒ“ƒhƒvƒƒ“ƒvƒg‚©‚ç, ˆÈ‰º‚ÌƒRƒ}ƒ“ƒh‚ð“ü—Í‚µ‚Ä, 
-‚»‚Ìˆø”‚Ì“n‚è•û‚ð’²‚×‚Ä‚Ý‚Ü‚µ‚½B
+æ¥ãšã‹ã—ãªãŒã‚‰, ä»Šå›žãƒ‡ãƒãƒƒã‚°ã‚’ã—ã¦ã„ã¦å§‹ã‚ã¦åˆ¤ã£ãŸã®ã§ã™ãŒ, gcc ã§ã‚³ãƒ³ãƒ‘
+ã‚¤ãƒ«ã—ãŸã‚‚ã®ã¨, MSVC ã§ã‚³ãƒ³ãƒ‘ã‚¤ãƒ«ã—ãŸã‚‚ã®ã§, ã‚³ãƒžãƒ³ãƒ‰ãƒ©ã‚¤ãƒ³å¼•æ•°ã®å‡¦ç†ãŒç•°
+ãªã‚‹ã‚ˆã†ã§ã™ã€‚Windows ã®ã‚³ãƒžãƒ³ãƒ‰ãƒ—ãƒ­ãƒ³ãƒ—ãƒˆã‹ã‚‰, ä»¥ä¸‹ã®ã‚³ãƒžãƒ³ãƒ‰ã‚’å…¥åŠ›ã—ã¦, 
+ãã®å¼•æ•°ã®æ¸¡ã‚Šæ–¹ã‚’èª¿ã¹ã¦ã¿ã¾ã—ãŸã€‚
 
 @itemize
 @item
@@ -658,7 +656,7 @@ gcc (GCC) 3.2 20020818 (prerelease)
 
 @enumerate
 @item
-MSVC‚ÅƒRƒ“ƒpƒCƒ‹‚µ‚½ê‡
+MSVCã§ã‚³ãƒ³ãƒ‘ã‚¤ãƒ«ã—ãŸå ´åˆ
 
 @example
 ARGV[0]=<jbanner>
@@ -668,10 +666,10 @@ ARGV[3]=<Roman'>
 ARGV[4]=<hoge>
 @end example
 
-@code{Times New Roman}‚ðˆê‚Â‚Ìˆø”‚Æ‚µ‚Ä“n‚·‚Â‚à‚è‚Å@code{'}‚ÅŠ‡‚Á‚½‚Ì‚Å
-‚·‚ª, Œ©Ž–‚Éˆø”‚ªŽO‚Â‚É•ªŠ„‚³‚ê‚Ä‚µ‚Ü‚¢‚Ü‚µ‚½B
+@code{Times New Roman}ã‚’ä¸€ã¤ã®å¼•æ•°ã¨ã—ã¦æ¸¡ã™ã¤ã‚‚ã‚Šã§@code{'}ã§æ‹¬ã£ãŸã®ã§
+ã™ãŒ, è¦‹äº‹ã«å¼•æ•°ãŒä¸‰ã¤ã«åˆ†å‰²ã•ã‚Œã¦ã—ã¾ã„ã¾ã—ãŸã€‚
 
-@item gcc‚ÅƒRƒ“ƒpƒCƒ‹‚µ‚½ê‡
+@item gccã§ã‚³ãƒ³ãƒ‘ã‚¤ãƒ«ã—ãŸå ´åˆ
 
 @example
 ARGV[0]=<jbanner>
@@ -679,18 +677,18 @@ ARGV[1]=<--fontname=Times New Roman>
 ARGV[2]=<hoge>
 @end example
 
-‚±‚¿‚ç‚Í, ˆÓ}‚µ‚½’Ê‚è‚Å‚·B
+ã“ã¡ã‚‰ã¯, æ„å›³ã—ãŸé€šã‚Šã§ã™ã€‚
 
 @end enumerate
 
 @item
 @samp{jbanner --fontname="Times New Roman" hoge}
 
-¡“x‚Í, @code{'}‚Å‚Í‚È‚­, @code{"}‚ÅŠ‡‚Á‚Ä‚Ý‚Ü‚µ‚½B
+ä»Šåº¦ã¯, @code{'}ã§ã¯ãªã, @code{"}ã§æ‹¬ã£ã¦ã¿ã¾ã—ãŸã€‚
 
 @enumerate
 
-@item MSVC‚ÅƒRƒ“ƒpƒCƒ‹‚µ‚½ê‡
+@item MSVCã§ã‚³ãƒ³ãƒ‘ã‚¤ãƒ«ã—ãŸå ´åˆ
 
 @example
 ARGV[0]=<jbanner>
@@ -698,9 +696,9 @@ ARGV[1]=<--fontname=Times New Roman>
 ARGV[2]=<hoge>
 @end example
 
-ˆÓ}‚µ‚½’Ê‚è‚Å‚·B
+æ„å›³ã—ãŸé€šã‚Šã§ã™ã€‚
 
-@item gcc ‚ÅƒRƒ“ƒpƒCƒ‹‚µ‚½ê‡
+@item gcc ã§ã‚³ãƒ³ãƒ‘ã‚¤ãƒ«ã—ãŸå ´åˆ
 
 @example
 ARGV[0]=<./jbanner>
@@ -708,53 +706,53 @@ ARGV[1]=<--fontname=Times New Roman>
 ARGV[2]=<hoge>
 @end example
 
-ˆÓ}‚µ‚½’Ê‚è‚Å‚·B
+æ„å›³ã—ãŸé€šã‚Šã§ã™ã€‚
 
 @end enumerate
 @end itemize
 
-‚Æ‚¢‚Á‚½Œ‹‰Ê‚É‚È‚è‚Ü‚µ‚½BŽ„‚Í–w‚Ç bash ‚ðŽg—p‚µ‚Ä‚¢‚Ü‚·‚Ì‚Å, ƒVƒFƒ‹‚ªˆ
-—‚µ‚Ä‚­‚ê‚é‚Ì‚Å, ‹C‚ª•t‚«‚Ü‚¹‚ñ‚Å‚µ‚½B
+ã¨ã„ã£ãŸçµæžœã«ãªã‚Šã¾ã—ãŸã€‚ç§ã¯æ®†ã© bash ã‚’ä½¿ç”¨ã—ã¦ã„ã¾ã™ã®ã§, ã‚·ã‚§ãƒ«ãŒå‡¦
+ç†ã—ã¦ãã‚Œã‚‹ã®ã§, æ°—ãŒä»˜ãã¾ã›ã‚“ã§ã—ãŸã€‚
 
 @c --------------------------------------------------------------------
-@node  ŽÖ‘«‚ÌŽÖ‘«,  , ƒRƒ}ƒ“ƒhƒ‰ƒCƒ“ˆø”‚Ì‰ðÍ, ŽÖ‘«
+@node  è›‡è¶³ã®è›‡è¶³,  , ã‚³ãƒžãƒ³ãƒ‰ãƒ©ã‚¤ãƒ³å¼•æ•°ã®è§£æž, è›‡è¶³
 @comment  node-name,  next,  previous,  up
-@section ŽÖ‘«‚ÌŽÖ‘«
+@section è›‡è¶³ã®è›‡è¶³
 
-ˆê•”, ƒfƒoƒbƒO—p‚É Syslog o—Í‚µ‚Ä‚¢‚Ü‚·BSyslogd ‚ð‹N“®‚µ‚Ä‚¢‚é•û‚Í, ‚²
-’ˆÓ(‚×‚Â‚Éˆ«‚³‚Í—^‚¦‚È‚¢‚ÆŽv‚¢‚Ü‚·‚ª)‚­‚¾‚³‚¢B
+ä¸€éƒ¨, ãƒ‡ãƒãƒƒã‚°ç”¨ã« Syslog å‡ºåŠ›ã—ã¦ã„ã¾ã™ã€‚Syslogd ã‚’èµ·å‹•ã—ã¦ã„ã‚‹æ–¹ã¯, ã”
+æ³¨æ„(ã¹ã¤ã«æ‚ªã•ã¯ä¸Žãˆãªã„ã¨æ€ã„ã¾ã™ãŒ)ãã ã•ã„ã€‚
 
 
 @c --------------------------------------------------------------------
-@node  Žæ‚èˆµ‚¢,  , ŽÖ‘«, Top
+@node  å–ã‚Šæ‰±ã„,  , è›‡è¶³, Top
 @comment  node-name,  next,  previous,  up
-@chapter Žæ‚èˆµ‚¢
+@chapter å–ã‚Šæ‰±ã„
 
 @menu
-* ’˜ìŒ A–ÆÓ“™::              
-* ƒoƒO•ñ“™::                  
+* è‘—ä½œæ¨©ã€å…è²¬ç­‰::              
+* ãƒã‚°å ±å‘Šç­‰::                  
 @end menu
 
-@node  ’˜ìŒ A–ÆÓ“™, ƒoƒO•ñ“™, Žæ‚èˆµ‚¢, Žæ‚èˆµ‚¢
+@node  è‘—ä½œæ¨©ã€å…è²¬ç­‰, ãƒã‚°å ±å‘Šç­‰, å–ã‚Šæ‰±ã„, å–ã‚Šæ‰±ã„
 @comment  node-name,  next,  previous,  up
-@section ’˜ìŒ A–ÆÓ“™
+@section è‘—ä½œæ¨©ã€å…è²¬ç­‰
 
-–{ƒvƒƒOƒ‰ƒ€‚ÍƒtƒŠ[ƒ\ƒtƒgƒEƒFƒA‚Å‚·B–{ƒvƒƒOƒ‰ƒ€‚ðŽg—p‚µ‚Ä¶‚¶‚½‚¢‚©‚È
-‚éŒ‹‰Ê‚É‘Î‚µ‚Ä‚àìŽÒ‚ÍÓ”C‚ð•‰‚í‚È‚¢‚±‚Æ‚Æ‚µ‚Ü‚·BŒÂl‚ÌÓ”C‚É‰—‚¢‚ÄŽg—p
-‚µ‚Ä‰º‚³‚¢B“üŽè‚µ‚½ƒA[ƒJƒCƒu‚Ì‚Ü‚Ü‚ÌŒ`Ž®‚Å‚ ‚ê‚Î, Ä”Ð•z, “]Ú‚Í‰Â”\‚Æ
-‚µ‚Ü‚·BíŽ¯“I‚Éˆµ‚Á‚Ä‚­‚¾‚³‚¢B
+æœ¬ãƒ—ãƒ­ã‚°ãƒ©ãƒ ã¯ãƒ•ãƒªãƒ¼ã‚½ãƒ•ãƒˆã‚¦ã‚§ã‚¢ã§ã™ã€‚æœ¬ãƒ—ãƒ­ã‚°ãƒ©ãƒ ã‚’ä½¿ç”¨ã—ã¦ç”Ÿã˜ãŸã„ã‹ãª
+ã‚‹çµæžœã«å¯¾ã—ã¦ã‚‚ä½œè€…ã¯è²¬ä»»ã‚’è² ã‚ãªã„ã“ã¨ã¨ã—ã¾ã™ã€‚å€‹äººã®è²¬ä»»ã«æ–¼ã„ã¦ä½¿ç”¨
+ã—ã¦ä¸‹ã•ã„ã€‚å…¥æ‰‹ã—ãŸã‚¢ãƒ¼ã‚«ã‚¤ãƒ–ã®ã¾ã¾ã®å½¢å¼ã§ã‚ã‚Œã°, å†é ’å¸ƒ, è»¢è¼‰ã¯å¯èƒ½ã¨
+ã—ã¾ã™ã€‚å¸¸è­˜çš„ã«æ‰±ã£ã¦ãã ã•ã„ã€‚
 
-@node  ƒoƒO•ñ“™,  , ’˜ìŒ A–ÆÓ“™, Žæ‚èˆµ‚¢
+@node  ãƒã‚°å ±å‘Šç­‰,  , è‘—ä½œæ¨©ã€å…è²¬ç­‰, å–ã‚Šæ‰±ã„
 @comment  node-name,  next,  previous,  up
-@section ƒoƒO•ñ“™
+@section ãƒã‚°å ±å‘Šç­‰
 
-ƒoƒO•ñ, ‰ü‘PˆÄ(‚ ‚é‚¢‚Í, Ž©•ª‚Å‰ü‘P‚µ‚½), Ž¿–â“™‚ ‚è‚Ü‚µ‚½‚ç, ¥”ñìŽÒ
-‚Öu—ã‚Ü‚µ‚Ì‚¨•Ö‚èv@code{(^^;}‚ð‘—‚Á‚Ä‰º‚³‚¢B“Á‚É‚²Ž©•ª‚Å‰ü‘P‚È‚³‚Á‚½
-ê‡‚Í, Ž„‚à‰¶Œb‚É—a‚©‚è‚½‚¢‚Ì‚Å, ¥”ñ‹³‚¦‚Ä‰º‚³‚¢B‰ü‘PˆÄ‚Ì‚²˜A—‚ð‰º‚³‚Á
-‚Ä‚à, ŽdŽ–‚É–ZŽE‚³‚ê‚Ä‚¢‚éŠÖŒWã, ‚²Šó–]‚É“Y‚¦‚éŽ–‚Ío—ˆ‚È‚¢‚©‚à‚µ‚ê‚Ü‚¹
-‚ñ‚ª, ƒoƒOC³‚Í‚È‚é‚×‚­s‚¤‚Â‚à‚è‚Å‚·BŽ©•ª‚Ì–¼—_‚Ìˆ×‚É‚à@dots{}(^^;
+ãƒã‚°å ±å‘Š, æ”¹å–„æ¡ˆ(ã‚ã‚‹ã„ã¯, è‡ªåˆ†ã§æ”¹å–„ã—ãŸ), è³ªå•ç­‰ã‚ã‚Šã¾ã—ãŸã‚‰, æ˜¯éžä½œè€…
+ã¸ã€ŒåŠ±ã¾ã—ã®ãŠä¾¿ã‚Šã€@code{(^^;}ã‚’é€ã£ã¦ä¸‹ã•ã„ã€‚ç‰¹ã«ã”è‡ªåˆ†ã§æ”¹å–„ãªã•ã£ãŸ
+å ´åˆã¯, ç§ã‚‚æ©æµã«é ã‹ã‚ŠãŸã„ã®ã§, æ˜¯éžæ•™ãˆã¦ä¸‹ã•ã„ã€‚æ”¹å–„æ¡ˆã®ã”é€£çµ¡ã‚’ä¸‹ã•ã£
+ã¦ã‚‚, ä»•äº‹ã«å¿™æ®ºã•ã‚Œã¦ã„ã‚‹é–¢ä¿‚ä¸Š, ã”å¸Œæœ›ã«æ·»ãˆã‚‹äº‹ã¯å‡ºæ¥ãªã„ã‹ã‚‚ã—ã‚Œã¾ã›
+ã‚“ãŒ, ãƒã‚°ä¿®æ­£ã¯ãªã‚‹ã¹ãè¡Œã†ã¤ã‚‚ã‚Šã§ã™ã€‚è‡ªåˆ†ã®åèª‰ã®ç‚ºã«ã‚‚@dots{}(^^;
 
-ƒ[ƒ‹ƒAƒhƒŒƒX‚Í, ˆÈ‰º‚Ì’Ê‚è‚Å‚·B
+ãƒ¡ãƒ¼ãƒ«ã‚¢ãƒ‰ãƒ¬ã‚¹ã¯, ä»¥ä¸‹ã®é€šã‚Šã§ã™ã€‚
 
 @flushright
 @ifhtml
@@ -766,14 +764,14 @@ T.Furukawa @email{tfuruka1 at nifty dot com}
 @end flushright
 
 @c --------------------------
-@c Part 6: ƒhƒLƒ…ƒƒ“ƒg‚ÌI‚è
+@c Part 6: ãƒ‰ã‚­ãƒ¥ãƒ¡ãƒ³ãƒˆã®çµ‚ã‚Š
 @c --------------------------
-@c @node  õˆø,  , Žæ‚èˆµ‚¢, Top
-@c @unnumbered õˆø
+@c @node  ç´¢å¼•,  , å–ã‚Šæ‰±ã„, Top
+@c @unnumbered ç´¢å¼•
 
 @c @printindex cp
 @c @printindex fn
 @c @printindex vr
 
-@c ƒCƒ“ƒfƒbƒNƒX‚Í—v‚ç‚È‚¢‚â
+@c ã‚¤ãƒ³ãƒ‡ãƒƒã‚¯ã‚¹ã¯è¦ã‚‰ãªã„ã‚„
 @bye
