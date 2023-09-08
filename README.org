@@ -17,6 +17,7 @@ Copyright(C) 2003 Tadamegu Furukawa
 
 ----
 
+=======
 このドキュメントは, jbanner について記述しています。jbanner は日本語を
 含 む文字列を拡大し, バナーとして画面に表示するコマンドです。 CYGWIN の
 banner と同じ動作になるように作成したつもりですが,
@@ -396,6 +397,7 @@ printf("\x95\x5c示\n")
 #+END_SRC
 
 と記述しています。
+
 
 [fn:shiftjis] 現在はソースの文字セットは utf-8 ですので、この制限はありません。現在は--input-charset=utf-8, --exec-charset=cp932 を指定してbuildできるようになりました。
 
