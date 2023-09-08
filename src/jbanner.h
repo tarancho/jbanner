@@ -37,7 +37,7 @@
 "    このソフトウエアはフリーソフトウエアです。転載、"\
 "頒布は入手したアー\n"\
 "    カイブのままであれば、自由に行ってください。\n"\
-"\n $Id: jbanner.h,v 1.1 2004/01/19 09:01:28 tfuruka1 Exp $\n"
+"\n(build: " __DATE__ " " __TIME__")\n"
 
 #include <windows.h>
 #include <stdio.h>

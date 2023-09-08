@@ -1,0 +1,498 @@
+# -*- coding: utf-8
+#+title: 日本語を含む文字列を拡大しバナーとして画面に表示する JBANNER
+#+author: tfuruka1 at nifty dot com
+#+options: ^:{} toc:nil
+
+本ドキュメントは
+
+#+BEGIN_EXAMPLE
+Copyright(C) 2003 Tadamegu Furukawa
+#+END_EXAMPLE
+
+当時作成したものを20年後の2023年、そのまま変換しただけですので、誤りが
+残っている可能性があります。記述がかなり古いです。ソースの管理も
+ RCS → CVS → git と変化しています。
+
+[[./jbanner.exe][download]]
+
+----
+
+このドキュメントは, jbanner について記述しています。jbanner は日本語を
+含 む文字列を拡大し, バナーとして画面に表示するコマンドです。 CYGWIN の
+banner と同じ動作になるように作成したつもりですが,
+ソースを全く参照していませんので, 内部処理は全く異なっているでしょう。
+また, 細かい動作は異なっていると思われます。
+
+* 要旨
+
+jbanner は, 日本語を含む文字列を拡大し,
+バナーとして画面に表示するコマンドです。
+以下の出力例を見れば何をするコマンドなのかは一目瞭然でしょう。
+#+BEGIN_EXAMPLE
+[491] ~/WORK/jbanner/src: ./jbanner -c 漢漢字
+
+　漢　　　　　漢　　　漢　　　　　　　　　　　漢
+　　漢　漢漢漢漢漢漢漢漢漢漢漢　　　　　　　　漢
+　　　漢　　　漢　　　漢　　　　漢漢漢漢漢漢漢漢漢漢漢漢漢漢漢
+　　　　　　　　　　　　　　　　漢　　　　　　　　　　　　　漢
+漢　　　　漢漢漢漢漢漢漢漢漢　　漢　　　　　　　　　　　　　漢
+　漢　　　漢　　　漢　　　漢　　　　　漢漢漢漢漢漢漢漢漢
+　　漢　　漢漢漢漢漢漢漢漢漢　　　　　　　　　　　　漢
+　　　　　　　　　漢　　　　　　　　　　　　　　　漢
+　　　　　漢漢漢漢漢漢漢漢漢　　　　　　　　　漢漢
+　　漢　　　　　　漢　　　　　　　　　　　　　漢
+　　漢　漢漢漢漢漢漢漢漢漢漢漢　漢漢漢漢漢漢漢漢漢漢漢漢漢漢漢
+　漢　　　　　　　漢　　　　　　　　　　　　　漢
+　漢　　　　　　漢　漢　　　　　　　　　　　　漢
+漢　　　　　漢漢　　　漢漢　　　　　　　　　　漢
+漢　　　漢漢　　　　　　　漢漢　　　　　　漢漢漢
+
+[492] ~/WORK/jbanner/src: ./jbanner -c '_/' 漢字
+
+  _/          _/      _/                      _/
+    _/  _/_/_/_/_/_/_/_/_/_/_/                _/
+      _/      _/      _/        _/_/_/_/_/_/_/_/_/_/_/_/_/_/_/
+                                _/                          _/
+_/        _/_/_/_/_/_/_/_/_/    _/                          _/
+  _/      _/      _/      _/          _/_/_/_/_/_/_/_/_/
+    _/    _/_/_/_/_/_/_/_/_/                        _/
+                  _/                              _/
+          _/_/_/_/_/_/_/_/_/                  _/_/
+    _/            _/                          _/
+    _/  _/_/_/_/_/_/_/_/_/_/_/  _/_/_/_/_/_/_/_/_/_/_/_/_/_/_/
+  _/              _/                          _/
+  _/            _/  _/                        _/
+_/          _/_/      _/_/                    _/
+_/      _/_/              _/_/            _/_/_/
+#+END_EXAMPLE
+
+ふとした事から, banner を使用したくなったのですが, Cygwin の banner
+は日本語を通してくれませんでした(当たり前ですけど)。多分, 数時間で作成
+できるだろうと思って作り始めたのですが, 色々と機能を追加しては削除した
+りして, 結構な日数を費やしてしましました。
+
+* 機能概要
+
+jbanner は, 日本語を含む文字列を拡大し,
+バナーとして画面に表示するコマンドです。
+
+ある日, メールに日本語のバナーを入れたいと思って, Cygwin の banner
+を使用したところ, 思った通り, 日本語は通してくれませんでした。多分, 日
+本語化されたものが有ると思い, インターネット等で検索してみたのですが,
+違うバナーが沢山ヒットしてしまい,
+結局目的のものは探し出せませんでした。
+
+#+BEGIN_QUOTE
+「しょうがない。作るか〜。」
+「多分, 二〜三時間もあれば作れるだろう」
+#+END_QUOTE
+
+と思って, 作り始めました。ま〜, だいたいは二時間ぐらいで出来たのです
+が, どうせなら, オリジナルと同じ動作にしようと思い, オリジナルを操作し
+ながら, 動作を真似て作りました。
+
+面倒だったので, オリジナルのソースは見ないで作成したので, 細かい部分
+までは真似しきれてないと思います。何れにしろ, オリジナルは多分プログラ
+ム内部にフォント情報を持っているでしょう(違うかな?)。欧文のように数が
+少なければ可能なのですが, 日本語は数が多いのでフォントを内部に持つのは
+得策ではないと判断して, OS からフォント情報を得ています。そんな訳でオ
+リジナルには存在しない機能として, 以下の機能があります。
+
+- 日本語を処理できます
+- フォントの指定が可能です
+- フォントサイズの指定が可能です
+- フォントファミリを列挙する事ができます。
+
+フォントの指定が可能になった事により,
+
+#+BEGIN_EXAMPLE
+[498] ~/WORK/jbanner/src: ./jbanner -c 漢 --fontname='@ＭＳ明朝' 漢字
+　
+　漢　　　　　　　　漢　　　漢　　　漢　　　　　　漢
+　漢　　漢漢漢　漢　漢　　　漢　　漢漢漢　　　　漢漢
+　漢　　漢　漢　漢　漢　　漢　　　　漢　　　　　　漢
+漢漢漢　漢　漢　漢　漢　漢　　　　　漢　　漢　　　漢
+　漢　　漢　漢　漢　漢漢　　　　　　漢　漢漢　　　漢
+　漢　　漢漢漢漢漢漢漢　　　　　　　漢　　漢漢　　漢
+　漢　　漢　漢　漢　漢漢　　　　漢　漢　　漢　漢　漢
+漢漢漢　漢　漢　漢　漢　漢　　　漢漢漢　　漢　漢漢漢漢漢漢漢
+　漢　　漢　漢　漢　漢　　漢　　　　漢　　漢　　　漢　　　漢漢
+　漢　　漢漢漢　漢　漢　　　漢　　　漢　　漢　　　漢　　　漢
+　漢　　　　　　　　漢　　　漢　　　漢　　漢　　　漢　　　漢
+　　　　漢漢漢　　　　　　　　　　　漢　　漢　　　漢
+　漢漢　　　　漢漢漢　　　　　　　　漢　　　　　　漢
+漢　　　漢漢　　　　漢漢漢漢漢　　漢漢漢　　　　　漢
+      漢　　　　　　漢　　　　　　　　漢漢　　　　漢
+#+END_EXAMPLE
+
+こんな事も出来るようになりました。
+
+* 動作環境
+
+一応, Windows(32bit) 汎用のつもりです。特殊な API
+は一切使用していませんので, 多分 Windows 95/98/98SE/ME/NT/2000/Xp の何
+れでも動作すると思います。 もしかすると, Win32s でも動作するかもしれま
+せん。但し私が動作確認を行った環境は
+
+- Windows 2000
+- Windows Xp
+
+のみです。
+
+* インストールとアンインストール方法
+** インストール
+
+インストールは, 特殊な事は何も行う必要はありません。`jbanner.exe'を任
+意のフォルダ(ディレクトリ)にコピーして下さい。jbanner はコマンドプロン
+プトから使用するツールですので, 環境変数`Path'に含まれているディレクト
+リにコピーする事をお勧め致します。エクスプローラから, クリックしても何
+も起こりませんので悪しからず`:-p' 。
+
+** アンインストール
+
+アンインストールは, `jbanner.exe'を削除するだけです。レジストリは一切
+触っていませんので, それ以外には何も行う必要はありません。
+
+* 使用方法
+** 簡単な使いかた
+
+`jbanner'は Windows のコマンドプロンプト等から使用します。私は Emacs の
+shell で bash を起動して使用する事が殆どですので, このドキュメントの例
+もbash のものを使用しているのが殆どです。コマンドプロンプトで使用する
+場合に於いても特に大きな違いはありませんので, 適当に読み替えて下さい。
+
+そのままコマンドプロンプトから`jbanner'と入力すると,
+#+BEGIN_EXAMPLE
+C:\home\tfuruka1>jbanner
+jbanner: 引数が不十分です。
+Usage: jbanner [-c X] [-w 80] [--usage] [--version] [--help] 表示する文字列
+#+END_EXAMPLE
+
+といった, 簡単な使用方法を表示します。今度は「表示する文字列」を何か
+入力してみます。ここでは「ほげ」と入力します。
+#+BEGIN_EXAMPLE
+C:\home\tfuruka1>jbanner ほげ
+                            X X
+  X               X         X X
+  X   XXXXXXXX    X        X
+ X         X     X         X
+ X         X     X    XXXXXXXXX
+ X    XXXXXXXX   X         X
+ X         X     X         X
+ X         X     X         X
+ X         X     X         X
+ X         X     X         X
+ X     XXXXX     X        X
+ X    X    XX     X       X
+  X   X    X X    X      X
+  X    XXXX            XX
+#+END_EXAMPLE
+
+これが基本的な使用方法です。あとは, オプションで細かい指定がそれなり
+にできます。
+
+** コマンド形式
+
+`jbanner'のコマンド形式は以下の通りです。
+#+BEGIN_EXAMPLE
+jbanner [options] 表示文字列
+#+END_EXAMPLE
+
+`表示文字列'で指定した文字列を拡大して, バナーとして, 画面に表示し
+ます。オプションは, `-'又は`--'から始まる文字又は文字列で, 出力形式に
+対する指示を行う事ができます。オプションの中には, 引数を必要とするもの
+もあります。その場合の引数は, コマンドの次の引数として記述する事もでき
+ますし, `='で連結して指定する事も可能です。例えば, 以下の二つはどちら
+も同じ意味になります。
+#+BEGIN_EXAMPLE
+--option argument
+--option=argument
+#+END_EXAMPLE
+
+因みにjbannerには`--option'というオプションは存在しません。上記はあ
+くまで例です。
+
+** ヘルプオプション
+
+ヘルプオプションを指定した場合は, jbanner に関連する情報を表示し, 直ち
+にコマンドを終了します。表示文字列を指定した場合も, バナー処理を行いま
+せん。
+
+- `-?' or `--help' :: 詳細な使用方法を表示し, 処理を終了します。
+- `--usage' :: 簡潔な使用方法を表示し, 処理を終了します。
+- `--version' :: ヴァージョン情報を表示し, 処理を終了します。
+
+** 全体的なオプション
+
+- `-c=X' or `--char=X' :: バナーを作成する為に使用する文字列を指定します。このオプションを指定しなかった場合は, バナーを作成する文字列として`X'を使用します。このオプションで指定するのは文字ではなく, *文字列 *です。例えば, `AB' を指定した場合は, 以下のようになります。
+#+BEGIN_EXAMPLE
+[513] ~/WORK/jbanner/src: ./jbanner -c AB 漢字
+  AB          AB      AB                      AB
+    AB  ABABABABABABABABABABAB                AB
+      AB      AB      AB        ABABABABABABABABABABABABABABAB
+                                AB                          AB
+AB        ABABABABABABABABAB    AB                          AB
+  AB      AB      AB      AB          ABABABABABABABABAB
+    AB    ABABABABABABABABAB                        AB
+                  AB                              AB
+          ABABABABABABABABAB                  ABAB
+    AB            AB                          AB
+    AB  ABABABABABABABABABABAB  ABABABABABABABABABABABABABABAB
+  AB              AB                          AB
+  AB            AB  AB                        AB
+AB          ABAB      ABAB                    AB
+AB      ABAB              ABAB            ABABAB
+#+END_EXAMPLE
+
+- `-w=80' or `--width=80' :: バナーの表示幅を設定します。このオプションを指定しなかった場合の表示幅は 80文字です。表示幅は 1以上, 1024未満の範囲で指定可能です。表示幅を超えた分部はカットされます。表示幅を 45に指定した場合の例を以下に示します。
+#+BEGIN_EXAMPLE
+[517] ~/WORK/jbanner/src: ./jbanner -c AB --width=45 漢字
+  AB          AB      AB
+    AB  ABABABABABABABABABABAB
+      AB      AB      AB        ABABABABABAB
+                                AB
+AB        ABABABABABABABABAB    AB
+  AB      AB      AB      AB          ABABAB
+    AB    ABABABABABABABABAB
+                  AB
+          ABABABABABABABABAB
+    AB            AB
+    AB  ABABABABABABABABABABAB  ABABABABABAB
+  AB              AB
+  AB            AB  AB
+AB          ABAB      ABAB
+AB      ABAB              ABAB            AB
+#+END_EXAMPLE
+
+** 特殊オプション(WIN32)
+
+`jbanner'は, Windows のフォントを使用してバナーを作成しています。その
+ために, フォントに関連するオプションを用意しています。
+
+- `-F="ＭＳゴシック"' or `--fontname="ＭＳゴシック"' :: バナー作成に使用するフォント名を指定します。このオプションを指定しなかった場合は, `MS ゴシック'を使用します。以下の例は, フォントに `@FixedSys'を使用した場合の例です。
+
+#+BEGIN_EXAMPLE
+[537] ~/WORK/jbanner/src: ./jbanner -c '漢' -F=@FixedSys 漢字
+　
+　
+　
+　漢　　　　　　　　漢　　　漢　　　漢漢漢　　　　　漢
+　漢　　漢漢漢　漢　漢　　　漢　　　漢　　　　　　　漢
+　漢　　漢　漢　漢　漢　　漢　　　　漢　　　　　　　漢
+漢漢漢　漢　漢　漢　漢　　漢　　　　漢　　漢　　　　漢
+　漢　　漢　漢　漢　漢　漢　　　　　漢　　漢漢　　　漢
+　漢　　漢漢漢漢漢漢漢漢　　　　　　漢　　漢　漢　　漢
+　漢　　漢　漢　漢　漢　漢　　　　　漢　　漢　　漢　漢
+漢漢漢　漢　漢　漢　漢　　漢　　漢漢漢　　漢　　漢漢漢漢漢漢漢
+　漢　　漢　漢　漢　漢　　漢　　　　漢　　漢　　　　漢　　　漢
+　漢　　漢漢漢　漢　漢　　　漢　　　漢　　漢　　　　漢　　　漢
+　漢　　　　　　　　漢　　　漢　　　漢　　漢　　　　漢
+　　漢　　　　　　　　　　　　　　　漢　　漢　　　　漢
+　漢　　　　漢　　漢漢　　　　　　　漢　　　　　　　漢
+漢　　　　漢　　　　　漢漢　　　　　漢　　　　　　　漢
+　　　　漢　　　　　　　　漢漢　　　漢漢漢　　　　　漢
+#+END_EXAMPLE
+
+このオプションで指定するのは, 書体名(フォントフェイス)ではなく, フ
+ォント名なので, 以下のように指定する事も出来ます。
+
+#+BEGIN_EXAMPLE
+[538] ~/WORK/jbanner/src: ./jbanner -F="Times New Roman Bold Italic" Hoge
+
+
+
+
+   XXXX  XXXX
+    XX    XX
+    XX    XX
+   XX    XX
+   XX    XX    XXX    XXXXXX   XXXX
+   XXXXXXXX   X  XX  XXX XX   X  XX
+  XX    XX   XX  XX  XX  XX  X  XX
+  XX    XX  XX   XX  XX XXX XXXXX
+  XX    XX  XX  XX    XXXX  XX
+ XX    XX   XX  XX   XX     XX  XX
+XXXX  XXXX   XXX     XXXX    XXX
+                    X  XXX
+                   XX   XX
+                    XXXXX
+#+END_EXAMPLE
+
+- `-f=16' or `--fontsize=16' :: バナー作成に使用するフォントのフォントサイズを指定します。このサイズはフォントの高さを意味します。フォントの幅は, アスペクトル比から自動算出します。 このオプションを指定しなかった場合のフォントサイズは 16を指定した事になります。フォントサイズに 24を指定した場合の例を以下に示します(行書体は16 ドットだと辛いですね)。
+
+#+BEGIN_EXAMPLE
+[546] ~/WORK/jbanner/src: ./jbanner -c '##' -F=HGS行書体 -f 24 あ
+
+
+
+                      ##
+                    ##  ##
+                  ####    ####
+                  ####  ########
+            ##    ############
+              ############
+                ####
+                ####        ##
+                ####  ############
+                ########    ##    ##
+              ######      ####      ##
+            ########    ####        ####
+          ####    ##########        ####
+        ##        ########          ####
+        ##      ######              ####
+          ########  ####          ######
+                                ######
+                          ########
+#+END_EXAMPLE
+
+- `--lsfont[=family]' :: familyで指定したフォントファミリのフォント情報を列挙し、コマンドを終了します。フォント名を指定する時に、システムに使用できるフォントを調べる場合に使用する事を想定しています。familyを指定しなかった場合は、使用可能な全てのフォントを列挙します。フォント情報は、左から
+  - フォント名
+  - スタイル名
+  - 書体名
+
+の順に列挙します。以下に例を示します。
+#+BEGIN_EXAMPLE
+[551] ~/WORK/jbanner/src: ./jbanner --lsfont=times
+"Times New Roman"	"Regular"	"Times"
+"Times New Roman"	"Regular"	"Times"
+"Times New Roman"	"Regular"	"Times"
+---中略---
+"Times New Roman Bold"	"Bold"	"Times"
+"Times New Roman Bold"	"Bold"	"Times"
+"Times New Roman Bold"	"Bold"	"Times"
+---中略---
+"Times New Roman Bold Italic"	"Bold Italic"	"Times"
+"Times New Roman Bold Italic"	"Bold Italic"	"Times"
+...以下省略...
+
+[552] ~/WORK/jbanner/src: ./jbanner --lsfont="ＭＳゴシック"
+"ＭＳゴシック"	"標準"	"ＭＳゴシック"
+#+END_EXAMPLE
+
+jbanner のオプションで指定するのは, フォント名です。フォント名から
+使用する書体名を得ています。日本語のフォントの場合は, フォント名
+と書体名は殆ど一致しているようです。
+
+* 蛇足
+** コンパイル方法
+
+コンパイルは, VC6.0と Cygwin の gcc で確認しています。特殊な事は行って
+い ないつもりですので, もっと古いものでも, 多分大丈夫だと思います。gcc
+でコンパイルを通す為に姑息な事(といっても, 昔 MS-DOS の MSC-3あたりを
+使用していた頃もこんな事をしていましたが)をしています。早い話が, 日本
+語を正しく処理できない分部の対応をしているだけです。もう少し詳しくいう
+と, エスケープコード`0x5C'が, SHIFT-JIS[fn:shiftjis] での漢字コードの 2バイト目と一
+致してしまい, 特定の漢字コード(2バイト目がエスケープコードと一致するコ
+ード)が正しく処理されないのです。例えば, 「表」(`0x955c')がそれにあた
+ります。
+
+#+BEGIN_SRC c
+printf("表示\n")
+#+END_SRC
+だとエラーになりますので、
+
+#+BEGIN_SRC c
+printf("\x95\x5c示\n")
+#+END_SRC
+
+と記述しています。
+
+[fn:shiftjis] 現在はソースの文字セットは utf-8 ですので、この制限はありません。現在は--input-charset=utf-8, --exec-charset=cp932 を指定してbuildできるようになりました。
+
+一応, 私がコンパイルを確認したコンパイラ[fn:compiler]を以下に列挙します。
+
+-  Microsoft (R) 32-bit C/C++ Optimizing Compiler Version 12.00.8804 for 80x86
+-  gcc (GCC) 3.2 20020818 (prerelease)
+
+[fn:compiler] 2023年現在は MinGW でbuildしています。
+
+コンパイルは, nmake または make 一発で行えるように考慮したつもりです
+が, 環境によっては, makefile を書き換える必要があるかもしれません(と,
+いうより, 私と全く同じ環境の筈がありませんので, 何らかの書き換えは必要
+になります)。修正方法は, makefile 内に記述していますので, そちらを参照
+して下さい。
+
+** コマンドライン引数の解析
+
+恥ずかしながら, 今回デバッグをしていて始めて判ったのですが, gcc でコン
+パ イルしたものと, MSVC でコンパイルしたもので, コマンドライン引数の処
+理が異なるようです。Windows のコマンドプロンプトから, 以下のコマンドを
+入力して, その引数の渡り方を調べてみました。
+
+#+BEGIN_EXAMPLE
+jbanner --fontname='Times New Roman' hoge
+#+END_EXAMPLE
+
+1. MSVCでコンパイルした場合
+#+BEGIN_EXAMPLE
+ARGV[0]=<jbanner>
+ARGV[1]=<--fontname=
+ARGV[2]=<New>
+ARGV[3]=<Roman'>
+ARGV[4]=<hoge>
+#+END_EXAMPLE
+`Times New Roman'を一つの引数として渡すつもりで`''で括ったの
+で すが, 見事に引数が三つに分割されてしまいました。
+
+2. gccでコンパイルした場合
+#+BEGIN_EXAMPLE
+kill rec ARGV[0]=<jbanner>
+kill rec ARGV[1]=<--fontname=Times New Roman>
+kill rec ARGV[2]=<hoge>
+#+END_EXAMPLE
+
+こちらは, 意図した通りです。
+
+#+BEGIN_EXAMPLE
+jbanner --fontname="Times New Roman" hoge
+#+END_EXAMPLE
+
+今度は, `''ではなく, `"'で括ってみました。
+
+1. MSVCでコンパイルした場合
+#+BEGIN_EXAMPLE
+ARGV[0]=<
+ARGV[1]=<--fontname=Times New Roman>
+ARGV[2]=<hoge>
+#+END_EXAMPLE
+
+意図した通りです。
+
+2. gcc でコンパイルした場合
+#+BEGIN_EXAMPLE
+ARGV[0]=<./jbanner>
+ARGV[1]=<--fontname=Times New Roman>
+ARGV[2]=<hoge>
+#+END_EXAMPLE
+
+意図した通りです。
+
+
+といった結果になりました。私は殆ど bash を使用していますので, シェル
+が処理してくれるので, 気が付きませんでした。
+
+** 蛇足の蛇足
+
+一部, デバッグ用に Syslog 出力しています。Syslogd を起動している方は,
+ご注意(べつに悪さは与えないと思いますが)ください。
+
+* 取り扱い
+** 著作権、免責等
+
+本プログラムはフリーソフトウェアです。本プログラムを使用して生じたいか
+な る結果に対しても作者は責任を負わないこととします。個人の責任に於いて
+使用して下さい。入手したアーカイブのままの形式であれば, 再頒布, 転載は
+可能とします。常識的に扱ってください。
+
+** バグ報告等
+
+バグ報告, 改善案(あるいは, 自分で改善した), 質問等ありましたら, 是非作
+者 へ「励ましのお便り」`(^^;'を送って下さい。特にご自分で改善なさった
+場合は, 私も恩恵に預かりたいので, 是非教えて下さい。改善案のご連絡を下
+さっても, 仕事に忙殺されている関係上, ご希望に添える事は出来ないかもし
+れませんが, バグ修正はなるべく行うつもりです。自分の名誉の為にも...(^^;
+
+メールアドレスは, 以下の通りです。
+#+BEGIN_EXAMPLE
+T.Furukawa <tfuruka1 at nifty dot com>
+#+END_EXAMPLE

@@ -1,0 +1,4 @@
+*.obj
+*.o
+*.exe
+src/TAGS
